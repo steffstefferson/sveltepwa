@@ -1,9 +1,10 @@
 {
-  "name": "Svelte PWA Tailwind starter",
-  "short_name": "SveltePWAStarter",
-  "theme_color": "#5bd1d7",
-  "background_color": "#f6f5f5",
+  "name": "Lurinfacts",
+  "short_name": "Lurinfacts",
+  "description": "Lurinfacts, the site about the world greatest coder",
+  "background_color": "#F2EA00",
   "display": "standalone",
+  "theme_color": "#F2EA00",
   "Scope": "/",
   "start_url": "/index.html",
   "icons": [

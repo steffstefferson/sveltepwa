@@ -38,7 +38,17 @@ export default {
       assets: ["src/assets"]
     }),
     postcss({
-      extract: true
+      extensions: [".scss", ".sass"],
+      extract: true,
+      minimize: true,
+      use: [
+        [
+          "sass",
+          {
+            includePaths: ["./src/theme", "./node_modules"]
+          }
+        ]
+      ]
     }),
     !production && livereload("dist"),
     production && terser()
