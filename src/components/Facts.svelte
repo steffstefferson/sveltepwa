@@ -36,7 +36,7 @@
 .list-content p {
 	flex: 1 0 auto;
 }
-</style>
+</style> 
 
 <div>
     <Button href="/contribute"

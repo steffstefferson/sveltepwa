@@ -1,7 +1,6 @@
 <script>
   import { addFactProposal } from './../services/factsService.js';
   import { form } from 'svelte-forms';
-  import { writable } from "svelte/store";
   import Button, {Label} from '@smui/button';
   import Textfield from '@smui/textfield';
   import HelperText from '@smui/textfield/helper-text/index';
