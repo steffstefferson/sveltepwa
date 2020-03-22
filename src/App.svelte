@@ -4,7 +4,9 @@
   import Login from './components/Login.svelte';
   import ImageFullScreen from './components/ImageFullScreen.svelte';
   import HeaderTopBar from './components/HeaderTopBar.svelte';
-  import Contribute from './components/Contribute.svelte';
+  import Contribution from './components/Contribution.svelte';
+  import ManageContribution from './components/ManageContribution.svelte';
+  import Notification from './components/Notification.svelte';
   import router from "page"
   import { DenseFixedAdjust} from '@smui/top-app-bar';
 
@@ -16,7 +18,8 @@
   
   router('/facts', () => page = Facts)
   router('/login', () => page = Login)
-  router('/facts/contribute', () => page = Contribute)
+  router('/contribute', () => page = Contribution)
+  router('/admin/contributions', () => page = ManageContribution)
   router('/facts/:factKey', (ctx, next) => {
       params = ctx.params
       next()
@@ -28,7 +31,7 @@
       next()
     }, 
     () => page = ImageFullScreen)
-  router('/*', () => page = Login)
+  router('/*', () => page = Facts)
   router.start()
 </script>
 
@@ -41,6 +44,13 @@
   background-color: #f8f8f8;
   margin: 0px;
 }
+
+:global(.formButton){
+  margin-top: 20px;
+  margin-left: 10px;
+  float: right;
+}
+
   :global(app, body, html) {
     display: block !important;
     height: auto !important;
@@ -53,3 +63,4 @@
 <main class="overflow-hidden" DenseFixedAdjust>
     <svelte:component this={page} params={params} />
 </main>
+<Notification></Notification>

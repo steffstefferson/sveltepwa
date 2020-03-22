@@ -1,5 +1,6 @@
 <script>
   import { addFactProposal } from './../services/factsService.js';
+  import { notify } from './../services/notifyService.js';
   import { form } from 'svelte-forms';
   import Button, {Label} from '@smui/button';
   import Textfield from '@smui/textfield';
@@ -7,8 +8,6 @@
   import CharacterCounter from '@smui/textfield/character-counter/index';
   import Snackbar, {Actions} from '@smui/snackbar';
 
-let mySnackbar;
-let mySnackbarText = "";
 let factObj = { fact: "", contributor: ""};
 
   const contributeForm = form(() => ({
@@ -20,8 +19,7 @@ function sendContribution(e) {
    e.preventDefault();
   factObj.insertTime = new Date().getTime();
   if (!navigator.onLine) {
-    mySnackbarText = "Your internet connection is lost and lurin couldn't fix it. try later."
-    mySnackbar.open();
+    notify("Your internet connection is lost and lurin couldn't fix it. try later.");
     return false;
   }
 
@@ -29,13 +27,11 @@ function sendContribution(e) {
     function() {
       factObj.fact = "";
       factObj.contributor = "";
-      mySnackbarText = "fact added, lurin will decide if it's worth it"
-      mySnackbar.open();
+      notify("fact added, lurin will decide if it's worth it");
     },
     function(e) {
       console.log('error on save:',e);
-      mySnackbarText = "lurin doesn't like this fact, error during save.";
-      mySnackbar.open();
+      notify("lurin doesn't like this fact, error during save.");
     }
   );
   return false;
@@ -73,11 +69,8 @@ function sendContribution(e) {
     <Button 
     disabled={!$contributeForm.valid || factObj.fact.length == 0}  
     variant="raised"
-    style="float:right; margin-top:20px">
+    class="formButton">
       <Label>Send</Label>
     </Button>
   </form>
-  <Snackbar bind:this={mySnackbar}>
-      <Label>{mySnackbarText}</Label>
-  </Snackbar>
 </div>

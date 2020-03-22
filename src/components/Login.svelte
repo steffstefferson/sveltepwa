@@ -96,14 +96,14 @@ function loginUser(e) {
     <Button 
     disabled={!$loginForm.valid || loginObj.password.length == 0}  
     variant="raised"
-    style="float:right; margin-top:20px">
+    class="formButton">
       <Label>Login</Label>
     </Button>
   </form>
     <Button on:click={sendPasswordResetLink}
     disabled={!$loginForm.email.valid || loginObj.email.length == 0}  
     variant="raised"
-    style="float:right; margin-top:20px">
+    class="formButton">
       <Label>Send password reset link</Label>
     </Button>
 
@@ -112,8 +112,8 @@ function loginUser(e) {
   <h3>As: {user.email}</h3>
   <form on:submit={logoutUser}>
     <Button 
-    variant="raised"
-    style="float:right; margin-top:20px">
+    class="formButton"
+    variant="raised">
       <Label>Logout</Label>
     </Button>
   </form>

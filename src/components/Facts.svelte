@@ -1,9 +1,51 @@
 <script>
-  import { getFacts } from './../services/factsService';
+  import { svelteFactStore, deleteFact  } from './../services/factsService';
+  import { notify  } from './../services/notifyService';
   import Fact from './Fact.svelte';
   import Button, {Label} from '@smui/button';
+  import { userStore } from './../services/loginService.js';
+   import Kitchen from '@smui/snackbar/kitchen/index';
 
-  const localStore = getFacts();
+  let loggedIn = false;
+  userStore.subscribe(user => {
+		loggedIn = user.loggedIn;
+  });
+  
+  let kitchen;
+
+  function onDeleteFact(event){
+    return pushToKitchen(event.detail.fact);
+  }
+
+function deleteFactSerious(fact){
+    deleteFact(fact).then(success => {
+        if(success){
+          notify('fact was deleted');
+        }else{
+          notify('something went wrong while deleting the fact');
+        }
+    });
+}
+
+
+  function pushToKitchen(fact) {
+    kitchen.push({
+      props: {
+        variant: 'stacked'
+      },
+      label: 'Do you really want to delete this fact?',
+      actions: [
+        {
+          onClick: () => deleteFactSerious(fact),
+          text: 'Yes, please'
+        },
+        {
+          text: 'Nope'
+        }
+      ],
+      dismissButton: false
+    });
+  }
 
 </script>
 
@@ -18,11 +60,7 @@
   .list-item {
 	display: flex; 
   padding: 0.5em;
-  width: 100%;
-  
-}
-  .list-item {
-    width: 300px;
+    width: 350px;
     flex-grow:1;
   }
 
@@ -36,19 +74,26 @@
 .list-content p {
 	flex: 1 0 auto;
 }
-</style> 
+ul {
+  padding-inline-start: 5px;
+}
 
-<div>
+</style> 
+<div style="height: 50px;">
     <Button href="/contribute"
     variant="raised"
-    style="margin-top:20px">
+    class="formButton">
       <Label>Contribute your own fact</Label>
     </Button>
-
+    </div>
+<div>
   <ul class="list">
-  {#each $localStore as fact}
+  {#each $svelteFactStore as fact}
   <li class="list-item">
-  <Fact fact={fact} class="list-content"></Fact>
+  <Fact fact={fact} hasDeleteButton="{loggedIn}" hasAcceptButton="{false}" on:delete="{onDeleteFact}" class="list-content"></Fact>
   </li>
   {/each}
+  </ul>
 </div>
+
+<Kitchen bind:this={kitchen} dismiss$class="material-icons" />

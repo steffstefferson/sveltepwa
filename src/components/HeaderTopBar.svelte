@@ -46,7 +46,9 @@
       <Item on:SMUI:action={() => page("/facts")}>Facts</Item>
       <Item on:SMUI:action={() => page("/images")}>Images</Item>
       <Item on:SMUI:action={() => page("/map")}>Map</Item>
-
+      {#if loggedIn}
+      <Item on:SMUI:action={() => page("/admin/contributions")}>Manage contributions</Item>
+      {/if}
       <Item on:SMUI:action={() => page("/login")}>{loggedIn ? 'Logout' : 'Login'}</Item>     
     </List>
   </Menu>
