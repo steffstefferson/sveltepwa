@@ -6,7 +6,7 @@ export const userStore = writable({ email: "", loggedIn: false });
 auth.onAuthStateChanged(function(authData) {
   if (authData) {
     setLoggedIn(authData.email);
-    console.log("User " + authData.email + " is logged in .");
+    console.log("User " + authData.email + " is logged in.");
   } else {
     console.log("User is logged out");
     setLoggedOut();

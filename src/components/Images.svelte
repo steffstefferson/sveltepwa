@@ -30,8 +30,6 @@ const localStore = getImages();
 }
 </style>
 <div>
-  <div>
-  Images:
   <ul class="list">
   {#each $localStore as image}
   <li class="list-item">
@@ -39,5 +37,4 @@ const localStore = getImages();
   </li>
   {/each}
   </ul>
-  </div>
 </div>

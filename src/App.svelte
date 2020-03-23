@@ -1,6 +1,8 @@
 <script>
   import Facts from './components/Facts.svelte';
   import Images from './components/Images.svelte';
+  import Map from './components/Map.svelte';
+  import AddPlaceToBe from './components/AddPlaceToBe.svelte';
   import Login from './components/Login.svelte';
   import ImageFullScreen from './components/ImageFullScreen.svelte';
   import HeaderTopBar from './components/HeaderTopBar.svelte';
@@ -20,6 +22,7 @@
   router('/login', () => page = Login)
   router('/contribute', () => page = Contribution)
   router('/admin/contributions', () => page = ManageContribution)
+  router('/admin/addImage', () => page = AddPlaceToBe)
   router('/facts/:factKey', (ctx, next) => {
       params = ctx.params
       next()
@@ -31,14 +34,13 @@
       next()
     }, 
     () => page = ImageFullScreen)
-  router('/*', () => page = Facts)
+  router('/*', () => page = AddPlaceToBe)
   router.start()
 </script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
-
 <style>
 :global(body) {
   background-color: #f8f8f8;
