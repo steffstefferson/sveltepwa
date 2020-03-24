@@ -1,22 +1,34 @@
 <script>
 import {getDisplayTime} from "../services/displayTime.js"
+import { createEventDispatcher } from 'svelte';
+import Button,{Label} from '@smui/Button';
+
 export let image;
+export let hasDeleteButton;
 
 let landscapeClass = "portrait";
+
+
+const dispatch = createEventDispatcher();
+
+function deleteLocation(){
+		dispatch('delete', image);
+}
+
 
 function imageLoaded(e) {
    if(e.target.width > e.target.height){
        landscapeClass = "landscape";
    }
 }
-function saveImage(image){
+function addToLocalStorage(image){
     localStorage.setItem('currentImage',JSON.stringify(image));
 }
 
 </script>
 
 <div class="imageContainer">
-<a href="/images/{image.imageKey}" on:click="{saveImage(image)}">
+<a href="/images/{image.imageKey}" on:click="{addToLocalStorage(image)}">
     <div class="imageText">{ image.imageTitle }</div>
     <div class="square">
     <img src="{image.thumbnail}" class="{landscapeClass}" on:load="{imageLoaded}" alt="{image.funimage}" />
@@ -24,6 +36,14 @@ function saveImage(image){
     <div class="imageText">{ image.funFact }</div>
     <div class="imageSubtitle">{ getDisplayTime(image.insertTime) }</div>
 </a>
+  {#if hasDeleteButton}
+        <Button on:click={deleteLocation}
+        variant="raised"
+         class="formButton">
+        <Label>Delete location</Label>
+        </Button>
+    {/if}
+
 </div>
 
 <style>

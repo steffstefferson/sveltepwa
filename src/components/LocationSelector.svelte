@@ -52,14 +52,15 @@ async function updateLocationByCoords(lat,lng) {
         console.log('updateLocationByCoords: error while looking up coords',e);
     }
 };
-async function getByAddress() {
-
+async function getByAddress(e) {
+   e.preventDefault();
     try{
         location = await getPositionByAddress(addressSearch);
         dispatch('locationChoosen',location);
     }catch(e){
         console.log('getByAddress: error while looking up coords',e);
     }
+    return false;
 };
 
 onMount(async () => {

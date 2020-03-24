@@ -90,7 +90,7 @@ ul {
   <ul class="list">
   {#each $svelteFactStore as fact}
   <li class="list-item">
-  <Fact fact={fact} hasDeleteButton="{loggedIn}" hasAcceptButton="{false}" on:delete="{onDeleteFact}" class="list-content"></Fact>
+  <Fact fact={fact} hasDeleteButton="{loggedIn}"  on:delete="{onDeleteFact}" hasAcceptButton="{false}" class="list-content"></Fact>
   </li>
   {/each}
   </ul>

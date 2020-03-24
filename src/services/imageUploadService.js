@@ -1,47 +1,48 @@
-import { db, storage } from "./customfirebase";
-import { writable } from "svelte/store";
-var firebaseMetaData = db.ref().child("imageMetaData");
-
+import { db, storage } from './customfirebase'
+import { writable } from 'svelte/store'
+const firebaseMetaData = db.ref().child('imageMetaDataTest')
+const storageRef = storage.ref()
 export function saveImageAndMetadata(metaData, image, thumbnail) {
-  return saveImage(image).then(imageKey => {
-    metaData.imageKey = imageKey;
-    metaData.thumbnail = thumbnail;
-    return saveMetaData(metaData);
-  });
+  return saveImage(image).then((imageKey) => {
+    metaData.imageKey = imageKey
+    metaData.thumbnail = thumbnail
+    return saveMetaData(metaData)
+  })
 }
 
 function saveImage(image) {
-  var imageKey = +new Date();
-  var ref = storageRef.child(toImageUrl(imageKey));
-  return ref.putString(image, "data_url").then(function() {
-    return imageKey;
-  });
+  var imageKey = +new Date()
+  var ref = storageRef.child(toImageUrl(imageKey))
+  return ref.putString(image, 'data_url').then(function () {
+    return imageKey
+  })
 }
 
 function saveMetaData(metaData) {
-  var firebaseMetaDataRef = firebaseMetaData.push();
-  return firebaseMetaDataRef.set(metaData).then(error => {
+  var firebaseMetaDataRef = firebaseMetaData.push()
+  return firebaseMetaDataRef.set(metaData).then((error) => {
     if (error) {
-      return false;
+      return false
     } else {
-      console.log("metadata uploaded under hash:" + firebaseMetaDataRef.key);
-      return true;
+      console.log('metadata uploaded under hash:' + firebaseMetaDataRef.key)
+      return true
     }
-  });
+  })
 }
 
 function toImageUrl(imageKey) {
-  return "locations/" + imageKey + ".jpg";
+  return 'locations/' + imageKey + '.jpg'
 }
 
-var getDownloadUrl = function(imageKey) {
-  if (tempDownloadUrl[imageKey]) {
-    return $q.resolve(tempDownloadUrl[imageKey]);
-  }
+export function deleteImageAndMetadata(metaData) {
+  return Promise.all([deleteMetadata(metaData), deleteImage(metaData.imageKey)])
+}
 
-  var tangRef = storageRef.child("locations/" + imageKey + ".jpg");
-  return tangRef.getDownloadURL().then(function(url) {
-    tempDownloadUrl[imageKey] = url;
-    return url;
-  });
-};
+var deleteMetadata = function (metaData) {
+  return firebaseMetaData.child(metaData.key).remove()
+}
+
+var deleteImage = function (imageKey) {
+  var deleteRef = storageRef.child(toImageUrl(imageKey))
+  return deleteRef.delete()
+}

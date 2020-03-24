@@ -10,7 +10,8 @@
   import { onMount } from 'svelte';
   import LocationSelector from './LocationSelector.svelte';
   import ImageSelector from './ImageSelector.svelte';
- 
+  import page from "page"
+
 let imageObj = { imageTitle : "", funFact: "",imageKey : "",location: {}, thumbnail: ""};
 let thumbnailImage = null;
 let fullsizeImage = null;
@@ -29,17 +30,31 @@ function updateLocation(event){
     funFact: { value: imageObj.funFact, validators: ["required", "min:5","max:240"]},
   }));
 
-function saveData(e) {
+async function saveData(e) {
    e.preventDefault();
-  imageObj.insertTime = new Date().getTime();
-
+    try{
+        imageObj.insertTime = new Date().getTime();
+        var result = await  saveImageAndMetadata(imageObj,thumbnailImage,fullsizeImage);
+        if(result){
+            imageObj = { imageTitle : "", funFact: "",imageKey : "",location: {}, thumbnail: ""};
+            thumbnailImage = null;
+            fullsizeImage = null;
+            notify("thanks for adding this gem.");
+             page("/images");
+        }else{
+            notify("something went wrong :-(");
+        }
+    }catch(e){
+        console.log('error on save',e);
+      notify("something went wrong :-(");
+    }
+    return false;
 }
 
 function handleFiles(e){
     readFile(e.target.files[0]).then(([thumb,fullSize]) =>{
         thumbnailImage = thumb;
         fullsizeImage = fullSize;
-        console.log('all good');
     })
 }
 
@@ -66,11 +81,6 @@ async function  readFile(f){
     reader.readAsDataURL(f);
     });
 }
-
-function allInputValid(){
-    return $imageForm.valid && imageObj.funFact.length > 0 && fullsizeImage && thumbnailImage && location;
-}
-
 </script>
 
 <style type="text/postcss">

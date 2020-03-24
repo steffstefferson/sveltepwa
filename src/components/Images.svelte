@@ -1,9 +1,51 @@
 <script>
   import { getImages } from "../services/imageSerivce.js"
   import Image from './Image.svelte';
+  import { userStore } from './../services/loginService.js';
+  import Kitchen from '@smui/snackbar/kitchen/index';
+  import {deleteImageAndMetadata} from "../services/imageUploadService.js"
+  import { notify } from './../services/notifyService.js';
 
-const localStore = getImages();
+  const localStore = getImages();
 
+  let loggedIn = false;
+  userStore.subscribe(user => {
+		loggedIn = user.loggedIn;
+  });
+  
+  let kitchen;
+
+  function onDeleteLocation(event){
+    return pushToKitchen(event.detail);
+  }
+
+function deleteLocationSerious(location){
+    deleteImageAndMetadata(location).then(() => {
+          notify('location was deleted');
+        },() =>{
+          notify('something went wrong while deleting the location');
+    });
+}
+
+
+  function pushToKitchen(location) {
+    kitchen.push({
+      props: {
+        variant: 'stacked'
+      },
+      label: 'Do you really want to delete this location?',
+      actions: [
+        {
+          onClick: () => deleteLocationSerious(location),
+          text: 'Yes, please'
+        },
+        {
+          text: 'Nope'
+        }
+      ],
+      dismissButton: false
+    });
+  }
 </script>
 
 <style type="text/postcss">
@@ -33,8 +75,10 @@ const localStore = getImages();
   <ul class="list">
   {#each $localStore as image}
   <li class="list-item">
-  <Image image={image} class="list-content"></Image>
+  <Image image={image} hasDeleteButton="{loggedIn}"  on:delete="{onDeleteLocation}" class="list-content"></Image>
   </li>
   {/each}
   </ul>
 </div>
+
+<Kitchen bind:this={kitchen} dismiss$class="material-icons" />
