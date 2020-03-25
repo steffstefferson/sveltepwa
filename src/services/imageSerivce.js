@@ -6,13 +6,13 @@ let imagesArray = []
 
 const svelteImageStore = writable([])
 
-const imgFromStore = '' //JSON.parse(localStorage.getItem('images'))
+const imgFromStore = JSON.parse(localStorage.getItem('images'))
 
 if (imgFromStore.length) {
   addImage(imgFromStore)
 } else {
   console.log('load image from firebase')
-  var metaRef = db.ref('imageMetaDataTest')
+  var metaRef = db.ref('imageMetaData')
   metaRef.on('child_added', function (snapshot) {
     var image = snapshot.val()
     image.key = snapshot.key

@@ -2,6 +2,7 @@
   import Facts from './components/Facts.svelte';
   import Images from './components/Images.svelte';
   import Map from './components/Map.svelte';
+  import Settings from './components/Settings.svelte';
   import AddPlaceToBe from './components/AddPlaceToBe.svelte';
   import Login from './components/Login.svelte';
   import ImageFullScreen from './components/ImageFullScreen.svelte';
@@ -34,7 +35,7 @@
       next()
     }, 
     () => page = ImageFullScreen)
-  router('/*', () => page = AddPlaceToBe)
+  router('/*', () => page = Settings)
   router.start()
 </script>
 
@@ -62,7 +63,7 @@
   }
 </style>
 <HeaderTopBar></HeaderTopBar>
-<main class="overflow-hidden" DenseFixedAdjust>
+<main class="overflow-hidden;" style="padding-top: 12px;" DenseFixedAdjust>
     <svelte:component this={page} params={params} />
 </main>
 <Notification></Notification>
