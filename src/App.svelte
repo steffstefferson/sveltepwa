@@ -31,6 +31,7 @@
       next()
     }, () => page = Facts)
 
+  router('/map', () => page = Map)
   router('/images', () => page = Images)
 
   router('/images/slideShow', (ctx, next) => {

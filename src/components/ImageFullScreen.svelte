@@ -17,49 +17,55 @@ function toggleText(){
 }
 
 function getPreviousImage(e){
-    image = load(image.imageKey,-1);
+    image = load(image.key,-1);
 }
 
 function getNextImage(e){
-    image = load(image.imageKey,1);
+    image = load(image.key,1);
 }
 
-function load(imageKey,offset){
-    const img = getImage(imageKey,offset);
+function load(key,offset){
+    const img = getImage(key,offset);
     backgroundStyle = "background-image: url("+(img.fullImageSizeUrl || img.thumbnail)+")";
     if(!img.fullImageSizeUrl){
     img.loadFullSizeImage().then((fullSizeImageUrl) =>{
         backgroundStyle = "background-image: url("+fullSizeImageUrl+")";
     });
     }
-    page('/images/slideShow?key='+imageKey);
+    page('/images/slideShow?key='+key);
 
     return img;
 }
 
 </script>
 <div class="container" style="{backgroundStyle}">
-    <div class="showHideInfoArea" on:mousedown="{toggleText}" on:mouseup="{toggleText}"> </div>
+    <div class="showHideInfoArea" on:mousedown="{toggleText}" on:touchstart="{toggleText}" on:touchend="{toggleText}" on:mouseup="{toggleText}"> </div>
     <div class="textContainer" style="visibility: {showText ? 'inherit' : 'hidden'}">
         <div>
             <div>
                 <span class="title">{ image.imageTitle }</span>
-                <span>{ getDisplayTime(image.insertTime) }</span>
-                <a href="{backUrl}">x</a>
             </div>
             <div class="text">{ image.funFact }</div>
-            <div class="subtitle"></div>
+            <div class="text">{ getDisplayTime(image.insertTime) }</div>
         </div>
         <div>
-         <IconButton on:click="{getPreviousImage}" style="font-size:40px" class="material-icons" aria-label="Back">navigate_before</IconButton>
-         <IconButton on:click="{() => page('map?key='+image.key)}" style="font-size:40px" class="material-icons" aria-label="Open map">place</IconButton>
-         <IconButton on:click="{() => page(backUrl)}" style="font-size:40px" class="material-icons" aria-label="Close">close</IconButton>
-         <IconButton on:click="{getNextImage}" style="font-size:40px" class="material-icons" aria-label="Next">navigate_next</IconButton>
+         <IconButton on:click="{getPreviousImage}"  class="lurinsnavicons material-icons" aria-label="Back">navigate_before</IconButton>
+         <IconButton on:click="{() => page('/map?key='+image.key)}"  class="lurinsnavicons material-icons" aria-label="Open map">place</IconButton>
+         <IconButton on:click="{() => page(backUrl)}"  class="lurinsnavicons material-icons" aria-label="Close">close</IconButton>
+         <IconButton on:click="{getNextImage}"  class="lurinsnavicons material-icons" aria-label="Next">navigate_next</IconButton>
         </div>
     </div>  
 </div>
 
 <style>
+
+:global(.lurinsnavicons){
+    font-size: 32px !important;
+    padding: 0px;
+    margin: 0px !important;
+    width: 25px;
+}
+
 .container {
     height: 100%; 
     background-position: center;
@@ -76,7 +82,9 @@ function load(imageKey,offset){
     padding: 10px;
     margin: 10px;
     display: grid;
-    grid-template-columns: 55% auto;
+    grid-template-columns: auto 120px;
+    position: absolute;
+    align-items: center;
     position: absolute;
     bottom: 0px;
 }
@@ -84,6 +92,8 @@ function load(imageKey,offset){
 .textContainer div{
     width:100%;
 }
+
+
 
 .showHideInfoArea{
     height: 80%;
@@ -94,7 +104,7 @@ function load(imageKey,offset){
 }
 
 .title{
-    font-size:18px;
+    font-size:20px;
 }
 .text{
     font-size:14px;

@@ -58,7 +58,7 @@ function getDownloadUrl() {
 }
 
 export function getImage(imageKey, offSet, preload = true) {
-  var idx = imagesArray.findIndex((i) => i.imageKey == imageKey)
+  var idx = imagesArray.findIndex((i) => i.key == imageKey)
   idx += offSet
   if (idx < 0) {
     idx = imagesArray.length - 1
@@ -70,8 +70,8 @@ export function getImage(imageKey, offSet, preload = true) {
   var image = imagesArray[idx]
 
   if (preload) {
-    preloadImage(image.imageKey, idx + offSet)
-    preloadImage(image.imageKey, idx + offSet * 2)
+    preloadImage(image.key, idx + offSet)
+    preloadImage(image.key, idx + offSet * 2)
   }
 
   image.getDownloadUrl = getDownloadUrl

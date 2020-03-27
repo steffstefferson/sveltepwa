@@ -33416,7 +33416,7 @@
     }
 
     function getImage(imageKey, offSet, preload = true) {
-      var idx = imagesArray.findIndex((i) => i.imageKey == imageKey);
+      var idx = imagesArray.findIndex((i) => i.key == imageKey);
       idx += offSet;
       if (idx < 0) {
         idx = imagesArray.length - 1;
@@ -33428,8 +33428,8 @@
       var image = imagesArray[idx];
 
       if (preload) {
-        preloadImage(image.imageKey, idx + offSet);
-        preloadImage(image.imageKey, idx + offSet * 2);
+        preloadImage(image.key, idx + offSet);
+        preloadImage(image.key, idx + offSet * 2);
       }
 
       image.getDownloadUrl = getDownloadUrl$1;
@@ -34199,9 +34199,9 @@
     			div0 = element("div");
     			attr_dev(div0, "id", "map");
     			attr_dev(div0, "class", "svelte-117z1au");
-    			add_location(div0, file$f, 84, 4, 2163);
+    			add_location(div0, file$f, 89, 4, 2261);
     			attr_dev(div1, "class", "mapContainer svelte-117z1au");
-    			add_location(div1, file$f, 83, 0, 2132);
+    			add_location(div1, file$f, 88, 0, 2230);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -34209,14 +34209,14 @@
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
-    			/*div0_binding*/ ctx[8](div0);
+    			/*div0_binding*/ ctx[9](div0);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
-    			/*div0_binding*/ ctx[8](null);
+    			/*div0_binding*/ ctx[9](null);
     		}
     	};
 
@@ -34241,6 +34241,7 @@
     }
 
     function instance$j($$self, $$props, $$invalidate) {
+    	let { params } = $$props;
     	let map;
     	let mapElement;
     	let markers = [];
@@ -34281,6 +34282,10 @@
     		});
 
     		markers.push(marker);
+
+    		if (params.key == image.key) {
+    			createInfoWindow(image, marker);
+    		}
     	}
 
     	// To add the marker to the map, call setMap();
@@ -34313,17 +34318,28 @@
     		infowindow.open(map, marker);
     	}
 
+    	const writable_props = ["params"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Map> was created with unknown prop '${key}'`);
+    	});
+
     	function div0_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			$$invalidate(0, mapElement = $$value);
     		});
     	}
 
+    	$$self.$set = $$props => {
+    		if ("params" in $$props) $$invalidate(1, params = $$props.params);
+    	};
+
     	$$self.$capture_state = () => ({
     		onMount,
     		Icon,
     		getImages,
     		tick,
+    		params,
     		map,
     		mapElement,
     		markers,
@@ -34338,6 +34354,7 @@
     	});
 
     	$$self.$inject_state = $$props => {
+    		if ("params" in $$props) $$invalidate(1, params = $$props.params);
     		if ("map" in $$props) map = $$props.map;
     		if ("mapElement" in $$props) $$invalidate(0, mapElement = $$props.mapElement);
     		if ("markers" in $$props) markers = $$props.markers;
@@ -34350,6 +34367,7 @@
 
     	return [
     		mapElement,
+    		params,
     		map,
     		infowindow,
     		markers,
@@ -34364,7 +34382,7 @@
     class Map$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$j, create_fragment$j, safe_not_equal, {});
+    		init(this, options, instance$j, create_fragment$j, safe_not_equal, { params: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -34372,6 +34390,21 @@
     			options,
     			id: create_fragment$j.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*params*/ ctx[1] === undefined && !("params" in props)) {
+    			console.warn("<Map> was created without expected prop 'params'");
+    		}
+    	}
+
+    	get params() {
+    		throw new Error("<Map>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set params(value) {
+    		throw new Error("<Map>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -45603,7 +45636,7 @@
     const { console: console_1$1 } = globals;
     const file$u = "src\\components\\ImageFullScreen.svelte";
 
-    // (54:9) <IconButton on:click="{getPreviousImage}" style="font-size:40px" class="material-icons" aria-label="Back">
+    // (52:9) <IconButton on:click="{getPreviousImage}"  class="lurinsnavicons material-icons" aria-label="Back">
     function create_default_slot_3$8(ctx) {
     	let t;
 
@@ -45623,14 +45656,14 @@
     		block,
     		id: create_default_slot_3$8.name,
     		type: "slot",
-    		source: "(54:9) <IconButton on:click=\\\"{getPreviousImage}\\\" style=\\\"font-size:40px\\\" class=\\\"material-icons\\\" aria-label=\\\"Back\\\">",
+    		source: "(52:9) <IconButton on:click=\\\"{getPreviousImage}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Back\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:9) <IconButton on:click="{() => page('map?key='+image.key)}" style="font-size:40px" class="material-icons" aria-label="Open map">
+    // (53:9) <IconButton on:click="{() => page('/map?key='+image.key)}"  class="lurinsnavicons material-icons" aria-label="Open map">
     function create_default_slot_2$9(ctx) {
     	let t;
 
@@ -45650,14 +45683,14 @@
     		block,
     		id: create_default_slot_2$9.name,
     		type: "slot",
-    		source: "(55:9) <IconButton on:click=\\\"{() => page('map?key='+image.key)}\\\" style=\\\"font-size:40px\\\" class=\\\"material-icons\\\" aria-label=\\\"Open map\\\">",
+    		source: "(53:9) <IconButton on:click=\\\"{() => page('/map?key='+image.key)}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Open map\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:9) <IconButton on:click="{() => page(backUrl)}" style="font-size:40px" class="material-icons" aria-label="Close">
+    // (54:9) <IconButton on:click="{() => page(backUrl)}"  class="lurinsnavicons material-icons" aria-label="Close">
     function create_default_slot_1$a(ctx) {
     	let t;
 
@@ -45677,14 +45710,14 @@
     		block,
     		id: create_default_slot_1$a.name,
     		type: "slot",
-    		source: "(56:9) <IconButton on:click=\\\"{() => page(backUrl)}\\\" style=\\\"font-size:40px\\\" class=\\\"material-icons\\\" aria-label=\\\"Close\\\">",
+    		source: "(54:9) <IconButton on:click=\\\"{() => page(backUrl)}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Close\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:9) <IconButton on:click="{getNextImage}" style="font-size:40px" class="material-icons" aria-label="Next">
+    // (55:9) <IconButton on:click="{getNextImage}"  class="lurinsnavicons material-icons" aria-label="Next">
     function create_default_slot$d(ctx) {
     	let t;
 
@@ -45704,7 +45737,7 @@
     		block,
     		id: create_default_slot$d.name,
     		type: "slot",
-    		source: "(57:9) <IconButton on:click=\\\"{getNextImage}\\\" style=\\\"font-size:40px\\\" class=\\\"material-icons\\\" aria-label=\\\"Next\\\">",
+    		source: "(55:9) <IconButton on:click=\\\"{getNextImage}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Next\\\">",
     		ctx
     	});
 
@@ -45718,34 +45751,28 @@
     	let div6;
     	let div4;
     	let div1;
-    	let span0;
+    	let span;
     	let t1_value = /*image*/ ctx[2].imageTitle + "";
     	let t1;
     	let t2;
-    	let span1;
-    	let t3_value = getDisplayTime(/*image*/ ctx[2].insertTime) + "";
+    	let div2;
+    	let t3_value = /*image*/ ctx[2].funFact + "";
     	let t3;
     	let t4;
-    	let a;
+    	let div3;
+    	let t5_value = getDisplayTime(/*image*/ ctx[2].insertTime) + "";
     	let t5;
     	let t6;
-    	let div2;
-    	let t7_value = /*image*/ ctx[2].funFact + "";
+    	let div5;
     	let t7;
     	let t8;
-    	let div3;
     	let t9;
-    	let div5;
-    	let t10;
-    	let t11;
-    	let t12;
     	let current;
     	let dispose;
 
     	const iconbutton0 = new IconButton({
     			props: {
-    				style: "font-size:40px",
-    				class: "material-icons",
+    				class: "lurinsnavicons material-icons",
     				"aria-label": "Back",
     				$$slots: { default: [create_default_slot_3$8] },
     				$$scope: { ctx }
@@ -45757,8 +45784,7 @@
 
     	const iconbutton1 = new IconButton({
     			props: {
-    				style: "font-size:40px",
-    				class: "material-icons",
+    				class: "lurinsnavicons material-icons",
     				"aria-label": "Open map",
     				$$slots: { default: [create_default_slot_2$9] },
     				$$scope: { ctx }
@@ -45770,8 +45796,7 @@
 
     	const iconbutton2 = new IconButton({
     			props: {
-    				style: "font-size:40px",
-    				class: "material-icons",
+    				class: "lurinsnavicons material-icons",
     				"aria-label": "Close",
     				$$slots: { default: [create_default_slot_1$a] },
     				$$scope: { ctx }
@@ -45783,8 +45808,7 @@
 
     	const iconbutton3 = new IconButton({
     			props: {
-    				style: "font-size:40px",
-    				class: "material-icons",
+    				class: "lurinsnavicons material-icons",
     				"aria-label": "Next",
     				$$slots: { default: [create_default_slot$d] },
     				$$scope: { ctx }
@@ -45802,51 +45826,43 @@
     			div6 = element("div");
     			div4 = element("div");
     			div1 = element("div");
-    			span0 = element("span");
+    			span = element("span");
     			t1 = text(t1_value);
     			t2 = space();
-    			span1 = element("span");
+    			div2 = element("div");
     			t3 = text(t3_value);
     			t4 = space();
-    			a = element("a");
-    			t5 = text("x");
-    			t6 = space();
-    			div2 = element("div");
-    			t7 = text(t7_value);
-    			t8 = space();
     			div3 = element("div");
-    			t9 = space();
+    			t5 = text(t5_value);
+    			t6 = space();
     			div5 = element("div");
     			create_component(iconbutton0.$$.fragment);
-    			t10 = space();
+    			t7 = space();
     			create_component(iconbutton1.$$.fragment);
-    			t11 = space();
+    			t8 = space();
     			create_component(iconbutton2.$$.fragment);
-    			t12 = space();
+    			t9 = space();
     			create_component(iconbutton3.$$.fragment);
-    			attr_dev(div0, "class", "showHideInfoArea svelte-xkmif3");
-    			add_location(div0, file$u, 41, 4, 1003);
-    			attr_dev(span0, "class", "title svelte-xkmif3");
-    			add_location(span0, file$u, 45, 16, 1229);
-    			add_location(span1, file$u, 46, 16, 1293);
-    			attr_dev(a, "href", /*backUrl*/ ctx[3]);
-    			add_location(a, file$u, 47, 16, 1359);
-    			attr_dev(div1, "class", "svelte-xkmif3");
-    			add_location(div1, file$u, 44, 12, 1207);
-    			attr_dev(div2, "class", "text svelte-xkmif3");
-    			add_location(div2, file$u, 49, 12, 1416);
-    			attr_dev(div3, "class", "subtitle svelte-xkmif3");
-    			add_location(div3, file$u, 50, 12, 1470);
-    			attr_dev(div4, "class", "svelte-xkmif3");
-    			add_location(div4, file$u, 43, 8, 1189);
-    			attr_dev(div5, "class", "svelte-xkmif3");
-    			add_location(div5, file$u, 52, 8, 1522);
-    			attr_dev(div6, "class", "textContainer svelte-xkmif3");
+    			attr_dev(div0, "class", "showHideInfoArea svelte-1f4i2aj");
+    			add_location(div0, file$u, 41, 4, 978);
+    			attr_dev(span, "class", "title svelte-1f4i2aj");
+    			add_location(span, file$u, 45, 16, 1260);
+    			attr_dev(div1, "class", "svelte-1f4i2aj");
+    			add_location(div1, file$u, 44, 12, 1238);
+    			attr_dev(div2, "class", "text svelte-1f4i2aj");
+    			add_location(div2, file$u, 47, 12, 1339);
+    			attr_dev(div3, "class", "text svelte-1f4i2aj");
+    			add_location(div3, file$u, 48, 12, 1393);
+    			attr_dev(div4, "class", "svelte-1f4i2aj");
+    			add_location(div4, file$u, 43, 8, 1220);
+    			attr_dev(div5, "class", "svelte-1f4i2aj");
+    			add_location(div5, file$u, 50, 8, 1477);
+    			attr_dev(div6, "class", "textContainer svelte-1f4i2aj");
     			set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
-    			add_location(div6, file$u, 42, 4, 1099);
-    			attr_dev(div7, "class", "container svelte-xkmif3");
+    			add_location(div6, file$u, 42, 4, 1130);
+    			attr_dev(div7, "class", "container svelte-1f4i2aj");
     			attr_dev(div7, "style", /*backgroundStyle*/ ctx[1]);
-    			add_location(div7, file$u, 40, 0, 949);
+    			add_location(div7, file$u, 40, 0, 924);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -45858,39 +45874,36 @@
     			append_dev(div7, div6);
     			append_dev(div6, div4);
     			append_dev(div4, div1);
-    			append_dev(div1, span0);
-    			append_dev(span0, t1);
-    			append_dev(div1, t2);
-    			append_dev(div1, span1);
-    			append_dev(span1, t3);
-    			append_dev(div1, t4);
-    			append_dev(div1, a);
-    			append_dev(a, t5);
-    			append_dev(div4, t6);
+    			append_dev(div1, span);
+    			append_dev(span, t1);
+    			append_dev(div4, t2);
     			append_dev(div4, div2);
-    			append_dev(div2, t7);
-    			append_dev(div4, t8);
+    			append_dev(div2, t3);
+    			append_dev(div4, t4);
     			append_dev(div4, div3);
-    			append_dev(div6, t9);
+    			append_dev(div3, t5);
+    			append_dev(div6, t6);
     			append_dev(div6, div5);
     			mount_component(iconbutton0, div5, null);
-    			append_dev(div5, t10);
+    			append_dev(div5, t7);
     			mount_component(iconbutton1, div5, null);
-    			append_dev(div5, t11);
+    			append_dev(div5, t8);
     			mount_component(iconbutton2, div5, null);
-    			append_dev(div5, t12);
+    			append_dev(div5, t9);
     			mount_component(iconbutton3, div5, null);
     			current = true;
 
     			dispose = [
     				listen_dev(div0, "mousedown", /*toggleText*/ ctx[4], false, false, false),
+    				listen_dev(div0, "touchstart", /*toggleText*/ ctx[4], { passive: true }, false, false),
+    				listen_dev(div0, "touchend", /*toggleText*/ ctx[4], { passive: true }, false, false),
     				listen_dev(div0, "mouseup", /*toggleText*/ ctx[4], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
     			if ((!current || dirty & /*image*/ 4) && t1_value !== (t1_value = /*image*/ ctx[2].imageTitle + "")) set_data_dev(t1, t1_value);
-    			if ((!current || dirty & /*image*/ 4) && t3_value !== (t3_value = getDisplayTime(/*image*/ ctx[2].insertTime) + "")) set_data_dev(t3, t3_value);
-    			if ((!current || dirty & /*image*/ 4) && t7_value !== (t7_value = /*image*/ ctx[2].funFact + "")) set_data_dev(t7, t7_value);
+    			if ((!current || dirty & /*image*/ 4) && t3_value !== (t3_value = /*image*/ ctx[2].funFact + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty & /*image*/ 4) && t5_value !== (t5_value = getDisplayTime(/*image*/ ctx[2].insertTime) + "")) set_data_dev(t5, t5_value);
     			const iconbutton0_changes = {};
 
     			if (dirty & /*$$scope*/ 2048) {
@@ -45977,15 +45990,15 @@
     	}
 
     	function getPreviousImage(e) {
-    		$$invalidate(2, image = load(image.imageKey, -1));
+    		$$invalidate(2, image = load(image.key, -1));
     	}
 
     	function getNextImage(e) {
-    		$$invalidate(2, image = load(image.imageKey, 1));
+    		$$invalidate(2, image = load(image.key, 1));
     	}
 
-    	function load(imageKey, offset) {
-    		const img = getImage(imageKey, offset);
+    	function load(key, offset) {
+    		const img = getImage(key, offset);
     		$$invalidate(1, backgroundStyle = "background-image: url(" + (img.fullImageSizeUrl || img.thumbnail) + ")");
 
     		if (!img.fullImageSizeUrl) {
@@ -45994,7 +46007,7 @@
     			});
     		}
 
-    		page_js("/images/slideShow?key=" + imageKey);
+    		page_js("/images/slideShow?key=" + key);
     		return img;
     	}
 
@@ -46004,7 +46017,7 @@
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$1.warn(`<ImageFullScreen> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = () => page_js("map?key=" + image.key);
+    	const click_handler = () => page_js("/map?key=" + image.key);
     	const click_handler_1 = () => page_js(backUrl);
 
     	$$self.$set = $$props => {
@@ -54656,17 +54669,17 @@
     			create_component(notification.$$.fragment);
     			attr_dev(link0, "rel", "stylesheet");
     			attr_dev(link0, "href", "https://fonts.googleapis.com/icon?family=Material+Icons");
-    			add_location(link0, file$H, 44, 0, 1675);
+    			add_location(link0, file$H, 45, 0, 1711);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700");
-    			add_location(link1, file$H, 45, 0, 1763);
+    			add_location(link1, file$H, 46, 0, 1799);
     			attr_dev(link2, "rel", "stylesheet");
     			attr_dev(link2, "href", "https://fonts.googleapis.com/css?family=Roboto+Mono");
-    			add_location(link2, file$H, 46, 0, 1862);
+    			add_location(link2, file$H, 47, 0, 1898);
     			attr_dev(main, "class", "overflow-hidden;");
     			set_style(main, "padding-top", "12px");
     			attr_dev(main, "densefixedadjust", "");
-    			add_location(main, file$H, 50, 0, 2297);
+    			add_location(main, file$H, 51, 0, 2333);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -54778,6 +54791,7 @@
     		() => $$invalidate(0, page = Facts)
     	);
 
+    	page_js("/map", () => $$invalidate(0, page = Map$1));
     	page_js("/images", () => $$invalidate(0, page = Images));
 
     	page_js(

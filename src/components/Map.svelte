@@ -4,6 +4,7 @@ import {Icon} from '@smui/icon-button';
 import { getImages } from "../services/imageSerivce.js"
 import { tick } from 'svelte';
 
+export let params
 let map;
 let mapElement;
 let markers =  [];
@@ -39,6 +40,10 @@ function addImageToMap(image){
         createInfoWindow(image,marker);
     });
     markers.push(marker);
+
+    if(params.key == image.key){
+        createInfoWindow(image,marker);
+    }
 }
 
 // To add the marker to the map, call setMap();
