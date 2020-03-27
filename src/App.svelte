@@ -21,6 +21,7 @@
   
   router('/facts', () => page = Facts)
   router('/login', () => page = Login)
+  router('/settings', () => page = Settings)
   router('/contribute', () => page = Contribution)
   router('/admin/contributions', () => page = ManageContribution)
   router('/admin/addImage', () => page = AddPlaceToBe)
