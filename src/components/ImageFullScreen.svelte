@@ -1,13 +1,15 @@
 <script>
 import {getImage} from "../services/imageSerivce.js"
+import IconButton, {Icon} from '@smui/icon-button';
 import { getDisplayTime } from "../services/displayTime.js";
+import page from "page"
 
 export let params;
 
 let showText = true;
 console.log(params);
 let backgroundStyle = "";
-let image = load(params.imageKey,0);
+let image = load(params.key,0);
 let backUrl = "/images";
 
 function toggleText(){
@@ -30,6 +32,8 @@ function load(imageKey,offset){
         backgroundStyle = "background-image: url("+fullSizeImageUrl+")";
     });
     }
+    page('/images/slideShow?key='+imageKey);
+
     return img;
 }
 
@@ -37,7 +41,6 @@ function load(imageKey,offset){
 <div class="container" style="{backgroundStyle}">
     <div class="showHideInfoArea" on:mousedown="{toggleText}" on:mouseup="{toggleText}"> </div>
     <div class="textContainer" style="visibility: {showText ? 'inherit' : 'hidden'}">
-        <button on:click="{getPreviousImage}">back</button>
         <div>
             <div>
                 <span class="title">{ image.imageTitle }</span>
@@ -47,9 +50,13 @@ function load(imageKey,offset){
             <div class="text">{ image.funFact }</div>
             <div class="subtitle"></div>
         </div>
-        <button on:click="{getNextImage}">next</button>
-    </div>
-    
+        <div>
+         <IconButton on:click="{getPreviousImage}" style="font-size:40px" class="material-icons" aria-label="Back">navigate_before</IconButton>
+         <IconButton on:click="{() => page('map?key='+image.key)}" style="font-size:40px" class="material-icons" aria-label="Open map">place</IconButton>
+         <IconButton on:click="{() => page(backUrl)}" style="font-size:40px" class="material-icons" aria-label="Close">close</IconButton>
+         <IconButton on:click="{getNextImage}" style="font-size:40px" class="material-icons" aria-label="Next">navigate_next</IconButton>
+        </div>
+    </div>  
 </div>
 
 <style>
@@ -58,7 +65,7 @@ function load(imageKey,offset){
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    width: 100%;
     position: absolute;
     top: 0px;
 }
@@ -69,8 +76,11 @@ function load(imageKey,offset){
     padding: 10px;
     margin: 10px;
     display: grid;
-    grid-template-columns: 50px auto 50px;
+    grid-template-columns: 55% auto;
+    position: absolute;
+    bottom: 0px;
 }
+
 .textContainer div{
     width:100%;
 }
@@ -78,7 +88,7 @@ function load(imageKey,offset){
 .showHideInfoArea{
     height: 80%;
     position: absolute;
-    top: 20%;
+    bottom: 20%;
     border: none;
     width: 100%;
 }

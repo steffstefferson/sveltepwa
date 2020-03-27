@@ -17,26 +17,28 @@
       //navigator.serviceWorker.register('/service-worker.js');
     }
   let page
-  let params
+  let params = {};
   
-  router('/facts', () => page = Facts)
   router('/login', () => page = Login)
   router('/settings', () => page = Settings)
   router('/contribute', () => page = Contribution)
   router('/admin/contributions', () => page = ManageContribution)
   router('/admin/addImage', () => page = AddPlaceToBe)
-  router('/facts/:factKey', (ctx, next) => {
+
+  router('/facts', () => page = Facts)
+  router('/facts?key=:factKey', (ctx, next) => {
       params = ctx.params
       next()
-    }, 
-    () => page = ImageFullScreen)
+    }, () => page = Facts)
+
   router('/images', () => page = Images)
-  router('/images/:imageKey', (ctx, next) => {
-      params = ctx.params
+
+  router('/images/slideShow', (ctx, next) => {
+      params = ctx.querystring.split("&").reduce((red,keyval) => { let [key,val] = keyval.split('=');  red[key] = val; return red;},{})
       next()
-    }, 
-    () => page = ImageFullScreen)
-  router('/*', () => page = Settings)
+    },() =>  page = ImageFullScreen)
+
+  router('/*', () => page = Images)
   router.start()
 </script>
 

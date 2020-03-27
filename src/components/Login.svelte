@@ -12,9 +12,9 @@ let loginObj = { email: "", password: ""};
 
  let user = {};
  let showLogin = true;
-  const unsubscribe = userStore.subscribe(value => {
-    showLogin = !user.loggedIn;
-    user = value;
+  const unsubscribe = userStore.subscribe(u => {
+    showLogin = !u.loggedIn;
+    user = u;
 	});
 
   const loginForm = form(() => ({

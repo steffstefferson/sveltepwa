@@ -1,11 +1,16 @@
 <script>
   import { svelteFactStore, deleteFact  } from './../services/factsService';
+  import Dialog, {Title, Content, Actions, InitialFocus} from '@smui/dialog';
   import { notify  } from './../services/notifyService';
   import Fact from './Fact.svelte';
   import Button, {Label} from '@smui/button';
   import { userStore } from './../services/loginService.js';
-   import Kitchen from '@smui/snackbar/kitchen/index';
+  import Kitchen from '@smui/snackbar/kitchen/index';
+  import page from "page"
 
+  export let params;
+  let selectedFactDialog;
+  let selectedFact = null;
   let loggedIn = false;
   userStore.subscribe(user => {
 		loggedIn = user.loggedIn;
@@ -25,6 +30,21 @@ function deleteFactSerious(fact){
           notify('something went wrong while deleting the fact');
         }
     });
+}
+
+if(params.factKey){
+  svelteFactStore.subscribe(facts => {
+    selectedFact = facts.filter(x => x.key = params.factKey)[0];
+    if(selectedFact){
+      selectFact(selectedFact);
+      }
+  });
+}
+
+function selectFact(fact){
+  selectedFact = fact;
+   selectedFactDialog.open();
+   page('/facts?key='+selectedFact.key);
 }
 
 
@@ -89,11 +109,25 @@ ul {
 <div>
   <ul class="list">
   {#each $svelteFactStore as fact}
-  <li class="list-item">
+  <li class="list-item" on:click={() => selectFact(fact)}>
   <Fact fact={fact} hasDeleteButton="{loggedIn}"  on:delete="{onDeleteFact}" hasAcceptButton="{false}" class="list-content"></Fact>
   </li>
   {/each}
   </ul>
 </div>
+
+    <Dialog bind:this={selectedFactDialog} aria-labelledby="list-title" aria-describedby="list-content">
+      <Title id="list-title">Fact</Title>
+      <Content>
+      {#if selectedFact}
+      <Fact fact={selectedFact} hasDeleteButton="{false}" hasAcceptButton="{false}" />
+      {/if}
+      </Content>
+      <Actions>
+        <Button action="accept">
+          <Label>Got it!</Label>
+        </Button>
+      </Actions>
+    </Dialog>
 
 <Kitchen bind:this={kitchen} dismiss$class="material-icons" />

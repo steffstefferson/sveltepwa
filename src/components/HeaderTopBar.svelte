@@ -30,11 +30,11 @@
       <Title>Lurinfacts</Title>
     </Section>
     <Section align="end" toolbar>
-      <IconButton class="material-icons" aria-label="Download">file_download</IconButton>
+      <!-- <IconButton class="material-icons" aria-label="Download">file_download</IconButton>
       {#if variant !== 'short'}
         <IconButton class="material-icons" aria-label="Print this page">print</IconButton>
         <IconButton class="material-icons" aria-label="Bookmark this page">bookmark</IconButton>
-      {/if}
+      {/if} -->
     </Section>
   </Row>
 </TopAppBar>
