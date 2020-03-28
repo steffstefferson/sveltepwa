@@ -2,22 +2,43 @@
   "name": "Lurinfacts",
   "short_name": "Lurinfacts",
   "description": "Lurinfacts, the site about the world greatest coder",
+  "icons": [
+    {
+      "src": "images/logo48m.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/logo96m.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/logo192m.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo512m.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/home",
   "background_color": "#F2EA00",
   "display": "standalone",
   "theme_color": "#F2EA00",
-  "Scope": "/",
-  "start_url": "/index.html",
-  "icons": [
-    {
-      "src": "/assets/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+  "share_target": {
+    "action": "/?share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "file",
+          "accept": ["image/*"]
+        }
+      ]
     }
-  ],
-  "splash_pages": null
+  }
 }

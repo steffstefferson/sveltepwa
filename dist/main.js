@@ -2147,7 +2147,6 @@
         }
         return p;
     };
-    //# sourceMappingURL=index.esm.js.map
 
     /**
      * Component for service name T, e.g. `auth`, `auth-internal`
@@ -2452,7 +2451,6 @@
         };
         return ComponentContainer;
     }());
-    //# sourceMappingURL=index.esm.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -2624,7 +2622,6 @@
         };
         return Logger;
     }());
-    //# sourceMappingURL=index.esm.js.map
 
     /**
      * @license
@@ -3277,7 +3274,6 @@
     };
     var firebase$1 = firebase;
     registerCoreComponents(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
 
     var name$c = "firebase";
     var version$2 = "7.9.1";
@@ -3299,7 +3295,6 @@
      * limitations under the License.
      */
     firebase$1.registerVersion(name$c, version$2, 'app');
-    //# sourceMappingURL=index.esm.js.map
 
     (function() {var k,aa="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value);};function ba(a){a=["object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global$1&&global$1,a];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}return globalThis}var ca=ba(this);
     function da(a,b){if(b){var c=ca;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];e in c||(c[e]={});c=c[e];}a=a[a.length-1];d=c[a];b=b(d);b!=d&&null!=b&&aa(c,a,{configurable:!0,writable:!0,value:b});}}function ea(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function fa(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):{next:ea(a)}}
@@ -3636,8 +3631,6 @@
     (function(){if("undefined"!==typeof firebase$1&&firebase$1.INTERNAL&&firebase$1.INTERNAL.registerComponent){var a={ActionCodeInfo:{Operation:{EMAIL_SIGNIN:jf,PASSWORD_RESET:"PASSWORD_RESET",RECOVER_EMAIL:"RECOVER_EMAIL",VERIFY_EMAIL:"VERIFY_EMAIL"}},Auth:Lm,AuthCredential:kg,Error:M};Z(a,"EmailAuthProvider",Hg,[]);Z(a,"FacebookAuthProvider",yg,[]);Z(a,"GithubAuthProvider",Ag,[]);Z(a,"GoogleAuthProvider",Cg,[]);Z(a,"TwitterAuthProvider",Eg,[]);Z(a,"OAuthProvider",O,[V("providerId")]);Z(a,"SAMLAuthProvider",
     xg,[V("providerId")]);Z(a,"PhoneAuthProvider",Ug,[En()]);Z(a,"RecaptchaVerifier",xn,[X(V(),Dn(),"recaptchaContainer"),W("recaptchaParameters",!0),Fn()]);Z(a,"ActionCodeURL",rf,[]);firebase$1.INTERNAL.registerComponent({name:"auth",instanceFactory:function(b){b=b.getProvider("app").getImmediate();return new Lm(b)},multipleInstances:!1,serviceProps:a,instantiationMode:"LAZY",type:"PUBLIC"});firebase$1.INTERNAL.registerComponent({name:"auth-internal",instanceFactory:function(b){b=b.getProvider("auth").getImmediate();
     return {getUid:t(b.getUid,b),getToken:t(b.cc,b),addAuthTokenListener:t(b.Wb,b),removeAuthTokenListener:t(b.Ec,b)}},multipleInstances:!1,instantiationMode:"LAZY",type:"PRIVATE"});firebase$1.registerVersion("@firebase/auth","0.13.5");firebase$1.INTERNAL.extendNamespace({User:Q});}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).apply(typeof global$1 !== 'undefined' ? global$1 : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
-
-    //# sourceMappingURL=auth.esm.js.map
 
     // shim for using process in browser
     // based off https://github.com/defunctzombie/node-process/blob/master/browser.js
@@ -19123,7 +19116,6 @@
         instance.registerVersion(name$d, version$4);
     }
     registerDatabase(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
 
     /**
      * @license
@@ -22684,7 +22676,6 @@
         instance.registerVersion(name$e, version$5);
     }
     registerStorage(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
 
     var configSecret = {
       firebaseConfig: {
@@ -23414,7 +23405,6 @@
         [].forEach.call(els, function (el) { return tops.add(el.offsetTop); });
         return tops.size > 1;
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -23488,7 +23478,6 @@
         };
         return MDCFoundation;
     }());
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -23586,7 +23575,6 @@
         };
         return MDCComponent;
     }());
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -23633,7 +23621,6 @@
             || element.msMatchesSelector;
         return nativeMatches.call(element, selector);
     }
-    //# sourceMappingURL=ponyfill.js.map
 
     /**
      * @license
@@ -23685,7 +23672,6 @@
         }
         return supportsPassive_ ? { passive: true } : false;
     }
-    //# sourceMappingURL=events.js.map
 
     /**
      * @license
@@ -23734,7 +23720,6 @@
         PADDING: 10,
         TAP_DELAY_MS: 300,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * Stores result from supportsCssVariables to avoid redundant processing to
@@ -23810,7 +23795,6 @@
         }
         return { x: normalizedX, y: normalizedY };
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -24265,7 +24249,6 @@
         };
         return MDCRippleFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -24371,7 +24354,6 @@
         };
         return MDCRipple;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -24427,7 +24409,6 @@
         DIALOG_ANIMATION_CLOSE_TIME_MS: 75,
         DIALOG_ANIMATION_OPEN_TIME_MS: 150,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -24681,7 +24662,6 @@
         };
         return MDCDialogFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -24859,7 +24839,6 @@
         };
         return MDCDialog;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     function forwardEventsBuilder(component, additionalEvents = []) {
       const events = [
@@ -28778,7 +28757,6 @@
         ARIA_PRESSED: 'aria-pressed',
         CHANGE_EVENT: 'MDCIconButtonToggle:change',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -28856,7 +28834,6 @@
         };
         return MDCIconButtonToggleFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -28938,7 +28915,6 @@
         };
         return MDCIconButtonToggle;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\icon-button\IconButton.svelte generated by Svelte v3.19.1 */
     const file$a = "node_modules\\@smui\\icon-button\\IconButton.svelte";
@@ -29571,7 +29547,6 @@
          */
         ARIA_LIVE_DELAY_MS: 1000,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -29651,7 +29626,6 @@
             labelEl.textContent = labelText;
         }, ARIA_LIVE_DELAY_MS);
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -29839,7 +29813,6 @@
         };
         return MDCSnackbarFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -29995,7 +29968,6 @@
         };
         return MDCSnackbar;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\snackbar\Snackbar.svelte generated by Svelte v3.19.1 */
     const file$b = "node_modules\\@smui\\snackbar\\Snackbar.svelte";
@@ -35395,7 +35367,6 @@
         LABEL_SHAKE: 'mdc-floating-label--shake',
         ROOT: 'mdc-floating-label',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35496,7 +35467,6 @@
         };
         return MDCFloatingLabelFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35562,7 +35532,6 @@
         };
         return MDCFloatingLabel;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35590,7 +35559,6 @@
         LINE_RIPPLE_ACTIVE: 'mdc-line-ripple--active',
         LINE_RIPPLE_DEACTIVATING: 'mdc-line-ripple--deactivating',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35676,7 +35644,6 @@
         };
         return MDCLineRippleFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35745,7 +35712,6 @@
         };
         return MDCLineRipple;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35781,7 +35747,6 @@
         OUTLINE_NOTCHED: 'mdc-notched-outline--notched',
         OUTLINE_UPGRADED: 'mdc-notched-outline--upgraded',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35869,7 +35834,6 @@
         };
         return MDCNotchedOutlineFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35944,7 +35908,6 @@
         };
         return MDCNotchedOutline;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35974,7 +35937,6 @@
     var strings$7 = {
         ROOT_SELECTOR: "." + cssClasses$7.ROOT,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36035,7 +35997,6 @@
         };
         return MDCTextFieldCharacterCounterFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36087,7 +36048,6 @@
         };
         return MDCTextFieldCharacterCounter;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -36150,7 +36110,6 @@
     var ALWAYS_FLOAT_TYPES = [
         'color', 'date', 'datetime-local', 'month', 'range', 'time', 'week',
     ];
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36605,7 +36564,6 @@
         };
         return MDCTextFieldFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36639,7 +36597,6 @@
         ROLE: 'role',
         ROOT_SELECTOR: "." + cssClasses$9.ROOT,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36760,7 +36717,6 @@
         };
         return MDCTextFieldHelperTextFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36819,7 +36775,6 @@
         };
         return MDCTextFieldHelperText;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -36850,7 +36805,6 @@
     var cssClasses$a = {
         ROOT: 'mdc-text-field__icon',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36957,7 +36911,6 @@
         };
         return MDCTextFieldIconFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -37017,7 +36970,6 @@
         };
         return MDCTextFieldIcon;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -37454,7 +37406,6 @@
         };
         return MDCTextField;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\floating-label\FloatingLabel.svelte generated by Svelte v3.19.1 */
     const file$h = "node_modules\\@smui\\floating-label\\FloatingLabel.svelte";
@@ -41156,7 +41107,6 @@
         DISABLED: 'mdc-radio--disabled',
         ROOT: 'mdc-radio',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -41222,7 +41172,6 @@
         };
         return MDCRadioFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -41334,7 +41283,6 @@
         });
         return MDCRadio;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\radio\Radio.svelte generated by Svelte v3.19.1 */
     const file$o = "node_modules\\@smui\\radio\\Radio.svelte";
@@ -41790,7 +41738,6 @@
     var strings$c = {
         LABEL_SELECTOR: '.mdc-form-field > label',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -41860,7 +41807,6 @@
         };
         return MDCFormFieldFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -41940,7 +41886,6 @@
         };
         return MDCFormField;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\form-field\FormField.svelte generated by Svelte v3.19.1 */
     const file$p = "node_modules\\@smui\\form-field\\FormField.svelte";
@@ -46265,7 +46210,6 @@
         ROOT_SELECTOR: '.mdc-top-app-bar',
         TITLE_SELECTOR: '.mdc-top-app-bar__title',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -46346,7 +46290,6 @@
         };
         return MDCTopAppBarBaseFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46509,7 +46452,6 @@
         };
         return MDCTopAppBarFoundation;
     }(MDCTopAppBarBaseFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46564,7 +46506,6 @@
         };
         return MDCFixedTopAppBarFoundation;
     }(MDCTopAppBarFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46664,7 +46605,6 @@
         };
         return MDCShortTopAppBarFoundation;
     }(MDCTopAppBarBaseFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46781,7 +46721,6 @@
         };
         return MDCTopAppBar;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\top-app-bar\TopAppBar.svelte generated by Svelte v3.19.1 */
     const file$v = "node_modules\\@smui\\top-app-bar\\TopAppBar.svelte";
@@ -47504,7 +47443,6 @@
         Corner[Corner["BOTTOM_START"] = 9] = "BOTTOM_START";
         Corner[Corner["BOTTOM_END"] = 13] = "BOTTOM_END";
     })(Corner || (Corner = {}));
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -47555,7 +47493,6 @@
     var numbers$7 = {
         UNSET_INDEX: -1,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -48013,7 +47950,6 @@
         };
         return MDCListFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -48262,7 +48198,6 @@
         };
         return MDCList;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -48706,7 +48641,6 @@
         };
         return MDCMenuSurfaceFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -48742,7 +48676,6 @@
         }
         return cachedCssTransformPropertyName_;
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -48909,7 +48842,6 @@
         };
         return MDCMenuSurface;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -48955,7 +48887,6 @@
         DefaultFocusState[DefaultFocusState["FIRST_ITEM"] = 2] = "FIRST_ITEM";
         DefaultFocusState[DefaultFocusState["LAST_ITEM"] = 3] = "LAST_ITEM";
     })(DefaultFocusState || (DefaultFocusState = {}));
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -49130,7 +49061,6 @@
         };
         return MDCMenuFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -49349,7 +49279,6 @@
         };
         return MDCMenu;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\menu-surface\MenuSurface.svelte generated by Svelte v3.19.1 */
     const file$y = "node_modules\\@smui\\menu-surface\\MenuSurface.svelte";
@@ -54754,15 +54683,9 @@
     const file$H = "src\\App.svelte";
 
     function create_fragment$N(ctx) {
-    	let link0;
     	let t0;
-    	let link1;
-    	let t1;
-    	let link2;
-    	let t2;
-    	let t3;
     	let main;
-    	let t4;
+    	let t1;
     	let current;
     	const headertopbar = new HeaderTopBar({ $$inline: true });
     	var switch_value = /*page*/ ctx[0];
@@ -54782,51 +54705,30 @@
 
     	const block = {
     		c: function create() {
-    			link0 = element("link");
-    			t0 = space();
-    			link1 = element("link");
-    			t1 = space();
-    			link2 = element("link");
-    			t2 = space();
     			create_component(headertopbar.$$.fragment);
-    			t3 = space();
+    			t0 = space();
     			main = element("main");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			t4 = space();
+    			t1 = space();
     			create_component(notification.$$.fragment);
-    			attr_dev(link0, "rel", "stylesheet");
-    			attr_dev(link0, "href", "https://fonts.googleapis.com/icon?family=Material+Icons");
-    			add_location(link0, file$H, 45, 0, 1711);
-    			attr_dev(link1, "rel", "stylesheet");
-    			attr_dev(link1, "href", "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700");
-    			add_location(link1, file$H, 46, 0, 1799);
-    			attr_dev(link2, "rel", "stylesheet");
-    			attr_dev(link2, "href", "https://fonts.googleapis.com/css?family=Roboto+Mono");
-    			add_location(link2, file$H, 47, 0, 1898);
     			attr_dev(main, "class", "overflow-hidden;");
     			set_style(main, "padding-top", "12px");
     			attr_dev(main, "densefixedadjust", "");
-    			add_location(main, file$H, 51, 0, 2333);
+    			add_location(main, file$H, 48, 0, 2062);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, link0, anchor);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, link1, anchor);
-    			insert_dev(target, t1, anchor);
-    			insert_dev(target, link2, anchor);
-    			insert_dev(target, t2, anchor);
     			mount_component(headertopbar, target, anchor);
-    			insert_dev(target, t3, anchor);
+    			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
 
     			if (switch_instance) {
     				mount_component(switch_instance, main, null);
     			}
 
-    			insert_dev(target, t4, anchor);
+    			insert_dev(target, t1, anchor);
     			mount_component(notification, target, anchor);
     			current = true;
     		},
@@ -54872,17 +54774,11 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(link0);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(link1);
-    			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(link2);
-    			if (detaching) detach_dev(t2);
     			destroy_component(headertopbar, detaching);
-    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			if (switch_instance) destroy_component(switch_instance);
-    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(t1);
     			destroy_component(notification, detaching);
     		}
     	};
@@ -54986,8 +54882,10 @@
     	}
     }
 
+    //import "./main.pcss";
+
     const app = new App({
-      target: document.body
+      target: document.body,
     });
 
 }());

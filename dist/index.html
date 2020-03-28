@@ -75,12 +75,27 @@
     <meta name="theme-color" content="#5bd1d7" />
     <!--Load google fonts here-->
     <link
-      href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
     />
-    <script type="text/Javascript">
-      function mapsLoaded(){
-        window.googleMapsLoaded = true;
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    />
+
+    <script type="text/javascript">
+      function mapsLoaded() {
+        window.googleMapsLoaded = true
+      }
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('/service-worker.js', { scope: '' })
+          .then(function (reg) {
+            console.log('Registrierung erfolgreich. Scope ist ' + reg.scope)
+          })
+          .catch(function (error) {
+            console.log('Registrierung fehlgeschlagen mit ' + error)
+          })
       }
     </script>
     <script
