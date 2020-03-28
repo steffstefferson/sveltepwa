@@ -45636,35 +45636,8 @@
     const { console: console_1$1 } = globals;
     const file$u = "src\\components\\ImageFullScreen.svelte";
 
-    // (52:9) <IconButton on:click="{getPreviousImage}"  class="lurinsnavicons material-icons" aria-label="Back">
-    function create_default_slot_3$8(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("navigate_before");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_3$8.name,
-    		type: "slot",
-    		source: "(52:9) <IconButton on:click=\\\"{getPreviousImage}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Back\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (53:9) <IconButton on:click="{() => page('/map?key='+image.key)}"  class="lurinsnavicons material-icons" aria-label="Open map">
-    function create_default_slot_2$9(ctx) {
+    // (63:9) <IconButton on:click="{() => page('/map?key='+image.key)}"  class="lurinsnavicons material-icons" aria-label="Open map">
+    function create_default_slot_5$3(ctx) {
     	let t;
 
     	const block = {
@@ -45681,17 +45654,44 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$9.name,
+    		id: create_default_slot_5$3.name,
     		type: "slot",
-    		source: "(53:9) <IconButton on:click=\\\"{() => page('/map?key='+image.key)}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Open map\\\">",
+    		source: "(63:9) <IconButton on:click=\\\"{() => page('/map?key='+image.key)}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Open map\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:9) <IconButton on:click="{() => page(backUrl)}"  class="lurinsnavicons material-icons" aria-label="Close">
-    function create_default_slot_1$a(ctx) {
+    // (64:9) <IconButton on:click="{toggleZoom}"  class="lurinsnavicons material-icons" aria-label="Toggle zoom">
+    function create_default_slot_4$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("aspect_ratio");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_4$4.name,
+    		type: "slot",
+    		source: "(64:9) <IconButton on:click=\\\"{toggleZoom}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Toggle zoom\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (65:9) <IconButton on:click="{() => page(backUrl)}"  class="lurinsnavicons material-icons" aria-label="Close">
+    function create_default_slot_3$8(ctx) {
     	let t;
 
     	const block = {
@@ -45708,16 +45708,70 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$a.name,
+    		id: create_default_slot_3$8.name,
     		type: "slot",
-    		source: "(54:9) <IconButton on:click=\\\"{() => page(backUrl)}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Close\\\">",
+    		source: "(65:9) <IconButton on:click=\\\"{() => page(backUrl)}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Close\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:9) <IconButton on:click="{getNextImage}"  class="lurinsnavicons material-icons" aria-label="Next">
+    // (67:9) <IconButton on:click="{getPreviousImage}"  class="lurinsnavicons material-icons" aria-label="Back">
+    function create_default_slot_2$9(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("navigate_before");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$9.name,
+    		type: "slot",
+    		source: "(67:9) <IconButton on:click=\\\"{getPreviousImage}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Back\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (68:9) <IconButton class="lurinsnavicons material-icons" aria-label="placeholder">
+    function create_default_slot_1$a(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("_");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$a.name,
+    		type: "slot",
+    		source: "(68:9) <IconButton class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"placeholder\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (69:9) <IconButton on:click="{getNextImage}"  class="lurinsnavicons material-icons" aria-label="Next">
     function create_default_slot$d(ctx) {
     	let t;
 
@@ -45737,7 +45791,7 @@
     		block,
     		id: create_default_slot$d.name,
     		type: "slot",
-    		source: "(55:9) <IconButton on:click=\\\"{getNextImage}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Next\\\">",
+    		source: "(69:9) <IconButton on:click=\\\"{getNextImage}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Next\\\">",
     		ctx
     	});
 
@@ -45752,61 +45806,86 @@
     	let div4;
     	let div1;
     	let span;
-    	let t1_value = /*image*/ ctx[2].imageTitle + "";
+    	let t1_value = /*image*/ ctx[3].imageTitle + "";
     	let t1;
     	let t2;
     	let div2;
-    	let t3_value = /*image*/ ctx[2].funFact + "";
+    	let t3_value = /*image*/ ctx[3].funFact + "";
     	let t3;
     	let t4;
     	let div3;
-    	let t5_value = getDisplayTime(/*image*/ ctx[2].insertTime) + "";
+    	let t5_value = getDisplayTime(/*image*/ ctx[3].insertTime) + "";
     	let t5;
     	let t6;
     	let div5;
     	let t7;
     	let t8;
     	let t9;
+    	let t10;
+    	let t11;
+    	let div7_style_value;
     	let current;
     	let dispose;
 
     	const iconbutton0 = new IconButton({
     			props: {
     				class: "lurinsnavicons material-icons",
-    				"aria-label": "Back",
+    				"aria-label": "Open map",
+    				$$slots: { default: [create_default_slot_5$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	iconbutton0.$on("click", /*click_handler*/ ctx[12]);
+
+    	const iconbutton1 = new IconButton({
+    			props: {
+    				class: "lurinsnavicons material-icons",
+    				"aria-label": "Toggle zoom",
+    				$$slots: { default: [create_default_slot_4$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	iconbutton1.$on("click", /*toggleZoom*/ ctx[8]);
+
+    	const iconbutton2 = new IconButton({
+    			props: {
+    				class: "lurinsnavicons material-icons",
+    				"aria-label": "Close",
     				$$slots: { default: [create_default_slot_3$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	iconbutton0.$on("click", /*getPreviousImage*/ ctx[5]);
+    	iconbutton2.$on("click", /*click_handler_1*/ ctx[13]);
 
-    	const iconbutton1 = new IconButton({
+    	const iconbutton3 = new IconButton({
     			props: {
     				class: "lurinsnavicons material-icons",
-    				"aria-label": "Open map",
+    				"aria-label": "Back",
     				$$slots: { default: [create_default_slot_2$9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	iconbutton1.$on("click", /*click_handler*/ ctx[9]);
+    	iconbutton3.$on("click", /*getPreviousImage*/ ctx[6]);
 
-    	const iconbutton2 = new IconButton({
+    	const iconbutton4 = new IconButton({
     			props: {
     				class: "lurinsnavicons material-icons",
-    				"aria-label": "Close",
+    				"aria-label": "placeholder",
     				$$slots: { default: [create_default_slot_1$a] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	iconbutton2.$on("click", /*click_handler_1*/ ctx[10]);
-
-    	const iconbutton3 = new IconButton({
+    	const iconbutton5 = new IconButton({
     			props: {
     				class: "lurinsnavicons material-icons",
     				"aria-label": "Next",
@@ -45816,7 +45895,7 @@
     			$$inline: true
     		});
 
-    	iconbutton3.$on("click", /*getNextImage*/ ctx[6]);
+    	iconbutton5.$on("click", /*getNextImage*/ ctx[7]);
 
     	const block = {
     		c: function create() {
@@ -45843,26 +45922,30 @@
     			create_component(iconbutton2.$$.fragment);
     			t9 = space();
     			create_component(iconbutton3.$$.fragment);
-    			attr_dev(div0, "class", "showHideInfoArea svelte-1f4i2aj");
-    			add_location(div0, file$u, 41, 4, 978);
-    			attr_dev(span, "class", "title svelte-1f4i2aj");
-    			add_location(span, file$u, 45, 16, 1260);
-    			attr_dev(div1, "class", "svelte-1f4i2aj");
-    			add_location(div1, file$u, 44, 12, 1238);
-    			attr_dev(div2, "class", "text svelte-1f4i2aj");
-    			add_location(div2, file$u, 47, 12, 1339);
-    			attr_dev(div3, "class", "text svelte-1f4i2aj");
-    			add_location(div3, file$u, 48, 12, 1393);
-    			attr_dev(div4, "class", "svelte-1f4i2aj");
-    			add_location(div4, file$u, 43, 8, 1220);
-    			attr_dev(div5, "class", "svelte-1f4i2aj");
-    			add_location(div5, file$u, 50, 8, 1477);
-    			attr_dev(div6, "class", "textContainer svelte-1f4i2aj");
+    			t10 = space();
+    			create_component(iconbutton4.$$.fragment);
+    			t11 = space();
+    			create_component(iconbutton5.$$.fragment);
+    			attr_dev(div0, "class", "showHideInfoArea svelte-1gnn90j");
+    			add_location(div0, file$u, 52, 4, 1292);
+    			attr_dev(span, "class", "title svelte-1gnn90j");
+    			add_location(span, file$u, 56, 16, 1574);
+    			attr_dev(div1, "class", "svelte-1gnn90j");
+    			add_location(div1, file$u, 55, 12, 1552);
+    			attr_dev(div2, "class", "text svelte-1gnn90j");
+    			add_location(div2, file$u, 58, 12, 1653);
+    			attr_dev(div3, "class", "text svelte-1gnn90j");
+    			add_location(div3, file$u, 59, 12, 1707);
+    			attr_dev(div4, "class", "svelte-1gnn90j");
+    			add_location(div4, file$u, 54, 8, 1534);
+    			attr_dev(div5, "class", "svelte-1gnn90j");
+    			add_location(div5, file$u, 61, 8, 1791);
+    			attr_dev(div6, "class", "textContainer svelte-1gnn90j");
     			set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
-    			add_location(div6, file$u, 42, 4, 1130);
-    			attr_dev(div7, "class", "container svelte-1f4i2aj");
-    			attr_dev(div7, "style", /*backgroundStyle*/ ctx[1]);
-    			add_location(div7, file$u, 40, 0, 924);
+    			add_location(div6, file$u, 53, 4, 1444);
+    			attr_dev(div7, "class", "container svelte-1gnn90j");
+    			attr_dev(div7, "style", div7_style_value = "" + (/*backgroundStyle*/ ctx[1] + " " + /*backgroundSize*/ ctx[2]));
+    			add_location(div7, file$u, 51, 0, 1221);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -45891,54 +45974,72 @@
     			mount_component(iconbutton2, div5, null);
     			append_dev(div5, t9);
     			mount_component(iconbutton3, div5, null);
+    			append_dev(div5, t10);
+    			mount_component(iconbutton4, div5, null);
+    			append_dev(div5, t11);
+    			mount_component(iconbutton5, div5, null);
     			current = true;
 
     			dispose = [
-    				listen_dev(div0, "mousedown", /*toggleText*/ ctx[4], false, false, false),
-    				listen_dev(div0, "touchstart", /*toggleText*/ ctx[4], { passive: true }, false, false),
-    				listen_dev(div0, "touchend", /*toggleText*/ ctx[4], { passive: true }, false, false),
-    				listen_dev(div0, "mouseup", /*toggleText*/ ctx[4], false, false, false)
+    				listen_dev(div0, "mousedown", /*toggleText*/ ctx[5], false, false, false),
+    				listen_dev(div0, "touchstart", /*toggleText*/ ctx[5], { passive: true }, false, false),
+    				listen_dev(div0, "touchend", /*toggleText*/ ctx[5], { passive: true }, false, false),
+    				listen_dev(div0, "mouseup", /*toggleText*/ ctx[5], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*image*/ 4) && t1_value !== (t1_value = /*image*/ ctx[2].imageTitle + "")) set_data_dev(t1, t1_value);
-    			if ((!current || dirty & /*image*/ 4) && t3_value !== (t3_value = /*image*/ ctx[2].funFact + "")) set_data_dev(t3, t3_value);
-    			if ((!current || dirty & /*image*/ 4) && t5_value !== (t5_value = getDisplayTime(/*image*/ ctx[2].insertTime) + "")) set_data_dev(t5, t5_value);
+    			if ((!current || dirty & /*image*/ 8) && t1_value !== (t1_value = /*image*/ ctx[3].imageTitle + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*image*/ 8) && t3_value !== (t3_value = /*image*/ ctx[3].funFact + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty & /*image*/ 8) && t5_value !== (t5_value = getDisplayTime(/*image*/ ctx[3].insertTime) + "")) set_data_dev(t5, t5_value);
     			const iconbutton0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 16384) {
     				iconbutton0_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton0.$set(iconbutton0_changes);
     			const iconbutton1_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 16384) {
     				iconbutton1_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton1.$set(iconbutton1_changes);
     			const iconbutton2_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 16384) {
     				iconbutton2_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton2.$set(iconbutton2_changes);
     			const iconbutton3_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 16384) {
     				iconbutton3_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton3.$set(iconbutton3_changes);
+    			const iconbutton4_changes = {};
+
+    			if (dirty & /*$$scope*/ 16384) {
+    				iconbutton4_changes.$$scope = { dirty, ctx };
+    			}
+
+    			iconbutton4.$set(iconbutton4_changes);
+    			const iconbutton5_changes = {};
+
+    			if (dirty & /*$$scope*/ 16384) {
+    				iconbutton5_changes.$$scope = { dirty, ctx };
+    			}
+
+    			iconbutton5.$set(iconbutton5_changes);
 
     			if (!current || dirty & /*showText*/ 1) {
     				set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
     			}
 
-    			if (!current || dirty & /*backgroundStyle*/ 2) {
-    				attr_dev(div7, "style", /*backgroundStyle*/ ctx[1]);
+    			if (!current || dirty & /*backgroundStyle, backgroundSize*/ 6 && div7_style_value !== (div7_style_value = "" + (/*backgroundStyle*/ ctx[1] + " " + /*backgroundSize*/ ctx[2]))) {
+    				attr_dev(div7, "style", div7_style_value);
     			}
     		},
     		i: function intro(local) {
@@ -45947,6 +46048,8 @@
     			transition_in(iconbutton1.$$.fragment, local);
     			transition_in(iconbutton2.$$.fragment, local);
     			transition_in(iconbutton3.$$.fragment, local);
+    			transition_in(iconbutton4.$$.fragment, local);
+    			transition_in(iconbutton5.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -45954,6 +46057,8 @@
     			transition_out(iconbutton1.$$.fragment, local);
     			transition_out(iconbutton2.$$.fragment, local);
     			transition_out(iconbutton3.$$.fragment, local);
+    			transition_out(iconbutton4.$$.fragment, local);
+    			transition_out(iconbutton5.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -45962,6 +46067,8 @@
     			destroy_component(iconbutton1);
     			destroy_component(iconbutton2);
     			destroy_component(iconbutton3);
+    			destroy_component(iconbutton4);
+    			destroy_component(iconbutton5);
     			run_all(dispose);
     		}
     	};
@@ -45981,7 +46088,9 @@
     	let { params } = $$props;
     	let showText = true;
     	console.log(params);
+    	let imageSizeContain = false;
     	let backgroundStyle = "";
+    	let backgroundSize = "background-size: cover;";
     	let image = load(params.key, 0);
     	let backUrl = "/images";
 
@@ -45990,20 +46099,30 @@
     	}
 
     	function getPreviousImage(e) {
-    		$$invalidate(2, image = load(image.key, -1));
+    		$$invalidate(3, image = load(image.key, -1));
     	}
 
     	function getNextImage(e) {
-    		$$invalidate(2, image = load(image.key, 1));
+    		$$invalidate(3, image = load(image.key, 1));
+    	}
+
+    	function toggleZoom() {
+    		imageSizeContain = !imageSizeContain;
+
+    		if (imageSizeContain) {
+    			$$invalidate(2, backgroundSize = "background-size: contain;");
+    		} else {
+    			$$invalidate(2, backgroundSize = "background-size: cover;");
+    		}
     	}
 
     	function load(key, offset) {
     		const img = getImage(key, offset);
-    		$$invalidate(1, backgroundStyle = "background-image: url(" + (img.fullImageSizeUrl || img.thumbnail) + ")");
+    		$$invalidate(1, backgroundStyle = "background-image: url(" + (img.fullImageSizeUrl || img.thumbnail) + "); ");
 
     		if (!img.fullImageSizeUrl) {
     			img.loadFullSizeImage().then(fullSizeImageUrl => {
-    				$$invalidate(1, backgroundStyle = "background-image: url(" + fullSizeImageUrl + ")");
+    				$$invalidate(1, backgroundStyle = "background-image: url(" + fullSizeImageUrl + "); ");
     			});
     		}
 
@@ -46021,7 +46140,7 @@
     	const click_handler_1 = () => page_js(backUrl);
 
     	$$self.$set = $$props => {
-    		if ("params" in $$props) $$invalidate(7, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(9, params = $$props.params);
     	};
 
     	$$self.$capture_state = () => ({
@@ -46032,22 +46151,27 @@
     		page: page_js,
     		params,
     		showText,
+    		imageSizeContain,
     		backgroundStyle,
+    		backgroundSize,
     		image,
     		backUrl,
     		toggleText,
     		getPreviousImage,
     		getNextImage,
+    		toggleZoom,
     		load,
     		console
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("params" in $$props) $$invalidate(7, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(9, params = $$props.params);
     		if ("showText" in $$props) $$invalidate(0, showText = $$props.showText);
+    		if ("imageSizeContain" in $$props) imageSizeContain = $$props.imageSizeContain;
     		if ("backgroundStyle" in $$props) $$invalidate(1, backgroundStyle = $$props.backgroundStyle);
-    		if ("image" in $$props) $$invalidate(2, image = $$props.image);
-    		if ("backUrl" in $$props) $$invalidate(3, backUrl = $$props.backUrl);
+    		if ("backgroundSize" in $$props) $$invalidate(2, backgroundSize = $$props.backgroundSize);
+    		if ("image" in $$props) $$invalidate(3, image = $$props.image);
+    		if ("backUrl" in $$props) $$invalidate(4, backUrl = $$props.backUrl);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -46057,12 +46181,15 @@
     	return [
     		showText,
     		backgroundStyle,
+    		backgroundSize,
     		image,
     		backUrl,
     		toggleText,
     		getPreviousImage,
     		getNextImage,
+    		toggleZoom,
     		params,
+    		imageSizeContain,
     		load,
     		click_handler,
     		click_handler_1
@@ -46072,7 +46199,7 @@
     class ImageFullScreen extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$y, create_fragment$y, safe_not_equal, { params: 7 });
+    		init(this, options, instance$y, create_fragment$y, safe_not_equal, { params: 9 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -46084,7 +46211,7 @@
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*params*/ ctx[7] === undefined && !("params" in props)) {
+    		if (/*params*/ ctx[9] === undefined && !("params" in props)) {
     			console_1$1.warn("<ImageFullScreen> was created without expected prop 'params'");
     		}
     	}
@@ -52733,7 +52860,7 @@
 
     	const item0 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_5$3] },
+    				$$slots: { default: [create_default_slot_5$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -52743,7 +52870,7 @@
 
     	const item1 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_4$4] },
+    				$$slots: { default: [create_default_slot_4$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -52809,7 +52936,7 @@
     }
 
     // (50:6) <Item on:SMUI:action={() => page("/admin/contributions")}>
-    function create_default_slot_5$3(ctx) {
+    function create_default_slot_5$4(ctx) {
     	let t;
 
     	const block = {
@@ -52826,7 +52953,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$3.name,
+    		id: create_default_slot_5$4.name,
     		type: "slot",
     		source: "(50:6) <Item on:SMUI:action={() => page(\\\"/admin/contributions\\\")}>",
     		ctx
@@ -52836,7 +52963,7 @@
     }
 
     // (51:6) <Item on:SMUI:action={() => page("/admin/addImage")}>
-    function create_default_slot_4$4(ctx) {
+    function create_default_slot_4$5(ctx) {
     	let t;
 
     	const block = {
@@ -52853,7 +52980,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$4.name,
+    		id: create_default_slot_4$5.name,
     		type: "slot",
     		source: "(51:6) <Item on:SMUI:action={() => page(\\\"/admin/addImage\\\")}>",
     		ctx
@@ -53668,7 +53795,7 @@
     const file$F = "src\\components\\Contribution.svelte";
 
     // (55:6) <HelperText id="helper-text-shaped-outlined-a">
-    function create_default_slot_5$4(ctx) {
+    function create_default_slot_5$5(ctx) {
     	let t;
 
     	const block = {
@@ -53685,7 +53812,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$4.name,
+    		id: create_default_slot_5$5.name,
     		type: "slot",
     		source: "(55:6) <HelperText id=\\\"helper-text-shaped-outlined-a\\\">",
     		ctx
@@ -53695,7 +53822,7 @@
     }
 
     // (56:6) <HelperText validationMsg>
-    function create_default_slot_4$5(ctx) {
+    function create_default_slot_4$6(ctx) {
     	let t;
 
     	const block = {
@@ -53712,7 +53839,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$5.name,
+    		id: create_default_slot_4$6.name,
     		type: "slot",
     		source: "(56:6) <HelperText validationMsg>",
     		ctx
@@ -53926,7 +54053,7 @@
     	const helpertext0 = new HelperText({
     			props: {
     				id: "helper-text-shaped-outlined-a",
-    				$$slots: { default: [create_default_slot_5$4] },
+    				$$slots: { default: [create_default_slot_5$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -53935,7 +54062,7 @@
     	const helpertext1 = new HelperText({
     			props: {
     				validationMsg: true,
-    				$$slots: { default: [create_default_slot_4$5] },
+    				$$slots: { default: [create_default_slot_4$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true

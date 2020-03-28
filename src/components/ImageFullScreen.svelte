@@ -8,7 +8,9 @@ export let params;
 
 let showText = true;
 console.log(params);
+let imageSizeContain = false;
 let backgroundStyle = "";
+let backgroundSize = "background-size: cover;";
 let image = load(params.key,0);
 let backUrl = "/images";
 
@@ -24,12 +26,21 @@ function getNextImage(e){
     image = load(image.key,1);
 }
 
+function toggleZoom(){
+    imageSizeContain = !imageSizeContain;
+    if(imageSizeContain){
+        backgroundSize = "background-size: contain;"
+    }else{
+        backgroundSize = "background-size: cover;"
+    }
+}
+
 function load(key,offset){
     const img = getImage(key,offset);
-    backgroundStyle = "background-image: url("+(img.fullImageSizeUrl || img.thumbnail)+")";
+    backgroundStyle = "background-image: url("+(img.fullImageSizeUrl || img.thumbnail)+"); ";
     if(!img.fullImageSizeUrl){
     img.loadFullSizeImage().then((fullSizeImageUrl) =>{
-        backgroundStyle = "background-image: url("+fullSizeImageUrl+")";
+        backgroundStyle = "background-image: url("+fullSizeImageUrl+"); ";
     });
     }
     page('/images/slideShow?key='+key);
@@ -38,7 +49,7 @@ function load(key,offset){
 }
 
 </script>
-<div class="container" style="{backgroundStyle}">
+<div class="container" style="{backgroundStyle} {backgroundSize}">
     <div class="showHideInfoArea" on:mousedown="{toggleText}" on:touchstart="{toggleText}" on:touchend="{toggleText}" on:mouseup="{toggleText}"> </div>
     <div class="textContainer" style="visibility: {showText ? 'inherit' : 'hidden'}">
         <div>
@@ -49,9 +60,12 @@ function load(key,offset){
             <div class="text">{ getDisplayTime(image.insertTime) }</div>
         </div>
         <div>
-         <IconButton on:click="{getPreviousImage}"  class="lurinsnavicons material-icons" aria-label="Back">navigate_before</IconButton>
          <IconButton on:click="{() => page('/map?key='+image.key)}"  class="lurinsnavicons material-icons" aria-label="Open map">place</IconButton>
+         <IconButton on:click="{toggleZoom}"  class="lurinsnavicons material-icons" aria-label="Toggle zoom">aspect_ratio</IconButton>
          <IconButton on:click="{() => page(backUrl)}"  class="lurinsnavicons material-icons" aria-label="Close">close</IconButton>
+         
+         <IconButton on:click="{getPreviousImage}"  class="lurinsnavicons material-icons" aria-label="Back">navigate_before</IconButton>
+         <IconButton class="lurinsnavicons material-icons" aria-label="placeholder">_</IconButton>
          <IconButton on:click="{getNextImage}"  class="lurinsnavicons material-icons" aria-label="Next">navigate_next</IconButton>
         </div>
     </div>  
@@ -70,7 +84,6 @@ function load(key,offset){
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     position: absolute;
     top: 0px;
@@ -82,7 +95,7 @@ function load(key,offset){
     padding: 10px;
     margin: 10px;
     display: grid;
-    grid-template-columns: auto 120px;
+    grid-template-columns: auto 100px;
     position: absolute;
     align-items: center;
     position: absolute;
