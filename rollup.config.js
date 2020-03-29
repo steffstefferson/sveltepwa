@@ -11,6 +11,8 @@ import globals from 'rollup-plugin-node-globals'
 import copy from 'rollup-plugin-copy-assets'
 import { injectManifest } from 'rollup-plugin-workbox'
 import replace from 'rollup-plugin-replace'
+import sizes from 'rollup-plugin-sizes'
+
 const production = !process.env.ROLLUP_WATCH
 export default [
   {
@@ -67,6 +69,7 @@ export default [
           )
         }
       ),
+      sizes(),
     ],
   },
   {

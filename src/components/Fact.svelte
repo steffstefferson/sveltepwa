@@ -2,7 +2,7 @@
 import { createEventDispatcher } from 'svelte';
 import {getDisplayTime} from "../services/displayTime.js"
  import Card from '@smui/Card';
-import Button,{Label} from '@smui/Button';
+import Button,{Label} from '@smui/button';
 
 export let fact;
 export let hasDeleteButton;

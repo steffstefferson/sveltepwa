@@ -1,7 +1,7 @@
 <script>
 import {getDisplayTime} from "../services/displayTime.js"
 import { createEventDispatcher } from 'svelte';
-import Button,{Label} from '@smui/Button';
+import Button,{Label} from '@smui/button';
  import page from "page"
 
 export let image;

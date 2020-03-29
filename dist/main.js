@@ -2147,6 +2147,7 @@
         }
         return p;
     };
+    //# sourceMappingURL=index.esm.js.map
 
     /**
      * Component for service name T, e.g. `auth`, `auth-internal`
@@ -2451,6 +2452,7 @@
         };
         return ComponentContainer;
     }());
+    //# sourceMappingURL=index.esm.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -2622,6 +2624,7 @@
         };
         return Logger;
     }());
+    //# sourceMappingURL=index.esm.js.map
 
     /**
      * @license
@@ -3274,6 +3277,7 @@
     };
     var firebase$1 = firebase;
     registerCoreComponents(firebase$1);
+    //# sourceMappingURL=index.esm.js.map
 
     var name$c = "firebase";
     var version$2 = "7.9.1";
@@ -3295,6 +3299,7 @@
      * limitations under the License.
      */
     firebase$1.registerVersion(name$c, version$2, 'app');
+    //# sourceMappingURL=index.esm.js.map
 
     (function() {var k,aa="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value);};function ba(a){a=["object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global$1&&global$1,a];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}return globalThis}var ca=ba(this);
     function da(a,b){if(b){var c=ca;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];e in c||(c[e]={});c=c[e];}a=a[a.length-1];d=c[a];b=b(d);b!=d&&null!=b&&aa(c,a,{configurable:!0,writable:!0,value:b});}}function ea(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function fa(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):{next:ea(a)}}
@@ -3631,6 +3636,8 @@
     (function(){if("undefined"!==typeof firebase$1&&firebase$1.INTERNAL&&firebase$1.INTERNAL.registerComponent){var a={ActionCodeInfo:{Operation:{EMAIL_SIGNIN:jf,PASSWORD_RESET:"PASSWORD_RESET",RECOVER_EMAIL:"RECOVER_EMAIL",VERIFY_EMAIL:"VERIFY_EMAIL"}},Auth:Lm,AuthCredential:kg,Error:M};Z(a,"EmailAuthProvider",Hg,[]);Z(a,"FacebookAuthProvider",yg,[]);Z(a,"GithubAuthProvider",Ag,[]);Z(a,"GoogleAuthProvider",Cg,[]);Z(a,"TwitterAuthProvider",Eg,[]);Z(a,"OAuthProvider",O,[V("providerId")]);Z(a,"SAMLAuthProvider",
     xg,[V("providerId")]);Z(a,"PhoneAuthProvider",Ug,[En()]);Z(a,"RecaptchaVerifier",xn,[X(V(),Dn(),"recaptchaContainer"),W("recaptchaParameters",!0),Fn()]);Z(a,"ActionCodeURL",rf,[]);firebase$1.INTERNAL.registerComponent({name:"auth",instanceFactory:function(b){b=b.getProvider("app").getImmediate();return new Lm(b)},multipleInstances:!1,serviceProps:a,instantiationMode:"LAZY",type:"PUBLIC"});firebase$1.INTERNAL.registerComponent({name:"auth-internal",instanceFactory:function(b){b=b.getProvider("auth").getImmediate();
     return {getUid:t(b.getUid,b),getToken:t(b.cc,b),addAuthTokenListener:t(b.Wb,b),removeAuthTokenListener:t(b.Ec,b)}},multipleInstances:!1,instantiationMode:"LAZY",type:"PRIVATE"});firebase$1.registerVersion("@firebase/auth","0.13.5");firebase$1.INTERNAL.extendNamespace({User:Q});}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).apply(typeof global$1 !== 'undefined' ? global$1 : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
+
+    //# sourceMappingURL=auth.esm.js.map
 
     // shim for using process in browser
     // based off https://github.com/defunctzombie/node-process/blob/master/browser.js
@@ -19116,6 +19123,7 @@
         instance.registerVersion(name$d, version$4);
     }
     registerDatabase(firebase$1);
+    //# sourceMappingURL=index.esm.js.map
 
     /**
      * @license
@@ -22676,6 +22684,7 @@
         instance.registerVersion(name$e, version$5);
     }
     registerStorage(firebase$1);
+    //# sourceMappingURL=index.esm.js.map
 
     var configSecret = {
       firebaseConfig: {
@@ -23405,6 +23414,7 @@
         [].forEach.call(els, function (el) { return tops.add(el.offsetTop); });
         return tops.size > 1;
     }
+    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -23478,6 +23488,7 @@
         };
         return MDCFoundation;
     }());
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -23575,6 +23586,7 @@
         };
         return MDCComponent;
     }());
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -23621,6 +23633,7 @@
             || element.msMatchesSelector;
         return nativeMatches.call(element, selector);
     }
+    //# sourceMappingURL=ponyfill.js.map
 
     /**
      * @license
@@ -23672,6 +23685,7 @@
         }
         return supportsPassive_ ? { passive: true } : false;
     }
+    //# sourceMappingURL=events.js.map
 
     /**
      * @license
@@ -23720,6 +23734,7 @@
         PADDING: 10,
         TAP_DELAY_MS: 300,
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * Stores result from supportsCssVariables to avoid redundant processing to
@@ -23795,6 +23810,7 @@
         }
         return { x: normalizedX, y: normalizedY };
     }
+    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -24249,6 +24265,7 @@
         };
         return MDCRippleFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -24354,6 +24371,7 @@
         };
         return MDCRipple;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -24409,6 +24427,7 @@
         DIALOG_ANIMATION_CLOSE_TIME_MS: 75,
         DIALOG_ANIMATION_OPEN_TIME_MS: 150,
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -24662,6 +24681,7 @@
         };
         return MDCDialogFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -24839,6 +24859,7 @@
         };
         return MDCDialog;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     function forwardEventsBuilder(component, additionalEvents = []) {
       const events = [
@@ -26694,7 +26715,7 @@
     	}
     }
 
-    /* node_modules\@smui\Button\Button.svelte generated by Svelte v3.19.1 */
+    /* node_modules\@smui\button\Button.svelte generated by Svelte v3.19.1 */
 
     // (1:0) <svelte:component   this={component}   use={[[Ripple, {ripple, unbounded: false, classForward: classes => rippleClasses = classes}], forwardEvents, ...use]}   class="     mdc-button     {className}     {rippleClasses.join(' ')}     {variant === 'raised' ? 'mdc-button--raised' : ''}     {variant === 'unelevated' ? 'mdc-button--unelevated' : ''}     {variant === 'outlined' ? 'mdc-button--outlined' : ''}     {dense ? 'mdc-button--dense' : ''}     {color === 'secondary' ? 'smui-button--color-secondary' : ''}     {context === 'card:action' ? 'mdc-card__action' : ''}     {context === 'card:action' ? 'mdc-card__action--button' : ''}     {context === 'dialog:action' ? 'mdc-dialog__button' : ''}     {context === 'top-app-bar:navigation' ? 'mdc-top-app-bar__navigation-icon' : ''}     {context === 'top-app-bar:action' ? 'mdc-top-app-bar__action-item' : ''}     {context === 'snackbar' ? 'mdc-snackbar__action' : ''}   "   {...actionProp}   {...defaultProp}   {...exclude($$props, ['use', 'class', 'ripple', 'color', 'variant', 'dense', ...dialogExcludes])} >
     function create_default_slot$1(ctx) {
@@ -28192,492 +28213,6 @@
     	}
     }
 
-    /* node_modules\@smui\button\Button.svelte generated by Svelte v3.19.1 */
-
-    // (1:0) <svelte:component   this={component}   use={[[Ripple, {ripple, unbounded: false, classForward: classes => rippleClasses = classes}], forwardEvents, ...use]}   class="     mdc-button     {className}     {rippleClasses.join(' ')}     {variant === 'raised' ? 'mdc-button--raised' : ''}     {variant === 'unelevated' ? 'mdc-button--unelevated' : ''}     {variant === 'outlined' ? 'mdc-button--outlined' : ''}     {dense ? 'mdc-button--dense' : ''}     {color === 'secondary' ? 'smui-button--color-secondary' : ''}     {context === 'card:action' ? 'mdc-card__action' : ''}     {context === 'card:action' ? 'mdc-card__action--button' : ''}     {context === 'dialog:action' ? 'mdc-dialog__button' : ''}     {context === 'top-app-bar:navigation' ? 'mdc-top-app-bar__navigation-icon' : ''}     {context === 'top-app-bar:action' ? 'mdc-top-app-bar__action-item' : ''}     {context === 'snackbar' ? 'mdc-snackbar__action' : ''}   "   {...actionProp}   {...defaultProp}   {...exclude($$props, ['use', 'class', 'ripple', 'color', 'variant', 'dense', ...dialogExcludes])} >
-    function create_default_slot$3(ctx) {
-    	let current;
-    	const default_slot_template = /*$$slots*/ ctx[17].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[19], null);
-
-    	const block = {
-    		c: function create() {
-    			if (default_slot) default_slot.c();
-    		},
-    		m: function mount(target, anchor) {
-    			if (default_slot) {
-    				default_slot.m(target, anchor);
-    			}
-
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			if (default_slot && default_slot.p && dirty & /*$$scope*/ 524288) {
-    				default_slot.p(get_slot_context(default_slot_template, ctx, /*$$scope*/ ctx[19], null), get_slot_changes(default_slot_template, /*$$scope*/ ctx[19], dirty, null));
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(default_slot, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(default_slot, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (default_slot) default_slot.d(detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot$3.name,
-    		type: "slot",
-    		source: "(1:0) <svelte:component   this={component}   use={[[Ripple, {ripple, unbounded: false, classForward: classes => rippleClasses = classes}], forwardEvents, ...use]}   class=\\\"     mdc-button     {className}     {rippleClasses.join(' ')}     {variant === 'raised' ? 'mdc-button--raised' : ''}     {variant === 'unelevated' ? 'mdc-button--unelevated' : ''}     {variant === 'outlined' ? 'mdc-button--outlined' : ''}     {dense ? 'mdc-button--dense' : ''}     {color === 'secondary' ? 'smui-button--color-secondary' : ''}     {context === 'card:action' ? 'mdc-card__action' : ''}     {context === 'card:action' ? 'mdc-card__action--button' : ''}     {context === 'dialog:action' ? 'mdc-dialog__button' : ''}     {context === 'top-app-bar:navigation' ? 'mdc-top-app-bar__navigation-icon' : ''}     {context === 'top-app-bar:action' ? 'mdc-top-app-bar__action-item' : ''}     {context === 'snackbar' ? 'mdc-snackbar__action' : ''}   \\\"   {...actionProp}   {...defaultProp}   {...exclude($$props, ['use', 'class', 'ripple', 'color', 'variant', 'dense', ...dialogExcludes])} >",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$c(ctx) {
-    	let switch_instance_anchor;
-    	let current;
-
-    	const switch_instance_spread_levels = [
-    		{
-    			use: [
-    				[
-    					Ripple,
-    					{
-    						ripple: /*ripple*/ ctx[2],
-    						unbounded: false,
-    						classForward: /*func*/ ctx[18]
-    					}
-    				],
-    				/*forwardEvents*/ ctx[11],
-    				.../*use*/ ctx[0]
-    			]
-    		},
-    		{
-    			class: "\n    mdc-button\n    " + /*className*/ ctx[1] + "\n    " + /*rippleClasses*/ ctx[7].join(" ") + "\n    " + (/*variant*/ ctx[4] === "raised"
-    			? "mdc-button--raised"
-    			: "") + "\n    " + (/*variant*/ ctx[4] === "unelevated"
-    			? "mdc-button--unelevated"
-    			: "") + "\n    " + (/*variant*/ ctx[4] === "outlined"
-    			? "mdc-button--outlined"
-    			: "") + "\n    " + (/*dense*/ ctx[5] ? "mdc-button--dense" : "") + "\n    " + (/*color*/ ctx[3] === "secondary"
-    			? "smui-button--color-secondary"
-    			: "") + "\n    " + (/*context*/ ctx[12] === "card:action"
-    			? "mdc-card__action"
-    			: "") + "\n    " + (/*context*/ ctx[12] === "card:action"
-    			? "mdc-card__action--button"
-    			: "") + "\n    " + (/*context*/ ctx[12] === "dialog:action"
-    			? "mdc-dialog__button"
-    			: "") + "\n    " + (/*context*/ ctx[12] === "top-app-bar:navigation"
-    			? "mdc-top-app-bar__navigation-icon"
-    			: "") + "\n    " + (/*context*/ ctx[12] === "top-app-bar:action"
-    			? "mdc-top-app-bar__action-item"
-    			: "") + "\n    " + (/*context*/ ctx[12] === "snackbar"
-    			? "mdc-snackbar__action"
-    			: "") + "\n  "
-    		},
-    		/*actionProp*/ ctx[9],
-    		/*defaultProp*/ ctx[10],
-    		exclude(/*$$props*/ ctx[13], [
-    			"use",
-    			"class",
-    			"ripple",
-    			"color",
-    			"variant",
-    			"dense",
-    			.../*dialogExcludes*/ ctx[8]
-    		])
-    	];
-
-    	var switch_value = /*component*/ ctx[6];
-
-    	function switch_props(ctx) {
-    		let switch_instance_props = {
-    			$$slots: { default: [create_default_slot$3] },
-    			$$scope: { ctx }
-    		};
-
-    		for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
-    			switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
-    		}
-
-    		return {
-    			props: switch_instance_props,
-    			$$inline: true
-    		};
-    	}
-
-    	if (switch_value) {
-    		var switch_instance = new switch_value(switch_props(ctx));
-    	}
-
-    	const block = {
-    		c: function create() {
-    			if (switch_instance) create_component(switch_instance.$$.fragment);
-    			switch_instance_anchor = empty();
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			if (switch_instance) {
-    				mount_component(switch_instance, target, anchor);
-    			}
-
-    			insert_dev(target, switch_instance_anchor, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, [dirty]) {
-    			const switch_instance_changes = (dirty & /*Ripple, ripple, rippleClasses, forwardEvents, use, className, variant, dense, color, context, actionProp, defaultProp, exclude, $$props, dialogExcludes*/ 16319)
-    			? get_spread_update(switch_instance_spread_levels, [
-    					dirty & /*Ripple, ripple, rippleClasses, forwardEvents, use*/ 2181 && {
-    						use: [
-    							[
-    								Ripple,
-    								{
-    									ripple: /*ripple*/ ctx[2],
-    									unbounded: false,
-    									classForward: /*func*/ ctx[18]
-    								}
-    							],
-    							/*forwardEvents*/ ctx[11],
-    							.../*use*/ ctx[0]
-    						]
-    					},
-    					dirty & /*className, rippleClasses, variant, dense, color, context*/ 4282 && {
-    						class: "\n    mdc-button\n    " + /*className*/ ctx[1] + "\n    " + /*rippleClasses*/ ctx[7].join(" ") + "\n    " + (/*variant*/ ctx[4] === "raised"
-    						? "mdc-button--raised"
-    						: "") + "\n    " + (/*variant*/ ctx[4] === "unelevated"
-    						? "mdc-button--unelevated"
-    						: "") + "\n    " + (/*variant*/ ctx[4] === "outlined"
-    						? "mdc-button--outlined"
-    						: "") + "\n    " + (/*dense*/ ctx[5] ? "mdc-button--dense" : "") + "\n    " + (/*color*/ ctx[3] === "secondary"
-    						? "smui-button--color-secondary"
-    						: "") + "\n    " + (/*context*/ ctx[12] === "card:action"
-    						? "mdc-card__action"
-    						: "") + "\n    " + (/*context*/ ctx[12] === "card:action"
-    						? "mdc-card__action--button"
-    						: "") + "\n    " + (/*context*/ ctx[12] === "dialog:action"
-    						? "mdc-dialog__button"
-    						: "") + "\n    " + (/*context*/ ctx[12] === "top-app-bar:navigation"
-    						? "mdc-top-app-bar__navigation-icon"
-    						: "") + "\n    " + (/*context*/ ctx[12] === "top-app-bar:action"
-    						? "mdc-top-app-bar__action-item"
-    						: "") + "\n    " + (/*context*/ ctx[12] === "snackbar"
-    						? "mdc-snackbar__action"
-    						: "") + "\n  "
-    					},
-    					dirty & /*actionProp*/ 512 && get_spread_object(/*actionProp*/ ctx[9]),
-    					dirty & /*defaultProp*/ 1024 && get_spread_object(/*defaultProp*/ ctx[10]),
-    					dirty & /*exclude, $$props, dialogExcludes*/ 8448 && get_spread_object(exclude(/*$$props*/ ctx[13], [
-    						"use",
-    						"class",
-    						"ripple",
-    						"color",
-    						"variant",
-    						"dense",
-    						.../*dialogExcludes*/ ctx[8]
-    					]))
-    				])
-    			: {};
-
-    			if (dirty & /*$$scope*/ 524288) {
-    				switch_instance_changes.$$scope = { dirty, ctx };
-    			}
-
-    			if (switch_value !== (switch_value = /*component*/ ctx[6])) {
-    				if (switch_instance) {
-    					group_outros();
-    					const old_component = switch_instance;
-
-    					transition_out(old_component.$$.fragment, 1, 0, () => {
-    						destroy_component(old_component, 1);
-    					});
-
-    					check_outros();
-    				}
-
-    				if (switch_value) {
-    					switch_instance = new switch_value(switch_props(ctx));
-    					create_component(switch_instance.$$.fragment);
-    					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
-    				} else {
-    					switch_instance = null;
-    				}
-    			} else if (switch_value) {
-    				switch_instance.$set(switch_instance_changes);
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(switch_instance_anchor);
-    			if (switch_instance) destroy_component(switch_instance, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$c.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$c($$self, $$props, $$invalidate) {
-    	const forwardEvents = forwardEventsBuilder(current_component);
-    	let { use = [] } = $$props;
-    	let { class: className = "" } = $$props;
-    	let { ripple = true } = $$props;
-    	let { color = "primary" } = $$props;
-    	let { variant = "text" } = $$props;
-    	let { dense = false } = $$props;
-    	let { href = null } = $$props;
-    	let { action = "close" } = $$props;
-    	let { default: defaultAction = false } = $$props;
-    	let { component = href == null ? Button : A } = $$props;
-    	let context = getContext("SMUI:button:context");
-    	let rippleClasses = [];
-    	setContext("SMUI:label:context", "button");
-    	setContext("SMUI:icon:context", "button");
-    	let { $$slots = {}, $$scope } = $$props;
-    	const func = classes => $$invalidate(7, rippleClasses = classes);
-
-    	$$self.$set = $$new_props => {
-    		$$invalidate(13, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
-    		if ("use" in $$new_props) $$invalidate(0, use = $$new_props.use);
-    		if ("class" in $$new_props) $$invalidate(1, className = $$new_props.class);
-    		if ("ripple" in $$new_props) $$invalidate(2, ripple = $$new_props.ripple);
-    		if ("color" in $$new_props) $$invalidate(3, color = $$new_props.color);
-    		if ("variant" in $$new_props) $$invalidate(4, variant = $$new_props.variant);
-    		if ("dense" in $$new_props) $$invalidate(5, dense = $$new_props.dense);
-    		if ("href" in $$new_props) $$invalidate(14, href = $$new_props.href);
-    		if ("action" in $$new_props) $$invalidate(15, action = $$new_props.action);
-    		if ("default" in $$new_props) $$invalidate(16, defaultAction = $$new_props.default);
-    		if ("component" in $$new_props) $$invalidate(6, component = $$new_props.component);
-    		if ("$$scope" in $$new_props) $$invalidate(19, $$scope = $$new_props.$$scope);
-    	};
-
-    	$$self.$capture_state = () => ({
-    		setContext,
-    		getContext,
-    		current_component,
-    		forwardEventsBuilder,
-    		exclude,
-    		useActions,
-    		A,
-    		Button,
-    		Ripple,
-    		forwardEvents,
-    		use,
-    		className,
-    		ripple,
-    		color,
-    		variant,
-    		dense,
-    		href,
-    		action,
-    		defaultAction,
-    		component,
-    		context,
-    		rippleClasses,
-    		dialogExcludes,
-    		actionProp,
-    		defaultProp
-    	});
-
-    	$$self.$inject_state = $$new_props => {
-    		$$invalidate(13, $$props = assign(assign({}, $$props), $$new_props));
-    		if ("use" in $$props) $$invalidate(0, use = $$new_props.use);
-    		if ("className" in $$props) $$invalidate(1, className = $$new_props.className);
-    		if ("ripple" in $$props) $$invalidate(2, ripple = $$new_props.ripple);
-    		if ("color" in $$props) $$invalidate(3, color = $$new_props.color);
-    		if ("variant" in $$props) $$invalidate(4, variant = $$new_props.variant);
-    		if ("dense" in $$props) $$invalidate(5, dense = $$new_props.dense);
-    		if ("href" in $$props) $$invalidate(14, href = $$new_props.href);
-    		if ("action" in $$props) $$invalidate(15, action = $$new_props.action);
-    		if ("defaultAction" in $$props) $$invalidate(16, defaultAction = $$new_props.defaultAction);
-    		if ("component" in $$props) $$invalidate(6, component = $$new_props.component);
-    		if ("context" in $$props) $$invalidate(12, context = $$new_props.context);
-    		if ("rippleClasses" in $$props) $$invalidate(7, rippleClasses = $$new_props.rippleClasses);
-    		if ("dialogExcludes" in $$props) $$invalidate(8, dialogExcludes = $$new_props.dialogExcludes);
-    		if ("actionProp" in $$props) $$invalidate(9, actionProp = $$new_props.actionProp);
-    		if ("defaultProp" in $$props) $$invalidate(10, defaultProp = $$new_props.defaultProp);
-    	};
-
-    	let dialogExcludes;
-    	let actionProp;
-    	let defaultProp;
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*action*/ 32768) {
-    			 $$invalidate(9, actionProp = context === "dialog:action" && action !== null
-    			? { "data-mdc-dialog-action": action }
-    			: {});
-    		}
-
-    		if ($$self.$$.dirty & /*defaultAction*/ 65536) {
-    			 $$invalidate(10, defaultProp = context === "dialog:action" && defaultAction
-    			? { "data-mdc-dialog-button-default": "" }
-    			: {});
-    		}
-    	};
-
-    	 $$invalidate(8, dialogExcludes = context === "dialog:action" ? ["action", "default"] : []);
-    	$$props = exclude_internal_props($$props);
-
-    	return [
-    		use,
-    		className,
-    		ripple,
-    		color,
-    		variant,
-    		dense,
-    		component,
-    		rippleClasses,
-    		dialogExcludes,
-    		actionProp,
-    		defaultProp,
-    		forwardEvents,
-    		context,
-    		$$props,
-    		href,
-    		action,
-    		defaultAction,
-    		$$slots,
-    		func,
-    		$$scope
-    	];
-    }
-
-    class Button_1$1 extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-
-    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {
-    			use: 0,
-    			class: 1,
-    			ripple: 2,
-    			color: 3,
-    			variant: 4,
-    			dense: 5,
-    			href: 14,
-    			action: 15,
-    			default: 16,
-    			component: 6
-    		});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Button_1",
-    			options,
-    			id: create_fragment$c.name
-    		});
-    	}
-
-    	get use() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set use(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get class() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set class(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get ripple() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ripple(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get color() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set color(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get variant() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set variant(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get dense() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set dense(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get href() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set href(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get action() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set action(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get default() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set default(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get component() {
-    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set component(value) {
-    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
     const userStore = writable({ email: "", loggedIn: false });
 
     auth.onAuthStateChanged(function(authData) {
@@ -28757,6 +28292,7 @@
         ARIA_PRESSED: 'aria-pressed',
         CHANGE_EVENT: 'MDCIconButtonToggle:change',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -28834,6 +28370,7 @@
         };
         return MDCIconButtonToggleFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -28915,6 +28452,7 @@
         };
         return MDCIconButtonToggle;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\icon-button\IconButton.svelte generated by Svelte v3.19.1 */
     const file$a = "node_modules\\@smui\\icon-button\\IconButton.svelte";
@@ -29169,7 +28707,7 @@
     	return block;
     }
 
-    function create_fragment$d(ctx) {
+    function create_fragment$c(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -29240,7 +28778,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$c.name,
     		type: "component",
     		source: "",
     		ctx
@@ -29249,7 +28787,7 @@
     	return block;
     }
 
-    function instance$d($$self, $$props, $$invalidate) {
+    function instance$c($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["MDCIconButtonToggle:change"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -29404,7 +28942,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {
     			use: 1,
     			class: 2,
     			ripple: 3,
@@ -29418,7 +28956,7 @@
     			component: this,
     			tagName: "IconButton",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$c.name
     		});
     	}
 
@@ -29547,6 +29085,7 @@
          */
         ARIA_LIVE_DELAY_MS: 1000,
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -29626,6 +29165,7 @@
             labelEl.textContent = labelText;
         }, ARIA_LIVE_DELAY_MS);
     }
+    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -29813,6 +29353,7 @@
         };
         return MDCSnackbarFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -29968,11 +29509,12 @@
         };
         return MDCSnackbar;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\snackbar\Snackbar.svelte generated by Svelte v3.19.1 */
     const file$b = "node_modules\\@smui\\snackbar\\Snackbar.svelte";
 
-    function create_fragment$e(ctx) {
+    function create_fragment$d(ctx) {
     	let div1;
     	let div0;
     	let useActions_action;
@@ -30086,7 +29628,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$e.name,
+    		id: create_fragment$d.name,
     		type: "component",
     		source: "",
     		ctx
@@ -30097,7 +29639,7 @@
 
     let waiting = Promise.resolve();
 
-    function instance$e($$self, $$props, $$invalidate) {
+    function instance$d($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, [
     		"MDCSnackbar:opening",
     		"MDCSnackbar:opened",
@@ -30300,7 +29842,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {
     			use: 0,
     			class: 1,
     			variant: 2,
@@ -30321,7 +29863,7 @@
     			component: this,
     			tagName: "Snackbar",
     			options,
-    			id: create_fragment$e.name
+    			id: create_fragment$d.name
     		});
     	}
 
@@ -30463,7 +30005,7 @@
     	];
 
     	let snackbar_props = {
-    		$$slots: { default: [create_default_slot$4] },
+    		$$slots: { default: [create_default_slot$3] },
     		$$scope: { ctx }
     	};
 
@@ -30723,7 +30265,7 @@
     		button_props = assign(button_props, button_spread_levels[i]);
     	}
 
-    	const button = new Button_1$1({ props: button_props, $$inline: true });
+    	const button = new Button_1({ props: button_props, $$inline: true });
     	button.$on("click", click_handler);
 
     	const block = {
@@ -30969,7 +30511,7 @@
     }
 
     // (2:2) <Snackbar     bind:this={component}     on:MDCSnackbar:closed={handleClosed}     labelText={config.label}     {...(config && config.props || {})}     {...prefixFilter($$props, 'snackbar$')}   >
-    function create_default_slot$4(ctx) {
+    function create_default_slot$3(ctx) {
     	let t;
     	let if_block_anchor;
     	let current;
@@ -31045,7 +30587,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$4.name,
+    		id: create_default_slot$3.name,
     		type: "slot",
     		source: "(2:2) <Snackbar     bind:this={component}     on:MDCSnackbar:closed={handleClosed}     labelText={config.label}     {...(config && config.props || {})}     {...prefixFilter($$props, 'snackbar$')}   >",
     		ctx
@@ -31054,7 +30596,7 @@
     	return block;
     }
 
-    function create_fragment$f(ctx) {
+    function create_fragment$e(ctx) {
     	let if_block_anchor;
     	let current;
     	let if_block = /*config*/ ctx[1] && create_if_block$2(ctx);
@@ -31110,7 +30652,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$f.name,
+    		id: create_fragment$e.name,
     		type: "component",
     		source: "",
     		ctx
@@ -31119,7 +30661,7 @@
     	return block;
     }
 
-    function instance$f($$self, $$props, $$invalidate) {
+    function instance$e($$self, $$props, $$invalidate) {
     	let snackbars = [];
     	let component;
     	let config = null;
@@ -31156,7 +30698,7 @@
     	$$self.$capture_state = () => ({
     		tick,
     		Label,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		IconButton,
     		prefixFilter,
     		Snackbar,
@@ -31216,13 +30758,13 @@
     class Kitchen extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$f, create_fragment$f, safe_not_equal, { push: 4 });
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, { push: 4 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Kitchen",
     			options,
-    			id: create_fragment$f.name
+    			id: create_fragment$e.name
     		});
     	}
 
@@ -32825,7 +32367,7 @@
     function create_default_slot_1$2(ctx) {
     	let current;
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				action: "accept",
     				$$slots: { default: [create_default_slot_2$2] },
@@ -32877,7 +32419,7 @@
     }
 
     // (91:4) <Dialog bind:this={selectedFactDialog} aria-labelledby="list-title" aria-describedby="list-content">
-    function create_default_slot$5(ctx) {
+    function create_default_slot$4(ctx) {
     	let t0;
     	let t1;
     	let current;
@@ -32970,7 +32512,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$5.name,
+    		id: create_default_slot$4.name,
     		type: "slot",
     		source: "(91:4) <Dialog bind:this={selectedFactDialog} aria-labelledby=\\\"list-title\\\" aria-describedby=\\\"list-content\\\">",
     		ctx
@@ -32979,7 +32521,7 @@
     	return block;
     }
 
-    function create_fragment$g(ctx) {
+    function create_fragment$f(ctx) {
     	let div0;
     	let t0;
     	let div1;
@@ -32988,7 +32530,7 @@
     	let t2;
     	let current;
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				href: "/contribute",
     				variant: "raised",
@@ -33014,7 +32556,7 @@
     	let dialog_props = {
     		"aria-labelledby": "list-title",
     		"aria-describedby": "list-content",
-    		$$slots: { default: [create_default_slot$5] },
+    		$$slots: { default: [create_default_slot$4] },
     		$$scope: { ctx }
     	};
 
@@ -33154,7 +32696,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$g.name,
+    		id: create_fragment$f.name,
     		type: "component",
     		source: "",
     		ctx
@@ -33173,7 +32715,7 @@
     	});
     }
 
-    function instance$g($$self, $$props, $$invalidate) {
+    function instance$f($$self, $$props, $$invalidate) {
     	let $svelteFactStore;
     	validate_store(svelteFactStore, "svelteFactStore");
     	component_subscribe($$self, svelteFactStore, $$value => $$invalidate(4, $svelteFactStore = $$value));
@@ -33257,7 +32799,7 @@
     		InitialFocus,
     		notify,
     		Fact,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		userStore,
     		Kitchen,
@@ -33305,13 +32847,13 @@
     class Facts extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$g, create_fragment$g, safe_not_equal, { params: 7 });
+    		init(this, options, instance$f, create_fragment$f, safe_not_equal, { params: 7 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Facts",
     			options,
-    			id: create_fragment$g.name
+    			id: create_fragment$f.name
     		});
 
     		const { ctx } = this.$$;
@@ -33436,7 +32978,7 @@
     			props: {
     				variant: "raised",
     				class: "formButton",
-    				$$slots: { default: [create_default_slot$6] },
+    				$$slots: { default: [create_default_slot$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -33514,7 +33056,7 @@
     }
 
     // (37:8) <Button on:click={deleteLocation}         variant="raised"          class="formButton">
-    function create_default_slot$6(ctx) {
+    function create_default_slot$5(ctx) {
     	let current;
 
     	const label = new Label({
@@ -33558,7 +33100,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$6.name,
+    		id: create_default_slot$5.name,
     		type: "slot",
     		source: "(37:8) <Button on:click={deleteLocation}         variant=\\\"raised\\\"          class=\\\"formButton\\\">",
     		ctx
@@ -33567,7 +33109,7 @@
     	return block;
     }
 
-    function create_fragment$h(ctx) {
+    function create_fragment$g(ctx) {
     	let div4;
     	let div0;
     	let t0_value = /*image*/ ctx[0].imageTitle + "";
@@ -33703,7 +33245,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$h.name,
+    		id: create_fragment$g.name,
     		type: "component",
     		source: "",
     		ctx
@@ -33712,7 +33254,7 @@
     	return block;
     }
 
-    function instance$h($$self, $$props, $$invalidate) {
+    function instance$g($$self, $$props, $$invalidate) {
     	let { image } = $$props;
     	let { hasDeleteButton } = $$props;
     	let landscapeClass = "portrait";
@@ -33779,13 +33321,13 @@
     class Image$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$h, create_fragment$h, safe_not_equal, { image: 0, hasDeleteButton: 1 });
+    		init(this, options, instance$g, create_fragment$g, safe_not_equal, { image: 0, hasDeleteButton: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Image",
     			options,
-    			id: create_fragment$h.name
+    			id: create_fragment$g.name
     		});
 
     		const { ctx } = this.$$;
@@ -33936,7 +33478,7 @@
     	return block;
     }
 
-    function create_fragment$i(ctx) {
+    function create_fragment$h(ctx) {
     	let div;
     	let ul;
     	let t;
@@ -34050,7 +33592,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$i.name,
+    		id: create_fragment$h.name,
     		type: "component",
     		source: "",
     		ctx
@@ -34070,7 +33612,7 @@
     	);
     }
 
-    function instance$i($$self, $$props, $$invalidate) {
+    function instance$h($$self, $$props, $$invalidate) {
     	let $localStore;
     	const localStore = getImages();
     	validate_store(localStore, "localStore");
@@ -34147,13 +33689,13 @@
     class Images extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$i, create_fragment$i, safe_not_equal, {});
+    		init(this, options, instance$h, create_fragment$h, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Images",
     			options,
-    			id: create_fragment$i.name
+    			id: create_fragment$h.name
     		});
     	}
     }
@@ -34161,7 +33703,7 @@
     /* src\components\Map.svelte generated by Svelte v3.19.1 */
     const file$f = "src\\components\\Map.svelte";
 
-    function create_fragment$j(ctx) {
+    function create_fragment$i(ctx) {
     	let div1;
     	let div0;
 
@@ -34194,7 +33736,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$j.name,
+    		id: create_fragment$i.name,
     		type: "component",
     		source: "",
     		ctx
@@ -34212,7 +33754,7 @@
     </div></div>`;
     }
 
-    function instance$j($$self, $$props, $$invalidate) {
+    function instance$i($$self, $$props, $$invalidate) {
     	let { params } = $$props;
     	let map;
     	let mapElement;
@@ -34354,13 +33896,13 @@
     class Map$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$j, create_fragment$j, safe_not_equal, { params: 1 });
+    		init(this, options, instance$i, create_fragment$i, safe_not_equal, { params: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Map",
     			options,
-    			id: create_fragment$j.name
+    			id: create_fragment$i.name
     		});
 
     		const { ctx } = this.$$;
@@ -34587,7 +34129,7 @@
     	let t;
     	let current;
 
-    	const button0 = new Button_1$1({
+    	const button0 = new Button_1({
     			props: {
     				disabled: /*isWorking*/ ctx[0],
     				variant: "raised",
@@ -34600,12 +34142,12 @@
 
     	button0.$on("click", /*click_handler*/ ctx[3]);
 
-    	const button1 = new Button_1$1({
+    	const button1 = new Button_1({
     			props: {
     				disabled: /*isWorking*/ ctx[0],
     				variant: "raised",
     				class: "formButton",
-    				$$slots: { default: [create_default_slot$7] },
+    				$$slots: { default: [create_default_slot$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34781,7 +34323,7 @@
     }
 
     // (37:4) <Button       on:click={() => togglePush(false)}      disabled={isWorking}        variant="raised"      class="formButton">
-    function create_default_slot$7(ctx) {
+    function create_default_slot$6(ctx) {
     	let current;
 
     	const label = new Label({
@@ -34825,7 +34367,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$7.name,
+    		id: create_default_slot$6.name,
     		type: "slot",
     		source: "(37:4) <Button       on:click={() => togglePush(false)}      disabled={isWorking}        variant=\\\"raised\\\"      class=\\\"formButton\\\">",
     		ctx
@@ -34834,7 +34376,7 @@
     	return block;
     }
 
-    function create_fragment$k(ctx) {
+    function create_fragment$j(ctx) {
     	let div;
     	let h1;
     	let t1;
@@ -34908,7 +34450,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$k.name,
+    		id: create_fragment$j.name,
     		type: "component",
     		source: "",
     		ctx
@@ -34917,7 +34459,7 @@
     	return block;
     }
 
-    function instance$k($$self, $$props, $$invalidate) {
+    function instance$j($$self, $$props, $$invalidate) {
     	let isWorking = false;
     	let isPushFeatured = "serviceWorker" in navigator && "PushManager" in window;
 
@@ -34943,7 +34485,7 @@
     		enablePush,
     		getCurrentSubscription,
     		notify,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		isWorking,
     		isPushFeatured,
@@ -34967,13 +34509,13 @@
     class Settings extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$k, create_fragment$k, safe_not_equal, {});
+    		init(this, options, instance$j, create_fragment$j, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Settings",
     			options,
-    			id: create_fragment$k.name
+    			id: create_fragment$j.name
     		});
     	}
     }
@@ -35367,6 +34909,7 @@
         LABEL_SHAKE: 'mdc-floating-label--shake',
         ROOT: 'mdc-floating-label',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35467,6 +35010,7 @@
         };
         return MDCFloatingLabelFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35532,6 +35076,7 @@
         };
         return MDCFloatingLabel;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35559,6 +35104,7 @@
         LINE_RIPPLE_ACTIVE: 'mdc-line-ripple--active',
         LINE_RIPPLE_DEACTIVATING: 'mdc-line-ripple--deactivating',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35644,6 +35190,7 @@
         };
         return MDCLineRippleFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35712,6 +35259,7 @@
         };
         return MDCLineRipple;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35747,6 +35295,7 @@
         OUTLINE_NOTCHED: 'mdc-notched-outline--notched',
         OUTLINE_UPGRADED: 'mdc-notched-outline--upgraded',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35834,6 +35383,7 @@
         };
         return MDCNotchedOutlineFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35908,6 +35458,7 @@
         };
         return MDCNotchedOutline;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35937,6 +35488,7 @@
     var strings$7 = {
         ROOT_SELECTOR: "." + cssClasses$7.ROOT,
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35997,6 +35549,7 @@
         };
         return MDCTextFieldCharacterCounterFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36048,6 +35601,7 @@
         };
         return MDCTextFieldCharacterCounter;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -36110,6 +35664,7 @@
     var ALWAYS_FLOAT_TYPES = [
         'color', 'date', 'datetime-local', 'month', 'range', 'time', 'week',
     ];
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36564,6 +36119,7 @@
         };
         return MDCTextFieldFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36597,6 +36153,7 @@
         ROLE: 'role',
         ROOT_SELECTOR: "." + cssClasses$9.ROOT,
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36717,6 +36274,7 @@
         };
         return MDCTextFieldHelperTextFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36775,6 +36333,7 @@
         };
         return MDCTextFieldHelperText;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -36805,6 +36364,7 @@
     var cssClasses$a = {
         ROOT: 'mdc-text-field__icon',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36911,6 +36471,7 @@
         };
         return MDCTextFieldIconFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36970,6 +36531,7 @@
         };
         return MDCTextFieldIcon;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -37406,6 +36968,7 @@
         };
         return MDCTextField;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\floating-label\FloatingLabel.svelte generated by Svelte v3.19.1 */
     const file$h = "node_modules\\@smui\\floating-label\\FloatingLabel.svelte";
@@ -37594,7 +37157,7 @@
     	return block;
     }
 
-    function create_fragment$l(ctx) {
+    function create_fragment$k(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -37665,7 +37228,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$l.name,
+    		id: create_fragment$k.name,
     		type: "component",
     		source: "",
     		ctx
@@ -37674,7 +37237,7 @@
     	return block;
     }
 
-    function instance$l($$self, $$props, $$invalidate) {
+    function instance$k($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -37790,7 +37353,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$l, create_fragment$l, safe_not_equal, {
+    		init(this, options, instance$k, create_fragment$k, safe_not_equal, {
     			use: 0,
     			class: 1,
     			for: 2,
@@ -37804,7 +37367,7 @@
     			component: this,
     			tagName: "FloatingLabel",
     			options,
-    			id: create_fragment$l.name
+    			id: create_fragment$k.name
     		});
     	}
 
@@ -37868,7 +37431,7 @@
     /* node_modules\@smui\line-ripple\LineRipple.svelte generated by Svelte v3.19.1 */
     const file$i = "node_modules\\@smui\\line-ripple\\LineRipple.svelte";
 
-    function create_fragment$m(ctx) {
+    function create_fragment$l(ctx) {
     	let div;
     	let useActions_action;
     	let forwardEvents_action;
@@ -37926,7 +37489,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$m.name,
+    		id: create_fragment$l.name,
     		type: "component",
     		source: "",
     		ctx
@@ -37935,7 +37498,7 @@
     	return block;
     }
 
-    function instance$m($$self, $$props, $$invalidate) {
+    function instance$l($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -38029,7 +37592,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$m, create_fragment$m, safe_not_equal, {
+    		init(this, options, instance$l, create_fragment$l, safe_not_equal, {
     			use: 0,
     			class: 1,
     			active: 2,
@@ -38042,7 +37605,7 @@
     			component: this,
     			tagName: "LineRipple",
     			options,
-    			id: create_fragment$m.name
+    			id: create_fragment$l.name
     		});
     	}
 
@@ -38152,7 +37715,7 @@
     	return block;
     }
 
-    function create_fragment$n(ctx) {
+    function create_fragment$m(ctx) {
     	let div2;
     	let div0;
     	let t0;
@@ -38263,7 +37826,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$n.name,
+    		id: create_fragment$m.name,
     		type: "component",
     		source: "",
     		ctx
@@ -38272,7 +37835,7 @@
     	return block;
     }
 
-    function instance$n($$self, $$props, $$invalidate) {
+    function instance$m($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -38370,7 +37933,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$n, create_fragment$n, safe_not_equal, {
+    		init(this, options, instance$m, create_fragment$m, safe_not_equal, {
     			use: 0,
     			class: 1,
     			notched: 2,
@@ -38383,7 +37946,7 @@
     			component: this,
     			tagName: "NotchedOutline",
     			options,
-    			id: create_fragment$n.name
+    			id: create_fragment$m.name
     		});
     	}
 
@@ -38439,7 +38002,7 @@
     /* node_modules\@smui\textfield\Input.svelte generated by Svelte v3.19.1 */
     const file$k = "node_modules\\@smui\\textfield\\Input.svelte";
 
-    function create_fragment$o(ctx) {
+    function create_fragment$n(ctx) {
     	let input;
     	let useActions_action;
     	let forwardEvents_action;
@@ -38522,7 +38085,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$o.name,
+    		id: create_fragment$n.name,
     		type: "component",
     		source: "",
     		ctx
@@ -38541,7 +38104,7 @@
     	return +value;
     }
 
-    function instance$o($$self, $$props, $$invalidate) {
+    function instance$n($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["change", "input"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -38682,7 +38245,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$o, create_fragment$o, safe_not_equal, {
+    		init(this, options, instance$n, create_fragment$n, safe_not_equal, {
     			use: 0,
     			class: 1,
     			type: 2,
@@ -38697,7 +38260,7 @@
     			component: this,
     			tagName: "Input",
     			options,
-    			id: create_fragment$o.name
+    			id: create_fragment$n.name
     		});
     	}
 
@@ -38769,7 +38332,7 @@
     /* node_modules\@smui\textfield\Textarea.svelte generated by Svelte v3.19.1 */
     const file$l = "node_modules\\@smui\\textfield\\Textarea.svelte";
 
-    function create_fragment$p(ctx) {
+    function create_fragment$o(ctx) {
     	let textarea;
     	let useActions_action;
     	let forwardEvents_action;
@@ -38834,7 +38397,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$p.name,
+    		id: create_fragment$o.name,
     		type: "component",
     		source: "",
     		ctx
@@ -38843,7 +38406,7 @@
     	return block;
     }
 
-    function instance$p($$self, $$props, $$invalidate) {
+    function instance$o($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["change", "input"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -38942,7 +38505,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$p, create_fragment$p, safe_not_equal, {
+    		init(this, options, instance$o, create_fragment$o, safe_not_equal, {
     			use: 1,
     			class: 2,
     			value: 0,
@@ -38955,7 +38518,7 @@
     			component: this,
     			tagName: "Textarea",
     			options,
-    			id: create_fragment$p.name
+    			id: create_fragment$o.name
     		});
     	}
 
@@ -39852,7 +39415,7 @@
     	];
 
     	let notchedoutline_props = {
-    		$$slots: { default: [create_default_slot$8] },
+    		$$slots: { default: [create_default_slot$7] },
     		$$scope: { ctx }
     	};
 
@@ -40035,7 +39598,7 @@
     }
 
     // (58:6) <NotchedOutline noLabel={noLabel || label == null} {...prefixFilter($$props, 'outline$')}>
-    function create_default_slot$8(ctx) {
+    function create_default_slot$7(ctx) {
     	let if_block_anchor;
     	let current;
     	let if_block = !/*noLabel*/ ctx[14] && /*label*/ ctx[15] != null && create_if_block_2$1(ctx);
@@ -40088,7 +39651,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$8.name,
+    		id: create_default_slot$7.name,
     		type: "slot",
     		source: "(58:6) <NotchedOutline noLabel={noLabel || label == null} {...prefixFilter($$props, 'outline$')}>",
     		ctx
@@ -40097,7 +39660,7 @@
     	return block;
     }
 
-    function create_fragment$q(ctx) {
+    function create_fragment$p(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -40168,7 +39731,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$q.name,
+    		id: create_fragment$p.name,
     		type: "component",
     		source: "",
     		ctx
@@ -40177,7 +39740,7 @@
     	return block;
     }
 
-    function instance$q($$self, $$props, $$invalidate) {
+    function instance$p($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
 
     	let uninitializedValue = () => {
@@ -40525,8 +40088,8 @@
     		init(
     			this,
     			options,
-    			instance$q,
-    			create_fragment$q,
+    			instance$p,
+    			create_fragment$p,
     			safe_not_equal,
     			{
     				use: 4,
@@ -40558,7 +40121,7 @@
     			component: this,
     			tagName: "Textfield",
     			options,
-    			id: create_fragment$q.name
+    			id: create_fragment$p.name
     		});
     	}
 
@@ -40736,7 +40299,7 @@
     const get_character_counter_slot_changes = dirty => ({});
     const get_character_counter_slot_context = ctx => ({});
 
-    function create_fragment$r(ctx) {
+    function create_fragment$q(ctx) {
     	let div1;
     	let div0;
     	let useActions_action;
@@ -40874,7 +40437,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$r.name,
+    		id: create_fragment$q.name,
     		type: "component",
     		source: "",
     		ctx
@@ -40883,7 +40446,7 @@
     	return block;
     }
 
-    function instance$r($$self, $$props, $$invalidate) {
+    function instance$q($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -40980,7 +40543,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$r, create_fragment$r, safe_not_equal, {
+    		init(this, options, instance$q, create_fragment$q, safe_not_equal, {
     			use: 0,
     			class: 1,
     			persistent: 2,
@@ -40993,7 +40556,7 @@
     			component: this,
     			tagName: "HelperText",
     			options,
-    			id: create_fragment$r.name
+    			id: create_fragment$q.name
     		});
     	}
 
@@ -41107,6 +40670,7 @@
         DISABLED: 'mdc-radio--disabled',
         ROOT: 'mdc-radio',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -41172,6 +40736,7 @@
         };
         return MDCRadioFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -41283,11 +40848,12 @@
         });
         return MDCRadio;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\radio\Radio.svelte generated by Svelte v3.19.1 */
     const file$o = "node_modules\\@smui\\radio\\Radio.svelte";
 
-    function create_fragment$s(ctx) {
+    function create_fragment$r(ctx) {
     	let div3;
     	let input;
     	let useActions_action;
@@ -41416,7 +40982,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$s.name,
+    		id: create_fragment$r.name,
     		type: "component",
     		source: "",
     		ctx
@@ -41425,7 +40991,7 @@
     	return block;
     }
 
-    function instance$s($$self, $$props, $$invalidate) {
+    function instance$r($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
 
     	let uninitializedValue = () => {
@@ -41617,7 +41183,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$s, create_fragment$s, safe_not_equal, {
+    		init(this, options, instance$r, create_fragment$r, safe_not_equal, {
     			use: 0,
     			class: 1,
     			disabled: 2,
@@ -41633,7 +41199,7 @@
     			component: this,
     			tagName: "Radio",
     			options,
-    			id: create_fragment$s.name
+    			id: create_fragment$r.name
     		});
     	}
 
@@ -41738,6 +41304,7 @@
     var strings$c = {
         LABEL_SELECTOR: '.mdc-form-field > label',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -41807,6 +41374,7 @@
         };
         return MDCFormFieldFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -41886,13 +41454,14 @@
         };
         return MDCFormField;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\form-field\FormField.svelte generated by Svelte v3.19.1 */
     const file$p = "node_modules\\@smui\\form-field\\FormField.svelte";
     const get_label_slot_changes$1 = dirty => ({});
     const get_label_slot_context$1 = ctx => ({});
 
-    function create_fragment$t(ctx) {
+    function create_fragment$s(ctx) {
     	let div;
     	let t;
     	let label;
@@ -42019,7 +41588,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$t.name,
+    		id: create_fragment$s.name,
     		type: "component",
     		source: "",
     		ctx
@@ -42030,7 +41599,7 @@
 
     let counter = 0;
 
-    function instance$t($$self, $$props, $$invalidate) {
+    function instance$s($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -42126,7 +41695,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$t, create_fragment$t, safe_not_equal, {
+    		init(this, options, instance$s, create_fragment$s, safe_not_equal, {
     			use: 0,
     			class: 1,
     			align: 2,
@@ -42138,7 +41707,7 @@
     			component: this,
     			tagName: "FormField",
     			options,
-    			id: create_fragment$t.name
+    			id: create_fragment$s.name
     		});
     	}
 
@@ -42648,11 +42217,11 @@
     			$$inline: true
     		});
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				variant: "raised",
     				class: "formButton",
-    				$$slots: { default: [create_default_slot$9] },
+    				$$slots: { default: [create_default_slot$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -42836,7 +42405,7 @@
     }
 
     // (130:8) <Button  on:click="{getByAddress}"         variant="raised"         class="formButton">
-    function create_default_slot$9(ctx) {
+    function create_default_slot$8(ctx) {
     	let current;
 
     	const label = new Label({
@@ -42880,7 +42449,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$9.name,
+    		id: create_default_slot$8.name,
     		type: "slot",
     		source: "(130:8) <Button  on:click=\\\"{getByAddress}\\\"         variant=\\\"raised\\\"         class=\\\"formButton\\\">",
     		ctx
@@ -42980,7 +42549,7 @@
     	return block;
     }
 
-    function create_fragment$u(ctx) {
+    function create_fragment$t(ctx) {
     	let div1;
     	let h2;
     	let t1;
@@ -43184,7 +42753,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$u.name,
+    		id: create_fragment$t.name,
     		type: "component",
     		source: "",
     		ctx
@@ -43193,7 +42762,7 @@
     	return block;
     }
 
-    function instance$u($$self, $$props, $$invalidate) {
+    function instance$t($$self, $$props, $$invalidate) {
     	const dispatch = createEventDispatcher();
     	let { location = {} } = $$props;
     	let map;
@@ -43352,7 +42921,7 @@
     		onMount,
     		getPositionByCoords,
     		getPositionByAddress,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		Textfield,
     		HelperText,
@@ -43416,13 +42985,13 @@
     class LocationSelector extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$u, create_fragment$u, safe_not_equal, { location: 0 });
+    		init(this, options, instance$t, create_fragment$t, safe_not_equal, { location: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "LocationSelector",
     			options,
-    			id: create_fragment$u.name
+    			id: create_fragment$t.name
     		});
     	}
 
@@ -43463,12 +43032,12 @@
 
     	let if_block = /*fullsizeImage*/ ctx[2] && create_if_block_1$4(ctx);
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				disabled: !/*thumbnailImage*/ ctx[1],
     				variant: "raised",
     				class: "formButton",
-    				$$slots: { default: [create_default_slot$a] },
+    				$$slots: { default: [create_default_slot$9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -43730,7 +43299,7 @@
     }
 
     // (73:16) <Button on:click="{deleteImages}"                 disabled={!thumbnailImage}                   variant="raised"                 class="formButton">
-    function create_default_slot$a(ctx) {
+    function create_default_slot$9(ctx) {
     	let current;
 
     	const label = new Label({
@@ -43774,7 +43343,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$a.name,
+    		id: create_default_slot$9.name,
     		type: "slot",
     		source: "(73:16) <Button on:click=\\\"{deleteImages}\\\"                 disabled={!thumbnailImage}                   variant=\\\"raised\\\"                 class=\\\"formButton\\\">",
     		ctx
@@ -43783,7 +43352,7 @@
     	return block;
     }
 
-    function create_fragment$v(ctx) {
+    function create_fragment$u(ctx) {
     	let div2;
     	let h2;
     	let t1;
@@ -43896,7 +43465,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$v.name,
+    		id: create_fragment$u.name,
     		type: "component",
     		source: "",
     		ctx
@@ -43928,7 +43497,7 @@
     		});
     }
 
-    function instance$v($$self, $$props, $$invalidate) {
+    function instance$u($$self, $$props, $$invalidate) {
     	const dispatch = createEventDispatcher();
     	let uploadedFiles = [];
     	let thumbnailImage = null;
@@ -43961,7 +43530,7 @@
     		IconButton,
     		Icon,
     		notify,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		onMount,
     		LocationSelector,
@@ -44002,13 +43571,13 @@
     class ImageSelector extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$v, create_fragment$v, safe_not_equal, {});
+    		init(this, options, instance$u, create_fragment$u, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "ImageSelector",
     			options,
-    			id: create_fragment$v.name
+    			id: create_fragment$u.name
     		});
     	}
     }
@@ -44098,7 +43667,7 @@
     }
 
     // (117:4) <Button      disabled={!($imageForm.valid && imageObj.funFact.length > 0 && fullsizeImage && thumbnailImage && location)}       variant="raised"     class="formButton">
-    function create_default_slot$b(ctx) {
+    function create_default_slot$a(ctx) {
     	let current;
 
     	const label = new Label({
@@ -44142,7 +43711,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$b.name,
+    		id: create_default_slot$a.name,
     		type: "slot",
     		source: "(117:4) <Button      disabled={!($imageForm.valid && imageObj.funFact.length > 0 && fullsizeImage && thumbnailImage && location)}       variant=\\\"raised\\\"     class=\\\"formButton\\\">",
     		ctx
@@ -44151,7 +43720,7 @@
     	return block;
     }
 
-    function create_fragment$w(ctx) {
+    function create_fragment$v(ctx) {
     	let div2;
     	let h1;
     	let t1;
@@ -44242,12 +43811,12 @@
     	const locationselector = new LocationSelector({ $$inline: true });
     	locationselector.$on("locationChoosen", /*updateLocation*/ ctx[5]);
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				disabled: !(/*$imageForm*/ ctx[3].valid && /*imageObj*/ ctx[0].funFact.length > 0 && /*fullsizeImage*/ ctx[2] && /*thumbnailImage*/ ctx[1] && location),
     				variant: "raised",
     				class: "formButton",
-    				$$slots: { default: [create_default_slot$b] },
+    				$$slots: { default: [create_default_slot$a] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -44396,7 +43965,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$w.name,
+    		id: create_fragment$v.name,
     		type: "component",
     		source: "",
     		ctx
@@ -44428,7 +43997,7 @@
     		});
     }
 
-    function instance$w($$self, $$props, $$invalidate) {
+    function instance$v($$self, $$props, $$invalidate) {
     	let $imageForm;
 
     	let imageObj = {
@@ -44522,7 +44091,7 @@
     		Icon,
     		notify,
     		form,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		Textfield,
     		HelperText,
@@ -44574,13 +44143,13 @@
     class AddPlaceToBe extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$w, create_fragment$w, safe_not_equal, {});
+    		init(this, options, instance$v, create_fragment$v, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "AddPlaceToBe",
     			options,
-    			id: create_fragment$w.name
+    			id: create_fragment$v.name
     		});
     	}
     }
@@ -44601,7 +44170,7 @@
     	let current;
     	let dispose;
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				class: "formButton",
     				variant: "raised",
@@ -44764,7 +44333,7 @@
     			$$inline: true
     		});
 
-    	const button0 = new Button_1$1({
+    	const button0 = new Button_1({
     			props: {
     				disabled: !/*$loginForm*/ ctx[5].valid || /*loginObj*/ ctx[2].password.length == 0,
     				variant: "raised",
@@ -44775,7 +44344,7 @@
     			$$inline: true
     		});
 
-    	const button1 = new Button_1$1({
+    	const button1 = new Button_1({
     			props: {
     				disabled: !/*$loginForm*/ ctx[5].email.valid || /*loginObj*/ ctx[2].email.length == 0,
     				variant: "raised",
@@ -45260,7 +44829,7 @@
     }
 
     // (120:2) <Snackbar bind:this={mySnackbar}>
-    function create_default_slot$c(ctx) {
+    function create_default_slot$b(ctx) {
     	let current;
 
     	const label = new Label({
@@ -45304,7 +44873,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$c.name,
+    		id: create_default_slot$b.name,
     		type: "slot",
     		source: "(120:2) <Snackbar bind:this={mySnackbar}>",
     		ctx
@@ -45313,7 +44882,7 @@
     	return block;
     }
 
-    function create_fragment$x(ctx) {
+    function create_fragment$w(ctx) {
     	let div;
     	let current_block_type_index;
     	let if_block;
@@ -45331,7 +44900,7 @@
     	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	let snackbar_props = {
-    		$$slots: { default: [create_default_slot$c] },
+    		$$slots: { default: [create_default_slot$b] },
     		$$scope: { ctx }
     	};
 
@@ -45411,7 +44980,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$x.name,
+    		id: create_fragment$w.name,
     		type: "component",
     		source: "",
     		ctx
@@ -45420,7 +44989,7 @@
     	return block;
     }
 
-    function instance$x($$self, $$props, $$invalidate) {
+    function instance$w($$self, $$props, $$invalidate) {
     	let $loginForm;
     	let mySnackbar;
     	let mySnackbarText = "";
@@ -45511,7 +45080,7 @@
     		userStore,
     		resetPasswordRequest,
     		form,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		Textfield,
     		HelperText,
@@ -45565,13 +45134,13 @@
     class Login extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$x, create_fragment$x, safe_not_equal, {});
+    		init(this, options, instance$w, create_fragment$w, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Login",
     			options,
-    			id: create_fragment$x.name
+    			id: create_fragment$w.name
     		});
     	}
     }
@@ -45717,7 +45286,7 @@
     }
 
     // (69:9) <IconButton on:click="{getNextImage}"  class="lurinsnavicons material-icons" aria-label="Next">
-    function create_default_slot$d(ctx) {
+    function create_default_slot$c(ctx) {
     	let t;
 
     	const block = {
@@ -45734,7 +45303,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$d.name,
+    		id: create_default_slot$c.name,
     		type: "slot",
     		source: "(69:9) <IconButton on:click=\\\"{getNextImage}\\\"  class=\\\"lurinsnavicons material-icons\\\" aria-label=\\\"Next\\\">",
     		ctx
@@ -45743,7 +45312,7 @@
     	return block;
     }
 
-    function create_fragment$y(ctx) {
+    function create_fragment$x(ctx) {
     	let div7;
     	let div0;
     	let t0;
@@ -45834,7 +45403,7 @@
     			props: {
     				class: "lurinsnavicons material-icons",
     				"aria-label": "Next",
-    				$$slots: { default: [create_default_slot$d] },
+    				$$slots: { default: [create_default_slot$c] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -46020,7 +45589,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$y.name,
+    		id: create_fragment$x.name,
     		type: "component",
     		source: "",
     		ctx
@@ -46029,7 +45598,7 @@
     	return block;
     }
 
-    function instance$y($$self, $$props, $$invalidate) {
+    function instance$x($$self, $$props, $$invalidate) {
     	let { params } = $$props;
     	let showText = true;
     	console.log(params);
@@ -46144,13 +45713,13 @@
     class ImageFullScreen extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$y, create_fragment$y, safe_not_equal, { params: 9 });
+    		init(this, options, instance$x, create_fragment$x, safe_not_equal, { params: 9 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "ImageFullScreen",
     			options,
-    			id: create_fragment$y.name
+    			id: create_fragment$x.name
     		});
 
     		const { ctx } = this.$$;
@@ -46210,6 +45779,7 @@
         ROOT_SELECTOR: '.mdc-top-app-bar',
         TITLE_SELECTOR: '.mdc-top-app-bar__title',
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -46290,6 +45860,7 @@
         };
         return MDCTopAppBarBaseFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46452,6 +46023,7 @@
         };
         return MDCTopAppBarFoundation;
     }(MDCTopAppBarBaseFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46506,6 +46078,7 @@
         };
         return MDCFixedTopAppBarFoundation;
     }(MDCTopAppBarFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46605,6 +46178,7 @@
         };
         return MDCShortTopAppBarFoundation;
     }(MDCTopAppBarBaseFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -46721,11 +46295,12 @@
         };
         return MDCTopAppBar;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\top-app-bar\TopAppBar.svelte generated by Svelte v3.19.1 */
     const file$v = "node_modules\\@smui\\top-app-bar\\TopAppBar.svelte";
 
-    function create_fragment$z(ctx) {
+    function create_fragment$y(ctx) {
     	let header;
     	let useActions_action;
     	let forwardEvents_action;
@@ -46825,7 +46400,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$z.name,
+    		id: create_fragment$y.name,
     		type: "component",
     		source: "",
     		ctx
@@ -46834,7 +46409,7 @@
     	return block;
     }
 
-    function instance$z($$self, $$props, $$invalidate) {
+    function instance$y($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["MDCList:action"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -46935,7 +46510,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$z, create_fragment$z, safe_not_equal, {
+    		init(this, options, instance$y, create_fragment$y, safe_not_equal, {
     			use: 0,
     			class: 1,
     			variant: 2,
@@ -46949,7 +46524,7 @@
     			component: this,
     			tagName: "TopAppBar",
     			options,
-    			id: create_fragment$z.name
+    			id: create_fragment$y.name
     		});
     	}
 
@@ -47019,7 +46594,7 @@
     /* node_modules\@smui\top-app-bar\Section.svelte generated by Svelte v3.19.1 */
     const file$w = "node_modules\\@smui\\top-app-bar\\Section.svelte";
 
-    function create_fragment$A(ctx) {
+    function create_fragment$z(ctx) {
     	let section;
     	let useActions_action;
     	let forwardEvents_action;
@@ -47107,7 +46682,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$A.name,
+    		id: create_fragment$z.name,
     		type: "component",
     		source: "",
     		ctx
@@ -47116,7 +46691,7 @@
     	return block;
     }
 
-    function instance$A($$self, $$props, $$invalidate) {
+    function instance$z($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["MDCList:action"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -47174,13 +46749,13 @@
     class Section extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$A, create_fragment$A, safe_not_equal, { use: 0, class: 1, align: 2, toolbar: 3 });
+    		init(this, options, instance$z, create_fragment$z, safe_not_equal, { use: 0, class: 1, align: 2, toolbar: 3 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Section",
     			options,
-    			id: create_fragment$A.name
+    			id: create_fragment$z.name
     		});
     	}
 
@@ -47220,7 +46795,7 @@
     /* node_modules\@smui\common\Span.svelte generated by Svelte v3.19.1 */
     const file$x = "node_modules\\@smui\\common\\Span.svelte";
 
-    function create_fragment$B(ctx) {
+    function create_fragment$A(ctx) {
     	let span;
     	let useActions_action;
     	let forwardEvents_action;
@@ -47285,7 +46860,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$B.name,
+    		id: create_fragment$A.name,
     		type: "component",
     		source: "",
     		ctx
@@ -47294,7 +46869,7 @@
     	return block;
     }
 
-    function instance$B($$self, $$props, $$invalidate) {
+    function instance$A($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { $$slots = {}, $$scope } = $$props;
@@ -47330,13 +46905,13 @@
     class Span extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$B, create_fragment$B, safe_not_equal, { use: 0 });
+    		init(this, options, instance$A, create_fragment$A, safe_not_equal, { use: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Span",
     			options,
-    			id: create_fragment$B.name
+    			id: create_fragment$A.name
     		});
     	}
 
@@ -47443,6 +47018,7 @@
         Corner[Corner["BOTTOM_START"] = 9] = "BOTTOM_START";
         Corner[Corner["BOTTOM_END"] = 13] = "BOTTOM_END";
     })(Corner || (Corner = {}));
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -47493,6 +47069,7 @@
     var numbers$7 = {
         UNSET_INDEX: -1,
     };
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -47950,6 +47527,7 @@
         };
         return MDCListFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -48198,6 +47776,7 @@
         };
         return MDCList;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -48641,6 +48220,7 @@
         };
         return MDCMenuSurfaceFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -48676,6 +48256,7 @@
         }
         return cachedCssTransformPropertyName_;
     }
+    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -48842,6 +48423,7 @@
         };
         return MDCMenuSurface;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -48887,6 +48469,7 @@
         DefaultFocusState[DefaultFocusState["FIRST_ITEM"] = 2] = "FIRST_ITEM";
         DefaultFocusState[DefaultFocusState["LAST_ITEM"] = 3] = "LAST_ITEM";
     })(DefaultFocusState || (DefaultFocusState = {}));
+    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -49061,6 +48644,7 @@
         };
         return MDCMenuFoundation;
     }(MDCFoundation));
+    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -49279,11 +48863,12 @@
         };
         return MDCMenu;
     }(MDCComponent));
+    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\menu-surface\MenuSurface.svelte generated by Svelte v3.19.1 */
     const file$y = "node_modules\\@smui\\menu-surface\\MenuSurface.svelte";
 
-    function create_fragment$C(ctx) {
+    function create_fragment$B(ctx) {
     	let div;
     	let useActions_action;
     	let forwardEvents_action;
@@ -49387,7 +48972,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$C.name,
+    		id: create_fragment$B.name,
     		type: "component",
     		source: "",
     		ctx
@@ -49396,7 +48981,7 @@
     	return block;
     }
 
-    function instance$C($$self, $$props, $$invalidate) {
+    function instance$B($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["MDCMenuSurface:closed", "MDCMenuSurface:opened"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -49664,7 +49249,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$C, create_fragment$C, safe_not_equal, {
+    		init(this, options, instance$B, create_fragment$B, safe_not_equal, {
     			use: 2,
     			class: 3,
     			static: 4,
@@ -49690,7 +49275,7 @@
     			component: this,
     			tagName: "MenuSurface",
     			options,
-    			id: create_fragment$C.name
+    			id: create_fragment$B.name
     		});
     	}
 
@@ -49850,7 +49435,7 @@
     /* node_modules\@smui\menu\Menu.svelte generated by Svelte v3.19.1 */
 
     // (1:0) <MenuSurface   bind:element   use={[forwardEvents, ...use]}   class="mdc-menu {className}"   on:MDCMenu:selected={updateOpen}   on:MDCMenuSurface:closed={updateOpen} on:MDCMenuSurface:opened={updateOpen}   {...exclude($$props, ['use', 'class', 'wrapFocus'])} >
-    function create_default_slot$e(ctx) {
+    function create_default_slot$d(ctx) {
     	let current;
     	const default_slot_template = /*$$slots*/ ctx[34].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[36], null);
@@ -49887,7 +49472,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$e.name,
+    		id: create_default_slot$d.name,
     		type: "slot",
     		source: "(1:0) <MenuSurface   bind:element   use={[forwardEvents, ...use]}   class=\\\"mdc-menu {className}\\\"   on:MDCMenu:selected={updateOpen}   on:MDCMenuSurface:closed={updateOpen} on:MDCMenuSurface:opened={updateOpen}   {...exclude($$props, ['use', 'class', 'wrapFocus'])} >",
     		ctx
@@ -49896,7 +49481,7 @@
     	return block;
     }
 
-    function create_fragment$D(ctx) {
+    function create_fragment$C(ctx) {
     	let updating_element;
     	let current;
 
@@ -49915,7 +49500,7 @@
     	}
 
     	let menusurface_props = {
-    		$$slots: { default: [create_default_slot$e] },
+    		$$slots: { default: [create_default_slot$d] },
     		$$scope: { ctx }
     	};
 
@@ -49985,7 +49570,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$D.name,
+    		id: create_fragment$C.name,
     		type: "component",
     		source: "",
     		ctx
@@ -49994,7 +49579,7 @@
     	return block;
     }
 
-    function instance$D($$self, $$props, $$invalidate) {
+    function instance$C($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["MDCMenu:selected", "MDCMenuSurface:closed", "MDCMenuSurface:opened"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -50278,8 +49863,8 @@
     		init(
     			this,
     			options,
-    			instance$D,
-    			create_fragment$D,
+    			instance$C,
+    			create_fragment$C,
     			safe_not_equal,
     			{
     				use: 0,
@@ -50311,7 +49896,7 @@
     			component: this,
     			tagName: "Menu",
     			options,
-    			id: create_fragment$D.name
+    			id: create_fragment$C.name
     		});
     	}
 
@@ -50487,7 +50072,7 @@
     /* node_modules\@smui\menu\SelectionGroup.svelte generated by Svelte v3.19.1 */
     const file$z = "node_modules\\@smui\\menu\\SelectionGroup.svelte";
 
-    function create_fragment$E(ctx) {
+    function create_fragment$D(ctx) {
     	let li;
     	let ul;
     	let useActions_action;
@@ -50585,7 +50170,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$E.name,
+    		id: create_fragment$D.name,
     		type: "component",
     		source: "",
     		ctx
@@ -50594,7 +50179,7 @@
     	return block;
     }
 
-    function instance$E($$self, $$props, $$invalidate) {
+    function instance$D($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { list$use = [] } = $$props;
@@ -50639,13 +50224,13 @@
     class SelectionGroup extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$E, create_fragment$E, safe_not_equal, { use: 0, list$use: 1, list$class: 2 });
+    		init(this, options, instance$D, create_fragment$D, safe_not_equal, { use: 0, list$use: 1, list$class: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "SelectionGroup",
     			options,
-    			id: create_fragment$E.name
+    			id: create_fragment$D.name
     		});
     	}
 
@@ -50893,7 +50478,7 @@
     	return block;
     }
 
-    function create_fragment$F(ctx) {
+    function create_fragment$E(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -50942,7 +50527,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$F.name,
+    		id: create_fragment$E.name,
     		type: "component",
     		source: "",
     		ctx
@@ -50951,7 +50536,7 @@
     	return block;
     }
 
-    function instance$F($$self, $$props, $$invalidate) {
+    function instance$E($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component, ["MDCList:action"]);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -51231,8 +50816,8 @@
     		init(
     			this,
     			options,
-    			instance$F,
-    			create_fragment$F,
+    			instance$E,
+    			create_fragment$E,
     			safe_not_equal,
     			{
     				use: 0,
@@ -51259,7 +50844,7 @@
     			component: this,
     			tagName: "List",
     			options,
-    			id: create_fragment$F.name
+    			id: create_fragment$E.name
     		});
     	}
 
@@ -51736,7 +51321,7 @@
     	return block;
     }
 
-    function create_fragment$G(ctx) {
+    function create_fragment$F(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -51808,7 +51393,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$G.name,
+    		id: create_fragment$F.name,
     		type: "component",
     		source: "",
     		ctx
@@ -51819,7 +51404,7 @@
 
     let counter$1 = 0;
 
-    function instance$G($$self, $$props, $$invalidate) {
+    function instance$F($$self, $$props, $$invalidate) {
     	const dispatch = createEventDispatcher();
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let checked = false;
@@ -52072,7 +51657,7 @@
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$G, create_fragment$G, safe_not_equal, {
+    		init(this, options, instance$F, create_fragment$F, safe_not_equal, {
     			use: 1,
     			class: 2,
     			ripple: 3,
@@ -52091,7 +51676,7 @@
     			component: this,
     			tagName: "Item",
     			options,
-    			id: create_fragment$G.name
+    			id: create_fragment$F.name
     		});
     	}
 
@@ -52225,7 +51810,7 @@
     /* node_modules\@smui\common\H3.svelte generated by Svelte v3.19.1 */
     const file$C = "node_modules\\@smui\\common\\H3.svelte";
 
-    function create_fragment$H(ctx) {
+    function create_fragment$G(ctx) {
     	let h3;
     	let useActions_action;
     	let forwardEvents_action;
@@ -52290,7 +51875,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$H.name,
+    		id: create_fragment$G.name,
     		type: "component",
     		source: "",
     		ctx
@@ -52299,7 +51884,7 @@
     	return block;
     }
 
-    function instance$H($$self, $$props, $$invalidate) {
+    function instance$G($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { $$slots = {}, $$scope } = $$props;
@@ -52335,13 +51920,13 @@
     class H3 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$H, create_fragment$H, safe_not_equal, { use: 0 });
+    		init(this, options, instance$G, create_fragment$G, safe_not_equal, { use: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "H3",
     			options,
-    			id: create_fragment$H.name
+    			id: create_fragment$G.name
     		});
     	}
 
@@ -53194,7 +52779,7 @@
     }
 
     // (43:2) <Menu bind:this={menu2} anchor={false} bind:anchorElement={anchor2} anchorCorner="BOTTOM_LEFT">
-    function create_default_slot$f(ctx) {
+    function create_default_slot$e(ctx) {
     	let current;
 
     	const list = new List({
@@ -53238,7 +52823,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$f.name,
+    		id: create_default_slot$e.name,
     		type: "slot",
     		source: "(43:2) <Menu bind:this={menu2} anchor={false} bind:anchorElement={anchor2} anchorCorner=\\\"BOTTOM_LEFT\\\">",
     		ctx
@@ -53247,7 +52832,7 @@
     	return block;
     }
 
-    function create_fragment$I(ctx) {
+    function create_fragment$H(ctx) {
     	let updating_collapsed;
     	let t0;
     	let div;
@@ -53276,7 +52861,7 @@
     	const topappbar = new TopAppBar({ props: topappbar_props, $$inline: true });
     	binding_callbacks.push(() => bind(topappbar, "collapsed", topappbar_collapsed_binding));
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				$$slots: { default: [create_default_slot_10] },
     				$$scope: { ctx }
@@ -53291,7 +52876,7 @@
     	let menu_props = {
     		anchor: false,
     		anchorCorner: "BOTTOM_LEFT",
-    		$$slots: { default: [create_default_slot$f] },
+    		$$slots: { default: [create_default_slot$e] },
     		$$scope: { ctx }
     	};
 
@@ -53389,7 +52974,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$I.name,
+    		id: create_fragment$H.name,
     		type: "component",
     		source: "",
     		ctx
@@ -53398,7 +52983,7 @@
     	return block;
     }
 
-    function instance$I($$self, $$props, $$invalidate) {
+    function instance$H($$self, $$props, $$invalidate) {
     	let loggedIn = false;
 
     	const unsubscribe = userStore.subscribe(user => {
@@ -53451,7 +53036,7 @@
     		Title: Title$1,
     		IconButton,
     		Icon,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		Menu,
     		SelectionGroup,
@@ -53515,13 +53100,13 @@
     class HeaderTopBar extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$I, create_fragment$I, safe_not_equal, {});
+    		init(this, options, instance$H, create_fragment$H, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "HeaderTopBar",
     			options,
-    			id: create_fragment$I.name
+    			id: create_fragment$H.name
     		});
     	}
     }
@@ -53529,7 +53114,7 @@
     /* node_modules\@smui\textfield\character-counter\CharacterCounter.svelte generated by Svelte v3.19.1 */
     const file$E = "node_modules\\@smui\\textfield\\character-counter\\CharacterCounter.svelte";
 
-    function create_fragment$J(ctx) {
+    function create_fragment$I(ctx) {
     	let div;
     	let useActions_action;
     	let forwardEvents_action;
@@ -53609,7 +53194,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$J.name,
+    		id: create_fragment$I.name,
     		type: "component",
     		source: "",
     		ctx
@@ -53618,7 +53203,7 @@
     	return block;
     }
 
-    function instance$J($$self, $$props, $$invalidate) {
+    function instance$I($$self, $$props, $$invalidate) {
     	const forwardEvents = forwardEventsBuilder(current_component);
     	let { use = [] } = $$props;
     	let { class: className = "" } = $$props;
@@ -53693,13 +53278,13 @@
     class CharacterCounter extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$J, create_fragment$J, safe_not_equal, { use: 0, class: 1 });
+    		init(this, options, instance$I, create_fragment$I, safe_not_equal, { use: 0, class: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "CharacterCounter",
     			options,
-    			id: create_fragment$J.name
+    			id: create_fragment$I.name
     		});
     	}
 
@@ -53886,7 +53471,7 @@
     }
 
     // (68:4) <Button       disabled={!$contributeForm.valid || factObj.fact.length == 0}        variant="raised"      class="formButton">
-    function create_default_slot$g(ctx) {
+    function create_default_slot$f(ctx) {
     	let current;
 
     	const label = new Label({
@@ -53930,7 +53515,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$g.name,
+    		id: create_default_slot$f.name,
     		type: "slot",
     		source: "(68:4) <Button       disabled={!$contributeForm.valid || factObj.fact.length == 0}        variant=\\\"raised\\\"      class=\\\"formButton\\\">",
     		ctx
@@ -53939,7 +53524,7 @@
     	return block;
     }
 
-    function create_fragment$K(ctx) {
+    function create_fragment$J(ctx) {
     	let div3;
     	let h1;
     	let t1;
@@ -54018,12 +53603,12 @@
     	const textfield1 = new Textfield({ props: textfield1_props, $$inline: true });
     	binding_callbacks.push(() => bind(textfield1, "value", textfield1_value_binding));
 
-    	const button = new Button_1$1({
+    	const button = new Button_1({
     			props: {
     				disabled: !/*$contributeForm*/ ctx[1].valid || /*factObj*/ ctx[0].fact.length == 0,
     				variant: "raised",
     				class: "formButton",
-    				$$slots: { default: [create_default_slot$g] },
+    				$$slots: { default: [create_default_slot$f] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -54155,7 +53740,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$K.name,
+    		id: create_fragment$J.name,
     		type: "component",
     		source: "",
     		ctx
@@ -54164,7 +53749,7 @@
     	return block;
     }
 
-    function instance$K($$self, $$props, $$invalidate) {
+    function instance$J($$self, $$props, $$invalidate) {
     	let $contributeForm;
     	let factObj = { fact: "", contributor: "" };
 
@@ -54218,7 +53803,7 @@
     		addFactProposal,
     		notify,
     		form,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		Textfield,
     		HelperText,
@@ -54255,13 +53840,13 @@
     class Contribution extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$K, create_fragment$K, safe_not_equal, {});
+    		init(this, options, instance$J, create_fragment$J, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Contribution",
     			options,
-    			id: create_fragment$K.name
+    			id: create_fragment$J.name
     		});
     	}
     }
@@ -54341,7 +53926,7 @@
     	return block;
     }
 
-    function create_fragment$L(ctx) {
+    function create_fragment$K(ctx) {
     	let h1;
     	let t1;
     	let div;
@@ -54448,7 +54033,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$L.name,
+    		id: create_fragment$K.name,
     		type: "component",
     		source: "",
     		ctx
@@ -54477,7 +54062,7 @@
     	});
     }
 
-    function instance$L($$self, $$props, $$invalidate) {
+    function instance$K($$self, $$props, $$invalidate) {
     	let $svelteFactProposalStore;
     	validate_store(svelteFactProposalStore, "svelteFactProposalStore");
     	component_subscribe($$self, svelteFactProposalStore, $$value => $$invalidate(1, $svelteFactProposalStore = $$value));
@@ -54492,7 +54077,7 @@
     		deleteFactProposal,
     		acceptFactProposal,
     		Fact,
-    		Button: Button_1$1,
+    		Button: Button_1,
     		Label,
     		notify,
     		userStore,
@@ -54516,13 +54101,13 @@
     class ManageContribution extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$L, create_fragment$L, safe_not_equal, {});
+    		init(this, options, instance$K, create_fragment$K, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "ManageContribution",
     			options,
-    			id: create_fragment$L.name
+    			id: create_fragment$K.name
     		});
     	}
     }
@@ -54530,7 +54115,7 @@
     /* src\components\Notification.svelte generated by Svelte v3.19.1 */
 
     // (18:0) <Snackbar bind:this={mySnackbar} labelText={mySnackbarText}>
-    function create_default_slot$h(ctx) {
+    function create_default_slot$g(ctx) {
     	let current;
     	const label = new Label({ $$inline: true });
 
@@ -54558,7 +54143,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$h.name,
+    		id: create_default_slot$g.name,
     		type: "slot",
     		source: "(18:0) <Snackbar bind:this={mySnackbar} labelText={mySnackbarText}>",
     		ctx
@@ -54567,12 +54152,12 @@
     	return block;
     }
 
-    function create_fragment$M(ctx) {
+    function create_fragment$L(ctx) {
     	let current;
 
     	let snackbar_props = {
     		labelText: /*mySnackbarText*/ ctx[1],
-    		$$slots: { default: [create_default_slot$h] },
+    		$$slots: { default: [create_default_slot$g] },
     		$$scope: { ctx }
     	};
 
@@ -54617,7 +54202,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$M.name,
+    		id: create_fragment$L.name,
     		type: "component",
     		source: "",
     		ctx
@@ -54626,7 +54211,7 @@
     	return block;
     }
 
-    function instance$M($$self, $$props, $$invalidate) {
+    function instance$L($$self, $$props, $$invalidate) {
     	let mySnackbar;
     	let mySnackbarText;
 
@@ -54668,13 +54253,13 @@
     class Notification$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$M, create_fragment$M, safe_not_equal, {});
+    		init(this, options, instance$L, create_fragment$L, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Notification",
     			options,
-    			id: create_fragment$M.name
+    			id: create_fragment$L.name
     		});
     	}
     }
@@ -54682,7 +54267,7 @@
     /* src\App.svelte generated by Svelte v3.19.1 */
     const file$H = "src\\App.svelte";
 
-    function create_fragment$N(ctx) {
+    function create_fragment$M(ctx) {
     	let t0;
     	let main;
     	let t1;
@@ -54785,7 +54370,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$N.name,
+    		id: create_fragment$M.name,
     		type: "component",
     		source: "",
     		ctx
@@ -54794,7 +54379,7 @@
     	return block;
     }
 
-    function instance$N($$self, $$props, $$invalidate) {
+    function instance$M($$self, $$props, $$invalidate) {
 
     	let page;
     	let params = {};
@@ -54871,13 +54456,13 @@
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$N, create_fragment$N, safe_not_equal, {});
+    		init(this, options, instance$M, create_fragment$M, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$N.name
+    			id: create_fragment$M.name
     		});
     	}
     }
