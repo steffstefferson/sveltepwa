@@ -9,7 +9,7 @@
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
 
-let uploadedFiles = [];
+let uploadedFiles = []; 
 let thumbnailImage = null;
 let fullsizeImage = null;
 

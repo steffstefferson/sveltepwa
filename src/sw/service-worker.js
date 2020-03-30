@@ -61,7 +61,7 @@ clientsClaim()
 
 // This will be replaced by the list of files to precache by
 // the `workbox injectManifest` build step.
-//precacheAndRoute(self.__WB_MANIFEST)
+precacheAndRoute(self.__WB_MANIFEST)
 
 registerRoute('/_share-target', shareTargetHandler, 'POST')
 
