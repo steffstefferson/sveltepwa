@@ -8,7 +8,7 @@ const svelteImageStore = writable([])
 
 const imgFromStore = JSON.parse(localStorage.getItem('images'))
 
-if (imgFromStore.length) {
+if (imgFromStore && imgFromStore.length) {
   addImage(imgFromStore)
 } else {
   console.log('load image from firebase')

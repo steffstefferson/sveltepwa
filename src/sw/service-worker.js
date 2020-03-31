@@ -67,6 +67,7 @@ registerRoute('/_share-target', shareTargetHandler, 'POST')
 
 registerRoute(new RegExp('/_media/'), cachedMediaHandler)
 
+// test content: {"type":"newfact","itemKey":"-Ldehm5uG6-Aij15awKw","message":"newfact!!","title":"pushTitle"}
 self.addEventListener('push', function (event) {
   var msg = preparePushMessage(event)
   event.waitUntil(self.registration.showNotification(msg.title, msg.options))

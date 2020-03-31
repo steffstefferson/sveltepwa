@@ -46,7 +46,7 @@
     "postcss-url": "^8.0.0",
     "prettier": "^2.0.2",
     "prettier-plugin-svelte": "^0.7.0",
-    "rollup": "^1.32.1",
+    "rollup": "^2.3.1",
     "rollup-plugin-copy-assets": "^2.0.1",
     "rollup-plugin-livereload": "^1.1.0",
     "rollup-plugin-node-builtins": "^2.1.2",
@@ -61,8 +61,7 @@
     "svelte-forms": "^1.2.0",
     "svelte-material-ui": "^1.0.0-beta.20",
     "svelte-preprocess": "^2.16.0",
-    "svelte-preprocess-postcss": "^1.1.1",
-    "tailwindcss": "^1.2.0"
+    "svelte-preprocess-postcss": "^1.1.1"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",

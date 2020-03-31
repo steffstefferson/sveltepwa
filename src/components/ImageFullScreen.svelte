@@ -100,6 +100,7 @@ function load(key,offset){
     align-items: center;
     position: absolute;
     bottom: 0px;
+    right: 10px;
 }
 
 .textContainer div{

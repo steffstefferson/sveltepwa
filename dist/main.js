@@ -33369,7 +33369,7 @@
 
     const imgFromStore = JSON.parse(localStorage.getItem('images'));
 
-    if (imgFromStore.length) {
+    if (imgFromStore && imgFromStore.length) {
       addImage(imgFromStore);
     } else {
       console.log('load image from firebase');
@@ -35239,8 +35239,6 @@
     function equal(val, args) {
       return val === args[0];
     }
-
-
 
     var rules = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -45996,24 +45994,24 @@
     			create_component(iconbutton4.$$.fragment);
     			t11 = space();
     			create_component(iconbutton5.$$.fragment);
-    			attr_dev(div0, "class", "showHideInfoArea svelte-1gnn90j");
+    			attr_dev(div0, "class", "showHideInfoArea svelte-1x03scn");
     			add_location(div0, file$u, 52, 4, 1292);
-    			attr_dev(span, "class", "title svelte-1gnn90j");
+    			attr_dev(span, "class", "title svelte-1x03scn");
     			add_location(span, file$u, 56, 16, 1574);
-    			attr_dev(div1, "class", "svelte-1gnn90j");
+    			attr_dev(div1, "class", "svelte-1x03scn");
     			add_location(div1, file$u, 55, 12, 1552);
-    			attr_dev(div2, "class", "text svelte-1gnn90j");
+    			attr_dev(div2, "class", "text svelte-1x03scn");
     			add_location(div2, file$u, 58, 12, 1653);
-    			attr_dev(div3, "class", "text svelte-1gnn90j");
+    			attr_dev(div3, "class", "text svelte-1x03scn");
     			add_location(div3, file$u, 59, 12, 1707);
-    			attr_dev(div4, "class", "svelte-1gnn90j");
+    			attr_dev(div4, "class", "svelte-1x03scn");
     			add_location(div4, file$u, 54, 8, 1534);
-    			attr_dev(div5, "class", "svelte-1gnn90j");
+    			attr_dev(div5, "class", "svelte-1x03scn");
     			add_location(div5, file$u, 61, 8, 1791);
-    			attr_dev(div6, "class", "textContainer svelte-1gnn90j");
+    			attr_dev(div6, "class", "textContainer svelte-1x03scn");
     			set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
     			add_location(div6, file$u, 53, 4, 1444);
-    			attr_dev(div7, "class", "container svelte-1gnn90j");
+    			attr_dev(div7, "class", "container svelte-1x03scn");
     			attr_dev(div7, "style", div7_style_value = "" + (/*backgroundStyle*/ ctx[1] + " " + /*backgroundSize*/ ctx[2]));
     			add_location(div7, file$u, 51, 0, 1221);
     		},

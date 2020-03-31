@@ -72,6 +72,7 @@ export default [
           process.env.NODE_ENV || 'production'
         ),
       }),
+      resolve(),
       injectManifest(
         {
           swSrc: 'dist/service-worker_temp.js',
