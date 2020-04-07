@@ -3053,7 +3053,7 @@
     exports.validateCallback = validateCallback;
     exports.validateContextObject = validateContextObject;
     exports.validateNamespace = validateNamespace;
-    //# sourceMappingURL=index.cjs.js.map
+
     });
 
     unwrapExports(index_cjs);
@@ -3654,7 +3654,7 @@
     exports.Component = Component;
     exports.ComponentContainer = ComponentContainer;
     exports.Provider = Provider;
-    //# sourceMappingURL=index.cjs.js.map
+
     });
 
     unwrapExports(index_cjs$1);
@@ -3943,7 +3943,6 @@
             _loop_1(instance);
         }
     }
-    //# sourceMappingURL=index.esm.js.map
 
     var index_esm = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -4626,7 +4625,7 @@
 
     exports.default = firebase$1;
     exports.firebase = firebase$1;
-    //# sourceMappingURL=index.cjs.js.map
+
     });
 
     var firebase = unwrapExports(index_cjs$2);
@@ -5020,8 +5019,6 @@
     (function(){if("undefined"!==typeof firebase&&firebase.INTERNAL&&firebase.INTERNAL.registerComponent){var a={ActionCodeInfo:{Operation:{EMAIL_SIGNIN:xf,PASSWORD_RESET:"PASSWORD_RESET",RECOVER_EMAIL:"RECOVER_EMAIL",REVERT_SECOND_FACTOR_ADDITION:zf,VERIFY_AND_CHANGE_EMAIL:yf,VERIFY_EMAIL:"VERIFY_EMAIL"}},Auth:un,AuthCredential:yg,Error:u};Z(a,"EmailAuthProvider",Vg,[]);Z(a,"FacebookAuthProvider",Mg,[]);Z(a,"GithubAuthProvider",Og,[]);Z(a,"GoogleAuthProvider",Qg,[]);Z(a,"TwitterAuthProvider",Sg,[]);
     Z(a,"OAuthProvider",M,[V("providerId")]);Z(a,"SAMLAuthProvider",Lg,[V("providerId")]);Z(a,"PhoneAuthProvider",hh,[oo()]);Z(a,"RecaptchaVerifier",ho,[X(V(),no(),"recaptchaContainer"),W("recaptchaParameters",!0),po()]);Z(a,"ActionCodeURL",Gf,[]);Z(a,"PhoneMultiFactorGenerator",Rn,[]);firebase.INTERNAL.registerComponent({name:"auth",instanceFactory:function(b){b=b.getProvider("app").getImmediate();return new un(b)},multipleInstances:!1,serviceProps:a,instantiationMode:"LAZY",type:"PUBLIC"});firebase.INTERNAL.registerComponent({name:"auth-internal",
     instanceFactory:function(b){b=b.getProvider("auth").getImmediate();return {getUid:r(b.getUid,b),getToken:r(b.kc,b),addAuthTokenListener:r(b.bc,b),removeAuthTokenListener:r(b.Nc,b)}},multipleInstances:!1,instantiationMode:"LAZY",type:"PRIVATE"});firebase.registerVersion("@firebase/auth","0.14.1");firebase.INTERNAL.extendNamespace({User:P});}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).apply(typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
-
-    //# sourceMappingURL=auth.esm.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -20573,7 +20570,7 @@
     exports.ServerValue = ServerValue;
     exports.enableLogging = enableLogging;
     exports.registerDatabase = registerDatabase;
-    //# sourceMappingURL=index.cjs.js.map
+
     });
 
     unwrapExports(index_cjs$4);
@@ -24215,7 +24212,6 @@
         instance.registerVersion(name$2, version$1);
     }
     registerStorage(firebase);
-    //# sourceMappingURL=index.esm.js.map
 
     var configSecret = {
       firebaseConfig: {
@@ -31474,7 +31470,7 @@
     			create_component(notification.$$.fragment);
     			attr_dev(main, "class", "overflow-hidden;");
     			set_style(main, "padding-top", "12px");
-    			add_location(main, file$9, 69, 0, 3193);
+    			add_location(main, file$9, 68, 0, 3156);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -31619,4 +31615,4 @@
     });
 
 }());
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=bundle.js.map
