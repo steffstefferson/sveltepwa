@@ -1,95 +1,75 @@
 <script>
-import {getImage} from "../services/imageSerivce.js"
-import IconButton, {Icon} from '@smui/icon-button';
-import { getDisplayTime } from "../services/displayTime.js";
-import page from "page"
+  import { getImage } from "../services/imageSerivce.js";
+  import IconButton, { Icon } from "@smui/icon-button";
+  import { getDisplayTime } from "../services/displayTime.js";
+  import page from "page";
 
-export let params;
+  export let params;
 
-let showText = true;
-console.log(params);
-let imageSizeContain = false;
-let backgroundStyle = "";
-let backgroundSize = "background-size: cover;";
-let image = load(params.key,0);
-let backUrl = "/images";
+  let showText = true;
+  console.log(params);
+  let imageSizeContain = false;
+  let backgroundStyle = "";
+  let backgroundSize = "background-size: cover;";
+  let image = load(params.key, 0);
+  let backUrl = "/images";
 
-function toggleText(){
+  function toggleText() {
     showText = !showText;
-}
+  }
 
-function getPreviousImage(e){
-    image = load(image.key,-1);
-}
+  function getPreviousImage(e) {
+    image = load(image.key, -1);
+  }
 
-function getNextImage(e){
-    image = load(image.key,1);
-}
+  function getNextImage(e) {
+    image = load(image.key, 1);
+  }
 
-function toggleZoom(){
+  function toggleZoom() {
     imageSizeContain = !imageSizeContain;
-    if(imageSizeContain){
-        backgroundSize = "background-size: contain;"
-    }else{
-        backgroundSize = "background-size: cover;"
+    if (imageSizeContain) {
+      backgroundSize = "background-size: contain;";
+    } else {
+      backgroundSize = "background-size: cover;";
     }
-}
+  }
 
-function load(key,offset){
-    const img = getImage(key,offset);
-    backgroundStyle = "background-image: url("+(img.fullImageSizeUrl || img.thumbnail)+"); ";
-    if(!img.fullImageSizeUrl){
-    img.loadFullSizeImage().then((fullSizeImageUrl) =>{
-        backgroundStyle = "background-image: url("+fullSizeImageUrl+"); ";
-    });
+  function load(key, offset) {
+    const img = getImage(key, offset);
+    backgroundStyle =
+      "background-image: url(" +
+      (img.fullImageSizeUrl || img.thumbnail) +
+      "); ";
+    if (!img.fullImageSizeUrl) {
+      img.loadFullSizeImage().then(fullSizeImageUrl => {
+        backgroundStyle = "background-image: url(" + fullSizeImageUrl + "); ";
+      });
     }
-    page('/images/slideShow?key='+key);
+    page("/images/slideShow?key=" + key);
 
     return img;
-}
-
+  }
 </script>
-<div class="container" style="{backgroundStyle} {backgroundSize}">
-    <div class="showHideInfoArea" on:mousedown="{toggleText}" on:touchstart="{toggleText}" on:touchend="{toggleText}" on:mouseup="{toggleText}"> </div>
-    <div class="textContainer" style="visibility: {showText ? 'inherit' : 'hidden'}">
-        <div>
-            <div>
-                <span class="title">{ image.imageTitle }</span>
-            </div>
-            <div class="text">{ image.funFact }</div>
-            <div class="text">{ getDisplayTime(image.insertTime) }</div>
-        </div>
-        <div>
-         <IconButton on:click="{() => page('/map?key='+image.key)}"  class="lurinsnavicons material-icons" aria-label="Open map">place</IconButton>
-         <IconButton on:click="{toggleZoom}"  class="lurinsnavicons material-icons" aria-label="Toggle zoom">aspect_ratio</IconButton>
-         <IconButton on:click="{() => page(backUrl)}"  class="lurinsnavicons material-icons" aria-label="Close">close</IconButton>
-         
-         <IconButton on:click="{getPreviousImage}"  class="lurinsnavicons material-icons" aria-label="Back">navigate_before</IconButton>
-         <IconButton class="lurinsnavicons material-icons" aria-label="placeholder">_</IconButton>
-         <IconButton on:click="{getNextImage}"  class="lurinsnavicons material-icons" aria-label="Next">navigate_next</IconButton>
-        </div>
-    </div>  
-</div>
 
 <style>
-
-:global(.lurinsnavicons){
+  :global(.lurinsnavicons) {
     font-size: 32px !important;
     padding: 0px;
     margin: 0px !important;
     width: 25px;
-}
+  }
 
-.container {
-    height: 100%; 
+  .container {
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     position: absolute;
     top: 0px;
-}
+  }
 
-.textContainer{
+  .textContainer {
     background-color: yellow;
     border: 1px black solid;
     padding: 10px;
@@ -101,27 +81,82 @@ function load(key,offset){
     position: absolute;
     bottom: 0px;
     right: 10px;
-}
+  }
 
-.textContainer div{
-    width:100%;
-}
+  .textContainer div {
+    width: 100%;
+  }
 
-
-
-.showHideInfoArea{
+  .showHideInfoArea {
     height: 80%;
     position: absolute;
     bottom: 20%;
     border: none;
     width: 100%;
-}
+  }
 
-.title{
-    font-size:20px;
-}
-.text{
-    font-size:14px;
-}
-
+  .title {
+    font-size: 20px;
+  }
+  .text {
+    font-size: 14px;
+  }
 </style>
+
+<div class="container" style="{backgroundStyle} {backgroundSize}">
+  <div
+    class="showHideInfoArea"
+    on:mousedown={toggleText}
+    on:touchstart={toggleText}
+    on:touchend={toggleText}
+    on:mouseup={toggleText} />
+  <div
+    class="textContainer"
+    style="visibility: {showText ? 'inherit' : 'hidden'}">
+    <div>
+      <div>
+        <span class="title">{image.imageTitle}</span>
+      </div>
+      <div class="text">{image.funFact}</div>
+      <div class="text">{getDisplayTime(image.insertTime)}</div>
+    </div>
+    <div>
+      <IconButton
+        on:click={() => page('/map?key=' + image.key)}
+        class="lurinsnavicons material-icons"
+        aria-label="Open map">
+        place
+      </IconButton>
+      <IconButton
+        on:click={toggleZoom}
+        class="lurinsnavicons material-icons"
+        aria-label="Toggle zoom">
+        aspect_ratio
+      </IconButton>
+      <IconButton
+        on:click={() => page(backUrl)}
+        class="lurinsnavicons material-icons"
+        aria-label="Close">
+        close
+      </IconButton>
+
+      <IconButton
+        on:click={getPreviousImage}
+        class="lurinsnavicons material-icons"
+        aria-label="Back">
+        navigate_before
+      </IconButton>
+      <IconButton
+        class="lurinsnavicons material-icons"
+        aria-label="placeholder">
+        _
+      </IconButton>
+      <IconButton
+        on:click={getNextImage}
+        class="lurinsnavicons material-icons"
+        aria-label="Next">
+        navigate_next
+      </IconButton>
+    </div>
+  </div>
+</div>

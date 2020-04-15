@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="components.css" />
     <link rel="manifest" href="/manifest.json" />
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -88,14 +89,14 @@
         window.googleMapsLoaded = true
       }
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-          .register('/service-worker.js', { scope: '' })
-          .then(function (reg) {
-            console.log('Registrierung erfolgreich. Scope ist ' + reg.scope)
-          })
-          .catch(function (error) {
-            console.log('Registrierung fehlgeschlagen mit ' + error)
-          })
+        // navigator.serviceWorker
+        //   .register('/service-worker.js', { scope: '' })
+        //   .then(function (reg) {
+        //     console.log('Registrierung erfolgreich. Scope ist ' + reg.scope)
+        //   })
+        //   .catch(function (error) {
+        //     console.log('Registrierung fehlgeschlagen mit ' + error)
+        //   })
       }
     </script>
     <script

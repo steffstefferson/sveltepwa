@@ -1,46 +1,48 @@
 <script>
-  import { getImages } from "../services/imageSerivce.js"
-  import Image from './Image.svelte';
-  import { userStore } from './../services/loginService.js';
-  import Kitchen from '@smui/snackbar/kitchen/index';
-  import {deleteImageAndMetadata} from "../services/imageUploadService.js"
-  import { notify } from './../services/notifyService.js';
+  import { getImages } from "../services/imageSerivce.js";
+  import Image from "./Image.svelte";
+  import { userStore } from "./../services/loginService.js";
+  import Kitchen from "@smui/snackbar/kitchen/index";
+  import { deleteImageAndMetadata } from "../services/imageUploadService.js";
+  import { notify } from "./../services/notifyService.js";
 
   const localStore = getImages();
 
   let loggedIn = false;
   userStore.subscribe(user => {
-		loggedIn = user.loggedIn;
+    loggedIn = user.loggedIn;
   });
-  
+
   let kitchen;
 
-  function onDeleteLocation(event){
+  function onDeleteLocation(event) {
     return pushToKitchen(event.detail);
   }
 
-function deleteLocationSerious(location){
-    deleteImageAndMetadata(location).then(() => {
-          notify('location was deleted');
-        },() =>{
-          notify('something went wrong while deleting the location');
-    });
-}
-
+  function deleteLocationSerious(location) {
+    deleteImageAndMetadata(location).then(
+      () => {
+        notify("location was deleted");
+      },
+      () => {
+        notify("something went wrong while deleting the location");
+      }
+    );
+  }
 
   function pushToKitchen(location) {
     kitchen.push({
       props: {
-        variant: 'stacked'
+        variant: "stacked"
       },
-      label: 'Do you really want to delete this location?',
+      label: "Do you really want to delete this location?",
       actions: [
         {
           onClick: () => deleteLocationSerious(location),
-          text: 'Yes, please'
+          text: "Yes, please"
         },
         {
-          text: 'Nope'
+          text: "Nope"
         }
       ],
       dismissButton: false
@@ -49,35 +51,32 @@ function deleteLocationSerious(location){
 </script>
 
 <style type="text/postcss">
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
   .list-item {
-	display: flex; 
-  padding: 0.5em;
-  width: 300px;
+    display: flex;
+    padding: 0.5em;
+    width: 300px;
   }
 
-.list-content {
-	background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-	width: 100%;
-}
-.list-content p {
-	flex: 1 0 auto;
-}
+  .list-content p {
+    flex: 1 0 auto;
+  }
 </style>
+
 <div>
   <ul class="list">
-  {#each $localStore as image}
-  <li class="list-item">
-  <Image image={image} hasDeleteButton="{loggedIn}"  on:delete="{onDeleteLocation}" class="list-content"></Image>
-  </li>
-  {/each}
+    {#each $localStore as image}
+      <li class="list-item">
+        <Image
+          {image}
+          hasDeleteButton={loggedIn}
+          on:delete={onDeleteLocation} />
+      </li>
+    {/each}
   </ul>
 </div>
 
