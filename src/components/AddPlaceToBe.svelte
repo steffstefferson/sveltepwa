@@ -118,6 +118,7 @@
   .dropZoneContainer {
     width: 100%;
     height: 71px;
+    background-color: white;
   }
 
   .dropZoneOverlay {

@@ -3,6 +3,7 @@
   import { Icon } from "@smui/icon-button";
   import { getImages } from "../services/imageSerivce.js";
   import { tick } from "svelte";
+  import page from "page";
 
   export let params;
   let map;
@@ -80,6 +81,7 @@
       content: getTemplate(image)
     });
     infowindow.open(map, marker);
+    page("/map?key=" + marker.key);
   }
 </script>
 
@@ -92,13 +94,27 @@
     height: 100%;
     width: 100%;
     position: absolute;
+    left: 0px;
   }
 
   :global(.markerPopUp) {
     padding: 10px;
-    background-color: #fff;
+
     text-align: center;
     max-width: 210px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :global(.gm-style-iw-d) {
+      background-color: black !important;
+      overflow: hidden !important;
+    }
+    :global(.gm-style-iw) {
+      background-color: black !important;
+    }
+    :global(.gm-style-iw-t::after) {
+      background: black !important;
+    }
   }
   :global(.markerPopUp img) {
     max-height: 150px;

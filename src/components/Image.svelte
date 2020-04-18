@@ -24,13 +24,17 @@
 
 <style>
   .imageContainer {
-    border: solid #b7b3b3 2px;
-    width: 100%;
     margin: 5px;
     padding: 15px 15px;
     background-color: #ffff65;
-    box-shadow: -3px -6px #d1d2b72e;
     font-size: 18px;
+    border: 2px solid #b7b3b3;
+    border-radius: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    .imageContainer {
+      color: black;
+    }
   }
   .imageText {
     width: 100%;
@@ -45,7 +49,7 @@
     width: 200px;
     height: 200px;
     overflow: hidden;
-    margin: auto;
+    margin: 6px auto;
   }
   img {
     position: absolute;
@@ -82,5 +86,4 @@
       <Label>Delete location</Label>
     </Button>
   {/if}
-
 </div>

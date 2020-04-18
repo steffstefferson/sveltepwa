@@ -28,6 +28,12 @@
   .factSubtitle {
     font-size: 12px;
     text-align: right;
+    padding-top: 4px;
+  }
+  @media (prefers-color-scheme: dark) {
+    .factContainer {
+      color: black;
+    }
   }
 </style>
 

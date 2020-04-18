@@ -1,4 +1,5 @@
 <script>
+  import "./../App.scss";
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
   import IconButton, { Icon } from "@smui/icon-button";
   import Button, { Label } from "@smui/button";
@@ -22,25 +23,23 @@
   let anchor2;
 </script>
 
-<TopAppBar {dense} {prominent} {variant} bind:collapsed>
+<style type="text/postcss">
+  .pageTitle {
+    color: var(--mdc-theme-on-primary, black);
+  }
+</style>
+
+<TopAppBar {dense} {prominent} {variant} color="primary" bind:collapsed>
   <Row>
     <Section>
       <IconButton class="material-icons" on:click={() => menu2.setOpen(true)}>
         menu
       </IconButton>
-      <Title>Lurinfacts</Title>
-    </Section>
-    <Section align="end" toolbar>
-      <!-- <IconButton class="material-icons" aria-label="Download">file_download</IconButton>
-      {#if variant !== 'short'}
-        <IconButton class="material-icons" aria-label="Print this page">print</IconButton>
-        <IconButton class="material-icons" aria-label="Bookmark this page">bookmark</IconButton>
-      {/if} -->
+      <span class="pageTitle">Lurinfacts</span>
     </Section>
   </Row>
 </TopAppBar>
 <div use:Anchor bind:this={anchor2}>
-  <Button>Open Menu</Button>
   <Menu
     bind:this={menu2}
     anchor={false}

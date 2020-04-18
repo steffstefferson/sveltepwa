@@ -9,10 +9,7 @@
   import Button, { Label } from "@smui/button";
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
-  import Snackbar, { Actions } from "@smui/snackbar";
-
-  let mySnackbar;
-  let mySnackbarText = "";
+  import { notify } from "./../services/notifyService";
   let loginObj = { email: "", password: "" };
 
   let user = {};
@@ -41,18 +38,18 @@
 
   function sendPasswordResetLink() {
     resetPasswordRequest(user).then(resposne => {
-      mySnackbarText =
-        "Password reset email sent. I hope you remember the password of your email account.";
-      mySnackbar.open();
+      notify(
+        "Password reset email sent. I hope you remember the password of your email account."
+      );
     });
   }
 
   function loginUser(e) {
     e.preventDefault();
     if (!navigator.onLine) {
-      mySnackbarText =
-        "Your internet connection is lost and lurin couldn't fix it. try later.";
-      mySnackbar.open();
+      notify(
+        "Your internet connection is lost and lurin couldn't fix it. try later."
+      );
       return false;
     }
 
@@ -61,16 +58,14 @@
         if (user.loggedIn) {
           loginObj.email = "";
           loginObj.password = "";
-          mySnackbarText = "you are logged in! Add some nice content.";
+          notify("you are logged in! Add some nice content.");
         } else {
-          mySnackbarText = "oooups, lurin didn't let you login.";
+          notify("oooups, lurin didn't let you login.");
         }
-        mySnackbar.open();
       },
       function(e) {
         console.log("login error:", e);
-        mySnackbarText = "oooups, lurin didn't let you login.";
-        mySnackbar.open();
+        notify("oooups, lurin didn't let you login.");
       }
     );
     return false;
@@ -121,7 +116,7 @@
         </HelperText>
       </div>
       <Button
-        disabled={!$loginForm.valid || loginObj.password.length == 0}
+        disabled={!$loginForm.valid || loginObj.email.length == 0 || loginObj.password.length == 0}
         variant="raised"
         class="formButton">
         <Label>Login</Label>
@@ -143,7 +138,4 @@
       </Button>
     </form>
   {/if}
-  <Snackbar bind:this={mySnackbar}>
-    <Label>{mySnackbarText}</Label>
-  </Snackbar>
 </div>
