@@ -1,6 +1,6 @@
 {
-  "name": "Lurinfacts",
-  "short_name": "Lurinfacts",
+  "name": "Lurinfacts Beta",
+  "short_name": "Lurinfacts Beta",
   "description": "Lurinfacts, the site about the world greatest coder",
   "icons": [
     {
@@ -29,7 +29,7 @@
   "display": "standalone",
   "theme_color": "#F2EA00",
   "share_target": {
-    "action": "/?share-target",
+    "action": "/_share-target",
     "method": "POST",
     "enctype": "multipart/form-data",
     "params": {

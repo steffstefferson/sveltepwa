@@ -15,9 +15,6 @@
   import router from "page";
   import { DenseFixedAdjust } from "@smui/top-app-bar";
 
-  if ("serviceWorker" in navigator) {
-    //navigator.serviceWorker.register('/service-worker.js');
-  }
   let page;
   let params = {};
 

@@ -55967,7 +55967,7 @@
     			create_component(notification.$$.fragment);
     			attr_dev(main, "class", "mainContainer svelte-504mr1");
     			attr_dev(main, "densefixedadjust", "");
-    			add_location(main, file$J, 64, 0, 2310);
+    			add_location(main, file$J, 61, 0, 2203);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -56048,7 +56048,6 @@
     }
 
     function instance$O($$self, $$props, $$invalidate) {
-
     	let page;
     	let params = {};
     	page_js("/login", () => $$invalidate(0, page = Login));
