@@ -24,6 +24,7 @@
     thumbnail: ""
   };
   let thumbnailImage = null;
+
   let fullsizeImage = null;
 
   function updateImage(event) {
@@ -83,59 +84,10 @@
       fullsizeImage = fullSize;
     });
   }
-
-  async function readFile(f) {
-    return new Promise((resolve, reject) => {
-      let thumbImage;
-      let fullsizeImage;
-      var reader = new FileReader();
-      reader.onload = async function(e) {
-        let orientation = await getOrientation(f);
-        console.log(`orientation of photo is: ${orientation.degree}`);
-        var rotatedResult = await rotatePhoto(
-          e.target.result,
-          orientation.degree
-        );
-        var promiseThumb = resizeImage(rotatedResult, 200);
-        var promise = resizeImage(rotatedResult, 1024);
-        Promise.all([promiseThumb, promise])
-          .then(r => {
-            resolve(r);
-          })
-          .catch(e => {
-            console.log(e);
-            reject(e);
-          });
-      };
-      reader.readAsDataURL(f);
-    });
-  }
 </script>
 
 <style type="text/postcss">
-  .dropZoneOverlay,
-  .FileUpload,
-  .dropZoneContainer {
-    width: 100%;
-    height: 71px;
-    background-color: white;
-  }
 
-  .dropZoneOverlay {
-    border: dotted 1px;
-    font-family: cursive;
-    color: gray;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    top: -71px;
-    text-align: center;
-  }
-
-  .FileUpload {
-    opacity: 0;
-    position: relative;
-    z-index: 1;
-  }
 </style>
 
 <div>

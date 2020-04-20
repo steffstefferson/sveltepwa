@@ -1,18 +1,23 @@
 export function resizeImage(src, size) {
-  return new Promise(function(resolve, reject) {
-    var img = new Image();
-    img.onload = function() {
-      var resized = resizeLoadedImage(img, size);
-      resolve(resized);
+  return loadImage(src).then((img) => {
+    return resizeLoadedImage(img, size);
+  });
+}
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = function onload() {
+      resolve(img);
     };
-    img.onerror = function(e) {
+    img.onerror = function onerror(e) {
       reject(e);
     };
     img.src = src;
   });
 }
 
-var resizeLoadedImage = function(image, size) {
+var resizeLoadedImage = function (image, size) {
   var mainCanvas = document.createElement("canvas");
   //portrait or landscape image?
   mainCanvas.width = image.width;
@@ -29,7 +34,7 @@ var resizeLoadedImage = function(image, size) {
 /*
  * Draw initial canvas on new canvas and half it's size
  */
-var halfSize = function(i) {
+var halfSize = function (i) {
   var canvas = document.createElement("canvas");
   canvas.width = i.width / 2;
   canvas.height = i.height / 2;
@@ -74,20 +79,7 @@ function getOrientationFromArrayBuffer(arrayBuffer) {
   return -1;
 }
 
-function loadImage(src) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = function onload() {
-      resolve(img);
-    };
-    img.onerror = function onerror(e) {
-      reject(e);
-    };
-    img.src = src;
-  });
-}
-
-function getOrientationNumber(file) {
+function getOrientationNumber(fileBlob) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = function loaded(e) {
@@ -96,12 +88,12 @@ function getOrientationNumber(file) {
     reader.onerror = function error(e) {
       reject(e);
     };
-    reader.readAsArrayBuffer(file);
+    reader.readAsArrayBuffer(fileBlob);
   });
 }
 
-export function getOrientation(file) {
-  return getOrientationNumber(file).then(orientation => {
+export function getOrientation(fileBlob) {
+  return getOrientationNumber(fileBlob).then((orientation) => {
     let degree = 0;
     switch (orientation) {
       case 1:
@@ -129,7 +121,7 @@ export function getOrientation(file) {
 }
 
 export function rotatePhoto(file, degree) {
-  return loadImage(file).then(image => {
+  return loadImage(file).then((image) => {
     const canvas = document.createElement("canvas");
     const canvasContext = canvas.getContext("2d");
 

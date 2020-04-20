@@ -1,54 +1,68 @@
 <script>
-  import { saveImageAndMetadata } from "./../services/imageUploadService.js";
   import {
-    resizeImage,
-    getOrientation,
-    rotatePhoto
-  } from "./../services/imageResizeService.js";
-  import IconButton, { Icon } from "@smui/icon-button";
-  import { notify } from "./../services/notifyService.js";
+    readFile,
+    getImageFormUrl
+  } from "./../services/imageReaderService.js";
+  import LinearProgress from "@smui/linear-progress";
+  import { Icon } from "@smui/icon-button";
   import Button, { Label } from "@smui/button";
-  import { onMount } from "svelte";
-  import LocationSelector from "./LocationSelector.svelte";
   import { createEventDispatcher } from "svelte";
+  import {
+    getCachedMediaMetadata,
+    deleteCachedMediaMetadata
+  } from "./../services/imageMediaDataCache.js";
+  import { tick } from "svelte";
+  import { onMount } from "svelte";
+
   const dispatch = createEventDispatcher();
 
   let uploadedFiles = [];
   let thumbnailImage = null;
   let fullsizeImage = null;
+  let cachedImage = {};
+  let cachedImageLoading = true; //!!new URLSearchParams(window.location.search).get("shareTarget");
+  onMount(async () => {
+    if (cachedImageLoading) {
+      loadCachedImage();
+    }
+  });
 
-  function handleFiles(e) {
+  async function loadCachedImage() {
+    const images = await getCachedMediaMetadata("image");
+    let img = images ? images[0] : null;
+    if (img) {
+      let [thumb, fullSize] = await getImageFormUrl(img.src);
+      cachedImage = img;
+      cachedImage.thumbnailImage = thumb;
+      cachedImage.fullsizeImage = fullSize;
+    }
+    cachedImageLoading = false;
+  }
+
+  async function useCachedImage(e) {
+    e.preventDefault();
+    thumbnailImage = cachedImage.thumbnailImage;
+    fullsizeImage = cachedImage.fullsizeImage;
+    dispatch("imageChoosen", { thumbnailImage, fullsizeImage });
+    deleteCachedMediaMetadata(cachedImage.src).then(
+      result => (cachedImage = {})
+    );
+  }
+
+  async function deleteCachedImage(e) {
+    e.preventDefault();
+    await deleteCachedMediaMetadata(cachedImage.src);
+    cachedImage = null;
+    cachedImageLoading = true;
+    loadCachedImage();
+    return false;
+  }
+
+  function readUploadedFiles(e) {
     readFile(e.target.files[0]).then(([thumb, fullSize]) => {
       thumbnailImage = thumb;
       fullsizeImage = fullSize;
       dispatch("imageChoosen", { thumbnailImage, fullsizeImage });
-    });
-  }
-
-  async function readFile(f) {
-    return new Promise((resolve, reject) => {
-      let thumbImage;
-      let fullsizeImage;
-      var reader = new FileReader();
-      reader.onload = async function(e) {
-        let orientation = await getOrientation(f);
-        console.log(`orientation of photo is: ${orientation.degree}`);
-        var rotatedResult = await rotatePhoto(
-          e.target.result,
-          orientation.degree
-        );
-        var promiseThumb = resizeImage(rotatedResult, 200);
-        var promise = resizeImage(rotatedResult, 1024);
-        Promise.all([promiseThumb, promise])
-          .then(r => {
-            resolve(r);
-          })
-          .catch(e => {
-            console.log(e);
-            reject(e);
-          });
-      };
-      reader.readAsDataURL(f);
     });
   }
 
@@ -70,7 +84,6 @@
 
   .dropZoneOverlay {
     border: dotted 1px;
-    font-family: cursive;
     color: gray;
     border-radius: 4px 4px 0 0;
     position: relative;
@@ -95,22 +108,42 @@
 
 <div>
   <h2>Select image</h2>
-  <div class="dropZoneContainer">
-    <input
-      type="file"
-      id="drop_zone"
-      bind:value={uploadedFiles}
-      class="FileUpload"
-      accept=".jpg,.png,.gif"
-      on:change={handleFiles} />
-    <div class="dropZoneOverlay">
-      Drag and drop your image
-      <br />
-      or
-      <br />
-      Click to add
+  {#if cachedImageLoading}
+    <LinearProgress indeterminate />
+  {:else if cachedImage.src}
+    <div class="col">
+      <img
+        src={cachedImage.thumbnailImage}
+        alt="shared image"
+        style="max-height:100px;height:auto" />
     </div>
-  </div>
+    <div class="col">
+      <Button on:click={useCachedImage} variant="raised" class="formButton">
+        <Label>Use this image</Label>
+      </Button>
+      <Button on:click={deleteCachedImage} variant="raised" class="formButton">
+        <Label>Choose other image</Label>
+      </Button>
+    </div>
+  {/if}
+  {#if !cachedImageLoading && !cachedImage.src && !thumbnailImage}
+    <div class="dropZoneContainer">
+      <input
+        type="file"
+        id="drop_zone"
+        bind:value={uploadedFiles}
+        class="FileUpload"
+        accept=".jpg,.png,.gif"
+        on:change={readUploadedFiles} />
+      <div class="dropZoneOverlay">
+        Drag and drop your image
+        <br />
+        or
+        <br />
+        Click to add
+      </div>
+    </div>
+  {/if}
   {#if thumbnailImage}
     <div class="flex-grid-imageOk">
       <div class="col" style="padding: 4px;">
@@ -132,7 +165,7 @@
           Fullsize is ready!
         {/if}
       </div>
-      <div class="col">
+      <div class="col" style="height:100px">
         <Button
           on:click={deleteImages}
           disabled={!thumbnailImage}

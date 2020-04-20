@@ -3318,51 +3318,42 @@
         }
     }
 
-    const cacheName = 'webShareMediaCache';
+    let webShareMediaCache = "webShareMediaCache";
 
-    registerRoute(
-      /\.(?:png|jpg|jpeg|svg|gif)$/,
-      new CacheFirst({
-        cacheName: 'my-image-cache',
-      })
-    );
+    async function addMediaToCache(urlPrefix, mediaFile) {
+      const cache = await caches.open(webShareMediaCache);
+      await cache.put(
+        `/_media/${urlPrefix}${Date.now()}-${mediaFile.name}`,
+        new Response(mediaFile, {
+          headers: {
+            "content-length": mediaFile.size,
+            "content-type": mediaFile.type,
+          },
+        })
+      );
+    }
 
     const shareTargetHandler = async ({ event }) => {
-      if (broadcastChannel) {
-        broadcastChannel.postMessage('Saving media locally...');
-      }
+      console.log("Saving media locally...");
       const formData = await event.request.formData();
-      const mediaFiles = formData.getAll('media');
-      const cache = await caches.open(cacheName);
+      const mediaFiles = formData.getAll("media");
 
       for (const mediaFile of mediaFiles) {
         // TODO: Instead of bailing, come up with a
         // default name for each possible MIME type.
         if (!mediaFile.name) {
-          if (broadcastChannel) {
-            broadcastChannel.postMessage('Sorry! No name found on incoming media.');
-          }
-          continue
+          console.log("Sorry! No name found on incoming media.");
+          continue;
         }
-        await cache.put(
-          // TODO: Handle scenarios in which mediaFile.name isn't set,
-          // or doesn't include a proper extension.
-          `${urlPrefix}${Date.now()}-${mediaFile.name}`,
-          new Response(mediaFile, {
-            headers: {
-              'content-length': mediaFile.size,
-              'content-type': mediaFile.type,
-            },
-          })
-        );
+        await addMediaToCache("image", mediaFile);
       }
 
       // After the POST succeeds, redirect to the main page.
-      return Response.redirect('/images?shareTarget', 303)
+      return Response.redirect("/addImage?shareTarget", 303);
     };
 
     const cachedMediaHandler = new CacheOnly({
-      cacheName,
+      cacheName: webShareMediaCache,
       plugins: [
         // Support for cache requests that include a Range: header.
         new RangeRequestsPlugin(),
@@ -3374,14 +3365,21 @@
 
     // This will be replaced by the list of files to precache by
     // the `workbox injectManifest` build step.
-    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"775dc7cf176c8ee9fcddaaecca682c80","url":"components.css"},{"revision":"9da66b5d779819c7c9bd13fb7822d8aa","url":"components2.css"},{"revision":"d8814fd1f8e77341329cc52da59bf5ba","url":"index.html"},{"revision":"f1ee16a3be25209bfda5c190f76951fb","url":"main.css"}]);
+    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"c8276b88f8b534962447e10b738ea2f6","url":"components.css"},{"revision":"9da66b5d779819c7c9bd13fb7822d8aa","url":"components2.css"},{"revision":"533991381c8745211c5b156595b30398","url":"index.html"},{"revision":"1427337dccce8e6cf24fc078e45e7895","url":"main.css"}]);
 
-    registerRoute('/_share-target', shareTargetHandler, 'POST');
+    registerRoute("/_share-target", shareTargetHandler, "POST");
 
-    registerRoute(new RegExp('/_media/'), cachedMediaHandler);
+    registerRoute(new RegExp("/_media/"), cachedMediaHandler);
+
+    registerRoute(
+      /\.(?:png|jpg|jpeg|svg|gif)$/,
+      new CacheFirst({
+        cacheName: "my-image-cache",
+      })
+    );
 
     // test content: {"type":"newfact","itemKey":"-Ldehm5uG6-Aij15awKw","message":"newfact!!","title":"pushTitle"}
-    self.addEventListener('push', function (event) {
+    self.addEventListener("push", function (event) {
       var msg = preparePushMessage(event);
       event.waitUntil(self.registration.showNotification(msg.title, msg.options));
     });

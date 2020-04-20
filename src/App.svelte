@@ -8,6 +8,7 @@
   import Login from "./components/Login.svelte";
   import ImageFullScreen from "./components/ImageFullScreen.svelte";
   import HeaderTopBar from "./components/HeaderTopBar.svelte";
+  import ShareApiTest from "./components/ShareApiTest.svelte";
   import Contribution from "./components/Contribution.svelte";
   import ManageContribution from "./components/ManageContribution.svelte";
   import Notification from "./components/Notification.svelte";
@@ -23,8 +24,9 @@
   router("/login", () => (page = Login));
   router("/settings", () => (page = Settings));
   router("/contribute", () => (page = Contribution));
-  router("/admin/contributions", () => (page = ManageContribution));
-  router("/admin/addImage", () => (page = AddPlaceToBe));
+  router("/contributions", () => (page = ManageContribution));
+  router("/addImage", () => (page = AddPlaceToBe));
+  router("/shareApiTest", () => (page = ShareApiTest));
 
   router("/facts", () => (page = Facts));
   router(
@@ -52,7 +54,7 @@
     () => (page = ImageFullScreen)
   );
 
-  router("/*", () => (page = Images));
+  router("/*", () => (page = AddPlaceToBe));
   router.start();
 </script>
 
