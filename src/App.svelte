@@ -51,7 +51,7 @@
     () => (page = ImageFullScreen)
   );
 
-  router("/*", () => (page = AddPlaceToBe));
+  router("/*", () => (page = Facts));
   router.start();
 </script>
 

@@ -13,6 +13,7 @@
   let backgroundSize = "background-size: cover;";
   let image = load(params.key, 0);
   let backUrl = "/images";
+  const canShare = "canShare" in navigator;
 
   function toggleText() {
     showText = !showText;
@@ -24,6 +25,19 @@
 
   function getNextImage(e) {
     image = load(image.key, 1);
+  }
+
+  async function shareImage(e) {
+    let response = await fetch(image.fullImageSizeUrl);
+    let data = await response.blob();
+    let metadata = {
+      type: "image/jpeg"
+    };
+    let file = new File([data], image.key + ".jpg", metadata);
+    const files = [file];
+    if (canShare && navigator.canShare({ files })) {
+      navigator.share({ files });
+    }
   }
 
   function toggleZoom() {
@@ -146,11 +160,20 @@
         aria-label="Back">
         navigate_before
       </IconButton>
-      <IconButton
-        class="lurinsnavicons material-icons"
-        aria-label="placeholder">
-        _
-      </IconButton>
+      {#if canShare}
+        <IconButton
+          on:click={shareImage}
+          class="lurinsnavicons material-icons"
+          aria-label="Back">
+          share
+        </IconButton>
+      {:else}
+        <IconButton
+          class="lurinsnavicons material-icons"
+          aria-label="placeholder">
+          _
+        </IconButton>
+      {/if}
       <IconButton
         on:click={getNextImage}
         class="lurinsnavicons material-icons"

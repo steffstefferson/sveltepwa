@@ -79,4 +79,5 @@ typings/
 
 config_secret.js
 
-dist/components.css
+.firebase/*.*
+.firebase/hosting.ZGlzdA.cache

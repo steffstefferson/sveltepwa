@@ -2107,7 +2107,6 @@
         }
         return p;
     };
-    //# sourceMappingURL=index.esm.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -2505,7 +2504,6 @@
         };
         return ComponentContainer;
     }());
-    //# sourceMappingURL=index.esm.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -2788,7 +2786,6 @@
             _loop_1(instance);
         }
     }
-    //# sourceMappingURL=index.esm.js.map
 
     /**
      * @license
@@ -3451,7 +3448,6 @@
     };
     var firebase$1 = firebase;
     registerCoreComponents(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
 
     var name$d = "firebase";
     var version$2 = "7.13.1";
@@ -3473,7 +3469,6 @@
      * limitations under the License.
      */
     firebase$1.registerVersion(name$d, version$2, 'app');
-    //# sourceMappingURL=index.esm.js.map
 
     (function() {/*
 
@@ -3836,8 +3831,6 @@
     (function(){if("undefined"!==typeof firebase$1&&firebase$1.INTERNAL&&firebase$1.INTERNAL.registerComponent){var a={ActionCodeInfo:{Operation:{EMAIL_SIGNIN:xf,PASSWORD_RESET:"PASSWORD_RESET",RECOVER_EMAIL:"RECOVER_EMAIL",REVERT_SECOND_FACTOR_ADDITION:zf,VERIFY_AND_CHANGE_EMAIL:yf,VERIFY_EMAIL:"VERIFY_EMAIL"}},Auth:un,AuthCredential:yg,Error:u};Z(a,"EmailAuthProvider",Vg,[]);Z(a,"FacebookAuthProvider",Mg,[]);Z(a,"GithubAuthProvider",Og,[]);Z(a,"GoogleAuthProvider",Qg,[]);Z(a,"TwitterAuthProvider",Sg,[]);
     Z(a,"OAuthProvider",M,[V("providerId")]);Z(a,"SAMLAuthProvider",Lg,[V("providerId")]);Z(a,"PhoneAuthProvider",hh,[oo()]);Z(a,"RecaptchaVerifier",ho,[X(V(),no(),"recaptchaContainer"),W("recaptchaParameters",!0),po()]);Z(a,"ActionCodeURL",Gf,[]);Z(a,"PhoneMultiFactorGenerator",Rn,[]);firebase$1.INTERNAL.registerComponent({name:"auth",instanceFactory:function(b){b=b.getProvider("app").getImmediate();return new un(b)},multipleInstances:!1,serviceProps:a,instantiationMode:"LAZY",type:"PUBLIC"});firebase$1.INTERNAL.registerComponent({name:"auth-internal",
     instanceFactory:function(b){b=b.getProvider("auth").getImmediate();return {getUid:r(b.getUid,b),getToken:r(b.kc,b),addAuthTokenListener:r(b.bc,b),removeAuthTokenListener:r(b.Nc,b)}},multipleInstances:!1,instantiationMode:"LAZY",type:"PRIVATE"});firebase$1.registerVersion("@firebase/auth","0.14.1");firebase$1.INTERNAL.extendNamespace({User:P});}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).apply(typeof global$1 !== 'undefined' ? global$1 : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
-
-    //# sourceMappingURL=auth.esm.js.map
 
     // shim for using process in browser
     // based off https://github.com/defunctzombie/node-process/blob/master/browser.js
@@ -19436,7 +19429,6 @@
         instance.registerVersion(name$e, version$4);
     }
     registerDatabase(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -23067,7 +23059,6 @@
         instance.registerVersion(name$f, version$5);
     }
     registerStorage(firebase$1);
-    //# sourceMappingURL=index.esm.js.map
 
     var configSecret = {
       firebaseConfig: {
@@ -23797,7 +23788,6 @@
         [].forEach.call(els, function (el) { return tops.add(el.offsetTop); });
         return tops.size > 1;
     }
-    //# sourceMappingURL=util.js.map
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -23945,7 +23935,6 @@
         };
         return MDCFoundation;
     }());
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -24043,7 +24032,6 @@
         };
         return MDCComponent;
     }());
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -24090,7 +24078,6 @@
             || element.msMatchesSelector;
         return nativeMatches.call(element, selector);
     }
-    //# sourceMappingURL=ponyfill.js.map
 
     /**
      * @license
@@ -24142,7 +24129,6 @@
         }
         return supportsPassive_ ? { passive: true } : false;
     }
-    //# sourceMappingURL=events.js.map
 
     /**
      * @license
@@ -24191,7 +24177,6 @@
         PADDING: 10,
         TAP_DELAY_MS: 300,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * Stores result from supportsCssVariables to avoid redundant processing to
@@ -24267,7 +24252,6 @@
         }
         return { x: normalizedX, y: normalizedY };
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -24722,7 +24706,6 @@
         };
         return MDCRippleFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -24828,7 +24811,6 @@
         };
         return MDCRipple;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -24884,7 +24866,6 @@
         DIALOG_ANIMATION_CLOSE_TIME_MS: 75,
         DIALOG_ANIMATION_OPEN_TIME_MS: 150,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -25138,7 +25119,6 @@
         };
         return MDCDialogFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -25316,7 +25296,6 @@
         };
         return MDCDialog;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     function forwardEventsBuilder(component, additionalEvents = []) {
       const events = [
@@ -28794,7 +28773,6 @@
         ARIA_PRESSED: 'aria-pressed',
         CHANGE_EVENT: 'MDCIconButtonToggle:change',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -28872,7 +28850,6 @@
         };
         return MDCIconButtonToggleFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -28954,7 +28931,6 @@
         };
         return MDCIconButtonToggle;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\icon-button\IconButton.svelte generated by Svelte v3.20.1 */
     const file$a = "node_modules\\@smui\\icon-button\\IconButton.svelte";
@@ -29594,7 +29570,6 @@
          */
         ARIA_LIVE_DELAY_MS: 1000,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -29674,7 +29649,6 @@
             labelEl.textContent = labelText;
         }, ARIA_LIVE_DELAY_MS);
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -29862,7 +29836,6 @@
         };
         return MDCSnackbarFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -30018,7 +29991,6 @@
         };
         return MDCSnackbar;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\snackbar\Snackbar.svelte generated by Svelte v3.20.1 */
     const file$b = "node_modules\\@smui\\snackbar\\Snackbar.svelte";
@@ -35433,7 +35405,6 @@
         LABEL_SHAKE: 'mdc-floating-label--shake',
         ROOT: 'mdc-floating-label',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35534,7 +35505,6 @@
         };
         return MDCFloatingLabelFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35600,7 +35570,6 @@
         };
         return MDCFloatingLabel;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35628,7 +35597,6 @@
         LINE_RIPPLE_ACTIVE: 'mdc-line-ripple--active',
         LINE_RIPPLE_DEACTIVATING: 'mdc-line-ripple--deactivating',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35714,7 +35682,6 @@
         };
         return MDCLineRippleFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35783,7 +35750,6 @@
         };
         return MDCLineRipple;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -35819,7 +35785,6 @@
         OUTLINE_NOTCHED: 'mdc-notched-outline--notched',
         OUTLINE_UPGRADED: 'mdc-notched-outline--upgraded',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -35907,7 +35872,6 @@
         };
         return MDCNotchedOutlineFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -35982,7 +35946,6 @@
         };
         return MDCNotchedOutline;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -36012,7 +35975,6 @@
     var strings$7 = {
         ROOT_SELECTOR: "." + cssClasses$7.ROOT,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36073,7 +36035,6 @@
         };
         return MDCTextFieldCharacterCounterFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36125,7 +36086,6 @@
         };
         return MDCTextFieldCharacterCounter;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -36188,7 +36148,6 @@
     var ALWAYS_FLOAT_TYPES = [
         'color', 'date', 'datetime-local', 'month', 'range', 'time', 'week',
     ];
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36643,7 +36602,6 @@
         };
         return MDCTextFieldFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36677,7 +36635,6 @@
         ROLE: 'role',
         ROOT_SELECTOR: "." + cssClasses$9.ROOT,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36798,7 +36755,6 @@
         };
         return MDCTextFieldHelperTextFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -36857,7 +36813,6 @@
         };
         return MDCTextFieldHelperText;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -36888,7 +36843,6 @@
     var cssClasses$a = {
         ROOT: 'mdc-text-field__icon',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -36995,7 +36949,6 @@
         };
         return MDCTextFieldIconFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -37055,7 +37008,6 @@
         };
         return MDCTextFieldIcon;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -37492,7 +37444,6 @@
         };
         return MDCTextField;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\floating-label\FloatingLabel.svelte generated by Svelte v3.20.1 */
     const file$h = "node_modules\\@smui\\floating-label\\FloatingLabel.svelte";
@@ -41232,7 +41183,6 @@
         DISABLED: 'mdc-radio--disabled',
         ROOT: 'mdc-radio',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -41298,7 +41248,6 @@
         };
         return MDCRadioFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -41410,7 +41359,6 @@
         });
         return MDCRadio;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\radio\Radio.svelte generated by Svelte v3.20.1 */
     const file$o = "node_modules\\@smui\\radio\\Radio.svelte";
@@ -41870,7 +41818,6 @@
     var strings$c = {
         LABEL_SELECTOR: '.mdc-form-field > label',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -41940,7 +41887,6 @@
         };
         return MDCFormFieldFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -42020,7 +41966,6 @@
         };
         return MDCFormField;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\form-field\FormField.svelte generated by Svelte v3.20.1 */
     const file$p = "node_modules\\@smui\\form-field\\FormField.svelte";
@@ -43686,7 +43631,6 @@
         }
         return cssProperty;
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -43719,7 +43663,6 @@
         BUFFER_SELECTOR: '.mdc-linear-progress__buffer',
         PRIMARY_BAR_SELECTOR: '.mdc-linear-progress__primary-bar',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -43828,7 +43771,6 @@
         };
         return MDCLinearProgressFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -43910,7 +43852,6 @@
         };
         return MDCLinearProgress;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\linear-progress\LinearProgress.svelte generated by Svelte v3.20.1 */
     const file$r = "node_modules\\@smui\\linear-progress\\LinearProgress.svelte";
@@ -46745,8 +46686,8 @@
     const { console: console_1$3 } = globals;
     const file$v = "src\\components\\ImageFullScreen.svelte";
 
-    // (76:6) <IconButton         on:click={() => page('/map?key=' + image.key)}         class="lurinsnavicons material-icons"         aria-label="Open map">
-    function create_default_slot_5$4(ctx) {
+    // (90:6) <IconButton         on:click={() => page('/map?key=' + image.key)}         class="lurinsnavicons material-icons"         aria-label="Open map">
+    function create_default_slot_6$4(ctx) {
     	let t;
 
     	const block = {
@@ -46763,17 +46704,17 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$4.name,
+    		id: create_default_slot_6$4.name,
     		type: "slot",
-    		source: "(76:6) <IconButton         on:click={() => page('/map?key=' + image.key)}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Open map\\\">",
+    		source: "(90:6) <IconButton         on:click={() => page('/map?key=' + image.key)}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Open map\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:6) <IconButton         on:click={toggleZoom}         class="lurinsnavicons material-icons"         aria-label="Toggle zoom">
-    function create_default_slot_4$5(ctx) {
+    // (96:6) <IconButton         on:click={toggleZoom}         class="lurinsnavicons material-icons"         aria-label="Toggle zoom">
+    function create_default_slot_5$4(ctx) {
     	let t;
 
     	const block = {
@@ -46790,17 +46731,17 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$5.name,
+    		id: create_default_slot_5$4.name,
     		type: "slot",
-    		source: "(82:6) <IconButton         on:click={toggleZoom}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Toggle zoom\\\">",
+    		source: "(96:6) <IconButton         on:click={toggleZoom}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Toggle zoom\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:6) <IconButton         on:click={() => page(backUrl)}         class="lurinsnavicons material-icons"         aria-label="Close">
-    function create_default_slot_3$8(ctx) {
+    // (102:6) <IconButton         on:click={() => page(backUrl)}         class="lurinsnavicons material-icons"         aria-label="Close">
+    function create_default_slot_4$5(ctx) {
     	let t;
 
     	const block = {
@@ -46817,17 +46758,17 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$8.name,
+    		id: create_default_slot_4$5.name,
     		type: "slot",
-    		source: "(88:6) <IconButton         on:click={() => page(backUrl)}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Close\\\">",
+    		source: "(102:6) <IconButton         on:click={() => page(backUrl)}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Close\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:6) <IconButton         on:click={getPreviousImage}         class="lurinsnavicons material-icons"         aria-label="Back">
-    function create_default_slot_2$9(ctx) {
+    // (109:6) <IconButton         on:click={getPreviousImage}         class="lurinsnavicons material-icons"         aria-label="Back">
+    function create_default_slot_3$8(ctx) {
     	let t;
 
     	const block = {
@@ -46844,17 +46785,131 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$9.name,
+    		id: create_default_slot_3$8.name,
     		type: "slot",
-    		source: "(95:6) <IconButton         on:click={getPreviousImage}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Back\\\">",
+    		source: "(109:6) <IconButton         on:click={getPreviousImage}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Back\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (101:6) <IconButton         class="lurinsnavicons material-icons"         aria-label="placeholder">
-    function create_default_slot_1$a(ctx) {
+    // (122:6) {:else}
+    function create_else_block$5(ctx) {
+    	let current;
+
+    	const iconbutton = new IconButton({
+    			props: {
+    				class: "lurinsnavicons material-icons",
+    				"aria-label": "placeholder",
+    				$$slots: { default: [create_default_slot_2$9] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(iconbutton.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(iconbutton, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const iconbutton_changes = {};
+
+    			if (dirty & /*$$scope*/ 65536) {
+    				iconbutton_changes.$$scope = { dirty, ctx };
+    			}
+
+    			iconbutton.$set(iconbutton_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(iconbutton.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(iconbutton.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(iconbutton, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$5.name,
+    		type: "else",
+    		source: "(122:6) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (115:6) {#if canShare}
+    function create_if_block$c(ctx) {
+    	let current;
+
+    	const iconbutton = new IconButton({
+    			props: {
+    				class: "lurinsnavicons material-icons",
+    				"aria-label": "Back",
+    				$$slots: { default: [create_default_slot_1$a] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	iconbutton.$on("click", /*shareImage*/ ctx[9]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(iconbutton.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(iconbutton, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const iconbutton_changes = {};
+
+    			if (dirty & /*$$scope*/ 65536) {
+    				iconbutton_changes.$$scope = { dirty, ctx };
+    			}
+
+    			iconbutton.$set(iconbutton_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(iconbutton.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(iconbutton.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(iconbutton, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$c.name,
+    		type: "if",
+    		source: "(115:6) {#if canShare}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (123:8) <IconButton           class="lurinsnavicons material-icons"           aria-label="placeholder">
+    function create_default_slot_2$9(ctx) {
     	let t;
 
     	const block = {
@@ -46871,16 +46926,43 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$a.name,
+    		id: create_default_slot_2$9.name,
     		type: "slot",
-    		source: "(101:6) <IconButton         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"placeholder\\\">",
+    		source: "(123:8) <IconButton           class=\\\"lurinsnavicons material-icons\\\"           aria-label=\\\"placeholder\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (106:6) <IconButton         on:click={getNextImage}         class="lurinsnavicons material-icons"         aria-label="Next">
+    // (116:8) <IconButton           on:click={shareImage}           class="lurinsnavicons material-icons"           aria-label="Back">
+    function create_default_slot_1$a(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("share");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$a.name,
+    		type: "slot",
+    		source: "(116:8) <IconButton           on:click={shareImage}           class=\\\"lurinsnavicons material-icons\\\"           aria-label=\\\"Back\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (129:6) <IconButton         on:click={getNextImage}         class="lurinsnavicons material-icons"         aria-label="Next">
     function create_default_slot$c(ctx) {
     	let t;
 
@@ -46900,7 +46982,7 @@
     		block,
     		id: create_default_slot$c.name,
     		type: "slot",
-    		source: "(106:6) <IconButton         on:click={getNextImage}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Next\\\">",
+    		source: "(129:6) <IconButton         on:click={getNextImage}         class=\\\"lurinsnavicons material-icons\\\"         aria-label=\\\"Next\\\">",
     		ctx
     	});
 
@@ -46931,6 +47013,8 @@
     	let t8;
     	let t9;
     	let t10;
+    	let current_block_type_index;
+    	let if_block;
     	let t11;
     	let div7_style_value;
     	let current;
@@ -46940,61 +47024,61 @@
     			props: {
     				class: "lurinsnavicons material-icons",
     				"aria-label": "Open map",
+    				$$slots: { default: [create_default_slot_6$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	iconbutton0.$on("click", /*click_handler*/ ctx[14]);
+
+    	const iconbutton1 = new IconButton({
+    			props: {
+    				class: "lurinsnavicons material-icons",
+    				"aria-label": "Toggle zoom",
     				$$slots: { default: [create_default_slot_5$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	iconbutton0.$on("click", /*click_handler*/ ctx[12]);
+    	iconbutton1.$on("click", /*toggleZoom*/ ctx[10]);
 
-    	const iconbutton1 = new IconButton({
+    	const iconbutton2 = new IconButton({
     			props: {
     				class: "lurinsnavicons material-icons",
-    				"aria-label": "Toggle zoom",
+    				"aria-label": "Close",
     				$$slots: { default: [create_default_slot_4$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	iconbutton1.$on("click", /*toggleZoom*/ ctx[8]);
+    	iconbutton2.$on("click", /*click_handler_1*/ ctx[15]);
 
-    	const iconbutton2 = new IconButton({
+    	const iconbutton3 = new IconButton({
     			props: {
     				class: "lurinsnavicons material-icons",
-    				"aria-label": "Close",
+    				"aria-label": "Back",
     				$$slots: { default: [create_default_slot_3$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	iconbutton2.$on("click", /*click_handler_1*/ ctx[13]);
+    	iconbutton3.$on("click", /*getPreviousImage*/ ctx[7]);
+    	const if_block_creators = [create_if_block$c, create_else_block$5];
+    	const if_blocks = [];
 
-    	const iconbutton3 = new IconButton({
-    			props: {
-    				class: "lurinsnavicons material-icons",
-    				"aria-label": "Back",
-    				$$slots: { default: [create_default_slot_2$9] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
+    	function select_block_type(ctx, dirty) {
+    		if (/*canShare*/ ctx[5]) return 0;
+    		return 1;
+    	}
 
-    	iconbutton3.$on("click", /*getPreviousImage*/ ctx[6]);
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	const iconbutton4 = new IconButton({
-    			props: {
-    				class: "lurinsnavicons material-icons",
-    				"aria-label": "placeholder",
-    				$$slots: { default: [create_default_slot_1$a] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const iconbutton5 = new IconButton({
     			props: {
     				class: "lurinsnavicons material-icons",
     				"aria-label": "Next",
@@ -47004,7 +47088,7 @@
     			$$inline: true
     		});
 
-    	iconbutton5.$on("click", /*getNextImage*/ ctx[7]);
+    	iconbutton4.$on("click", /*getNextImage*/ ctx[8]);
 
     	const block = {
     		c: function create() {
@@ -47032,29 +47116,29 @@
     			t9 = space();
     			create_component(iconbutton3.$$.fragment);
     			t10 = space();
-    			create_component(iconbutton4.$$.fragment);
+    			if_block.c();
     			t11 = space();
-    			create_component(iconbutton5.$$.fragment);
+    			create_component(iconbutton4.$$.fragment);
     			attr_dev(div0, "class", "showHideInfoArea svelte-1x03scn");
-    			add_location(div0, file$v, 58, 2, 2054);
+    			add_location(div0, file$v, 72, 2, 2465);
     			attr_dev(span, "class", "title svelte-1x03scn");
-    			add_location(span, file$v, 69, 8, 2331);
+    			add_location(span, file$v, 83, 8, 2742);
     			attr_dev(div1, "class", "svelte-1x03scn");
-    			add_location(div1, file$v, 68, 6, 2317);
+    			add_location(div1, file$v, 82, 6, 2728);
     			attr_dev(div2, "class", "text svelte-1x03scn");
-    			add_location(div2, file$v, 71, 6, 2396);
+    			add_location(div2, file$v, 85, 6, 2807);
     			attr_dev(div3, "class", "text svelte-1x03scn");
-    			add_location(div3, file$v, 72, 6, 2442);
+    			add_location(div3, file$v, 86, 6, 2853);
     			attr_dev(div4, "class", "svelte-1x03scn");
-    			add_location(div4, file$v, 67, 4, 2305);
+    			add_location(div4, file$v, 81, 4, 2716);
     			attr_dev(div5, "class", "svelte-1x03scn");
-    			add_location(div5, file$v, 74, 4, 2516);
+    			add_location(div5, file$v, 88, 4, 2927);
     			attr_dev(div6, "class", "textContainer svelte-1x03scn");
     			set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
-    			add_location(div6, file$v, 64, 2, 2211);
+    			add_location(div6, file$v, 78, 2, 2622);
     			attr_dev(div7, "class", "container svelte-1x03scn");
     			attr_dev(div7, "style", div7_style_value = "" + (/*backgroundStyle*/ ctx[1] + " " + /*backgroundSize*/ ctx[2]));
-    			add_location(div7, file$v, 57, 0, 1985);
+    			add_location(div7, file$v, 71, 0, 2396);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -47084,17 +47168,17 @@
     			append_dev(div5, t9);
     			mount_component(iconbutton3, div5, null);
     			append_dev(div5, t10);
-    			mount_component(iconbutton4, div5, null);
+    			if_blocks[current_block_type_index].m(div5, null);
     			append_dev(div5, t11);
-    			mount_component(iconbutton5, div5, null);
+    			mount_component(iconbutton4, div5, null);
     			current = true;
     			if (remount) run_all(dispose);
 
     			dispose = [
-    				listen_dev(div0, "mousedown", /*toggleText*/ ctx[5], false, false, false),
-    				listen_dev(div0, "touchstart", /*toggleText*/ ctx[5], { passive: true }, false, false),
-    				listen_dev(div0, "touchend", /*toggleText*/ ctx[5], { passive: true }, false, false),
-    				listen_dev(div0, "mouseup", /*toggleText*/ ctx[5], false, false, false)
+    				listen_dev(div0, "mousedown", /*toggleText*/ ctx[6], false, false, false),
+    				listen_dev(div0, "touchstart", /*toggleText*/ ctx[6], { passive: true }, false, false),
+    				listen_dev(div0, "touchend", /*toggleText*/ ctx[6], { passive: true }, false, false),
+    				listen_dev(div0, "mouseup", /*toggleText*/ ctx[6], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
@@ -47103,46 +47187,40 @@
     			if ((!current || dirty & /*image*/ 8) && t5_value !== (t5_value = getDisplayTime(/*image*/ ctx[3].insertTime) + "")) set_data_dev(t5, t5_value);
     			const iconbutton0_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 65536) {
     				iconbutton0_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton0.$set(iconbutton0_changes);
     			const iconbutton1_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 65536) {
     				iconbutton1_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton1.$set(iconbutton1_changes);
     			const iconbutton2_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 65536) {
     				iconbutton2_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton2.$set(iconbutton2_changes);
     			const iconbutton3_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 65536) {
     				iconbutton3_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton3.$set(iconbutton3_changes);
+    			if_block.p(ctx, dirty);
     			const iconbutton4_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 65536) {
     				iconbutton4_changes.$$scope = { dirty, ctx };
     			}
 
     			iconbutton4.$set(iconbutton4_changes);
-    			const iconbutton5_changes = {};
-
-    			if (dirty & /*$$scope*/ 16384) {
-    				iconbutton5_changes.$$scope = { dirty, ctx };
-    			}
-
-    			iconbutton5.$set(iconbutton5_changes);
 
     			if (!current || dirty & /*showText*/ 1) {
     				set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
@@ -47158,8 +47236,8 @@
     			transition_in(iconbutton1.$$.fragment, local);
     			transition_in(iconbutton2.$$.fragment, local);
     			transition_in(iconbutton3.$$.fragment, local);
+    			transition_in(if_block);
     			transition_in(iconbutton4.$$.fragment, local);
-    			transition_in(iconbutton5.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -47167,8 +47245,8 @@
     			transition_out(iconbutton1.$$.fragment, local);
     			transition_out(iconbutton2.$$.fragment, local);
     			transition_out(iconbutton3.$$.fragment, local);
+    			transition_out(if_block);
     			transition_out(iconbutton4.$$.fragment, local);
-    			transition_out(iconbutton5.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -47177,8 +47255,8 @@
     			destroy_component(iconbutton1);
     			destroy_component(iconbutton2);
     			destroy_component(iconbutton3);
+    			if_blocks[current_block_type_index].d();
     			destroy_component(iconbutton4);
-    			destroy_component(iconbutton5);
     			run_all(dispose);
     		}
     	};
@@ -47203,6 +47281,7 @@
     	let backgroundSize = "background-size: cover;";
     	let image = load(params.key, 0);
     	let backUrl = "/images";
+    	const canShare = "canShare" in navigator;
 
     	function toggleText() {
     		$$invalidate(0, showText = !showText);
@@ -47214,6 +47293,18 @@
 
     	function getNextImage(e) {
     		$$invalidate(3, image = load(image.key, 1));
+    	}
+
+    	async function shareImage(e) {
+    		let response = await fetch(image.fullImageSizeUrl);
+    		let data = await response.blob();
+    		let metadata = { type: "image/jpeg" };
+    		let file = new File([data], image.key + ".jpg", metadata);
+    		const files = [file];
+
+    		if (canShare && navigator.canShare({ files })) {
+    			navigator.share({ files });
+    		}
     	}
 
     	function toggleZoom() {
@@ -47252,7 +47343,7 @@
     	const click_handler_1 = () => page_js(backUrl);
 
     	$$self.$set = $$props => {
-    		if ("params" in $$props) $$invalidate(9, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(11, params = $$props.params);
     	};
 
     	$$self.$capture_state = () => ({
@@ -47268,15 +47359,17 @@
     		backgroundSize,
     		image,
     		backUrl,
+    		canShare,
     		toggleText,
     		getPreviousImage,
     		getNextImage,
+    		shareImage,
     		toggleZoom,
     		load
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("params" in $$props) $$invalidate(9, params = $$props.params);
+    		if ("params" in $$props) $$invalidate(11, params = $$props.params);
     		if ("showText" in $$props) $$invalidate(0, showText = $$props.showText);
     		if ("imageSizeContain" in $$props) imageSizeContain = $$props.imageSizeContain;
     		if ("backgroundStyle" in $$props) $$invalidate(1, backgroundStyle = $$props.backgroundStyle);
@@ -47295,9 +47388,11 @@
     		backgroundSize,
     		image,
     		backUrl,
+    		canShare,
     		toggleText,
     		getPreviousImage,
     		getNextImage,
+    		shareImage,
     		toggleZoom,
     		params,
     		imageSizeContain,
@@ -47310,7 +47405,7 @@
     class ImageFullScreen extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$y, create_fragment$y, safe_not_equal, { params: 9 });
+    		init(this, options, instance$y, create_fragment$y, safe_not_equal, { params: 11 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -47322,7 +47417,7 @@
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*params*/ ctx[9] === undefined && !("params" in props)) {
+    		if (/*params*/ ctx[11] === undefined && !("params" in props)) {
     			console_1$3.warn("<ImageFullScreen> was created without expected prop 'params'");
     		}
     	}
@@ -47376,7 +47471,6 @@
         ROOT_SELECTOR: '.mdc-top-app-bar',
         TITLE_SELECTOR: '.mdc-top-app-bar__title',
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -47457,7 +47551,6 @@
         };
         return MDCTopAppBarBaseFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -47620,7 +47713,6 @@
         };
         return MDCTopAppBarFoundation;
     }(MDCTopAppBarBaseFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -47675,7 +47767,6 @@
         };
         return MDCFixedTopAppBarFoundation;
     }(MDCTopAppBarFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -47775,7 +47866,6 @@
         };
         return MDCShortTopAppBarFoundation;
     }(MDCTopAppBarBaseFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -47892,7 +47982,6 @@
         };
         return MDCTopAppBar;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\top-app-bar\TopAppBar.svelte generated by Svelte v3.20.1 */
     const file$w = "node_modules\\@smui\\top-app-bar\\TopAppBar.svelte";
@@ -48627,7 +48716,6 @@
         Corner[Corner["BOTTOM_START"] = 9] = "BOTTOM_START";
         Corner[Corner["BOTTOM_END"] = 13] = "BOTTOM_END";
     })(Corner || (Corner = {}));
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -48678,7 +48766,6 @@
     var numbers$7 = {
         UNSET_INDEX: -1,
     };
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -49136,7 +49223,6 @@
         };
         return MDCListFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -49385,7 +49471,6 @@
         };
         return MDCList;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -49829,7 +49914,6 @@
         };
         return MDCMenuSurfaceFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -49865,7 +49949,6 @@
         }
         return cachedCssTransformPropertyName_;
     }
-    //# sourceMappingURL=util.js.map
 
     /**
      * @license
@@ -50032,7 +50115,6 @@
         };
         return MDCMenuSurface;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /**
      * @license
@@ -50078,7 +50160,6 @@
         DefaultFocusState[DefaultFocusState["FIRST_ITEM"] = 2] = "FIRST_ITEM";
         DefaultFocusState[DefaultFocusState["LAST_ITEM"] = 3] = "LAST_ITEM";
     })(DefaultFocusState || (DefaultFocusState = {}));
-    //# sourceMappingURL=constants.js.map
 
     /**
      * @license
@@ -50253,7 +50334,6 @@
         };
         return MDCMenuFoundation;
     }(MDCFoundation));
-    //# sourceMappingURL=foundation.js.map
 
     /**
      * @license
@@ -50472,7 +50552,6 @@
         };
         return MDCMenu;
     }(MDCComponent));
-    //# sourceMappingURL=component.js.map
 
     /* node_modules\@smui\menu-surface\MenuSurface.svelte generated by Svelte v3.20.1 */
     const file$z = "node_modules\\@smui\\menu-surface\\MenuSurface.svelte";
@@ -51903,7 +51982,7 @@
     const file$B = "node_modules\\@smui\\list\\List.svelte";
 
     // (18:0) {:else}
-    function create_else_block$5(ctx) {
+    function create_else_block$6(ctx) {
     	let ul;
     	let useActions_action;
     	let forwardEvents_action;
@@ -51994,7 +52073,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$5.name,
+    		id: create_else_block$6.name,
     		type: "else",
     		source: "(18:0) {:else}",
     		ctx
@@ -52004,7 +52083,7 @@
     }
 
     // (1:0) {#if nav}
-    function create_if_block$c(ctx) {
+    function create_if_block$d(ctx) {
     	let nav_1;
     	let useActions_action;
     	let forwardEvents_action;
@@ -52093,7 +52172,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$c.name,
+    		id: create_if_block$d.name,
     		type: "if",
     		source: "(1:0) {#if nav}",
     		ctx
@@ -52107,7 +52186,7 @@
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$c, create_else_block$5];
+    	const if_block_creators = [create_if_block$d, create_else_block$6];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -52605,7 +52684,7 @@
     const file$C = "node_modules\\@smui\\list\\Item.svelte";
 
     // (40:0) {:else}
-    function create_else_block$6(ctx) {
+    function create_else_block$7(ctx) {
     	let li;
     	let useActions_action;
     	let forwardEvents_action;
@@ -52727,7 +52806,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$6.name,
+    		id: create_else_block$7.name,
     		type: "else",
     		source: "(40:0) {:else}",
     		ctx
@@ -52845,7 +52924,7 @@
     }
 
     // (1:0) {#if nav && href}
-    function create_if_block$d(ctx) {
+    function create_if_block$e(ctx) {
     	let a;
     	let useActions_action;
     	let forwardEvents_action;
@@ -52945,7 +53024,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$d.name,
+    		id: create_if_block$e.name,
     		type: "if",
     		source: "(1:0) {#if nav && href}",
     		ctx
@@ -52959,7 +53038,7 @@
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$d, create_if_block_1$5, create_else_block$6];
+    	const if_block_creators = [create_if_block$e, create_if_block_1$5, create_else_block$7];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -53870,7 +53949,7 @@
     }
 
     // (49:6) <Item on:SMUI:action={() => page('/map')}>
-    function create_default_slot_6$4(ctx) {
+    function create_default_slot_6$5(ctx) {
     	let t;
 
     	const block = {
@@ -53887,7 +53966,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$4.name,
+    		id: create_default_slot_6$5.name,
     		type: "slot",
     		source: "(49:6) <Item on:SMUI:action={() => page('/map')}>",
     		ctx
@@ -53897,7 +53976,7 @@
     }
 
     // (50:6) {#if loggedIn}
-    function create_if_block$e(ctx) {
+    function create_if_block$f(ctx) {
     	let t;
     	let current;
 
@@ -53969,7 +54048,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$e.name,
+    		id: create_if_block$f.name,
     		type: "if",
     		source: "(50:6) {#if loggedIn}",
     		ctx
@@ -54132,14 +54211,14 @@
 
     	const item3 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_6$4] },
+    				$$slots: { default: [create_default_slot_6$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	item3.$on("SMUI:action", /*SMUI_action_handler_3*/ ctx[13]);
-    	let if_block = /*loggedIn*/ ctx[0] && create_if_block$e(ctx);
+    	let if_block = /*loggedIn*/ ctx[0] && create_if_block$f(ctx);
 
     	const item4 = new Item$1({
     			props: {
@@ -54228,7 +54307,7 @@
     					if_block.p(ctx, dirty);
     					transition_in(if_block, 1);
     				} else {
-    					if_block = create_if_block$e(ctx);
+    					if_block = create_if_block$f(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(t4.parentNode, t4);
@@ -55967,7 +56046,7 @@
     			create_component(notification.$$.fragment);
     			attr_dev(main, "class", "mainContainer svelte-504mr1");
     			attr_dev(main, "densefixedadjust", "");
-    			add_location(main, file$J, 61, 0, 2203);
+    			add_location(main, file$J, 61, 0, 2196);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -56087,7 +56166,7 @@
     		() => $$invalidate(0, page = ImageFullScreen)
     	);
 
-    	page_js("/*", () => $$invalidate(0, page = AddPlaceToBe));
+    	page_js("/*", () => $$invalidate(0, page = Facts));
     	page_js.start();
     	const writable_props = [];
 

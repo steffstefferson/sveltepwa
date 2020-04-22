@@ -30,12 +30,12 @@
   "theme_color": "#F2EA00",
   "share_target": {
     "action": "/_share-target",
-    "method": "POST",
     "enctype": "multipart/form-data",
+    "method": "POST",
     "params": {
       "files": [
         {
-          "name": "file",
+          "name": "media",
           "accept": ["image/*"]
         }
       ]

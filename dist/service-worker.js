@@ -3365,14 +3365,14 @@
 
     // This will be replaced by the list of files to precache by
     // the `workbox injectManifest` build step.
-    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"c8276b88f8b534962447e10b738ea2f6","url":"components.css"},{"revision":"9da66b5d779819c7c9bd13fb7822d8aa","url":"components2.css"},{"revision":"533991381c8745211c5b156595b30398","url":"index.html"},{"revision":"1427337dccce8e6cf24fc078e45e7895","url":"main.css"}]);
+    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"fb5b7d1349b1371cff7baa3b413c7e5b","url":"components.css"},{"revision":"0fc2d5335fb7c962f4ebfad006fb218a","url":"index.html"},{"revision":"967cf4021e5686489eb09930bd36a814","url":"main.css"}]);
 
     registerRoute("/_share-target", shareTargetHandler, "POST");
 
     registerRoute(new RegExp("/_media/"), cachedMediaHandler);
 
     registerRoute(
-      /\.(?:png|jpg|jpeg|svg|gif)$/,
+      /\.(?:png|jpg|jpeg|gif)$/,
       new CacheFirst({
         cacheName: "my-image-cache",
       })
