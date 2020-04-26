@@ -4,36 +4,43 @@ import { writable } from "svelte/store";
 let factsArray = [];
 let poposalArray = [];
 export const svelteFactStore = writable([]);
+export const svelteNewestFactStore = writable([]);
+
+svelteFactStore.subscribe((facts) => {
+  const newest = facts.sort((y, x) => x.insertTime > y.insertTime).splice(0, 3);
+  svelteNewestFactStore.set(newest);
+});
+
 export const svelteFactProposalStore = writable([]);
 const factsFromStore = JSON.parse(localStorage.getItem("facts"));
 
 var proposalDbRef = db.ref("factsProposal");
 var factsDbRef = db.ref("facts");
 
-proposalDbRef.on("child_added", function(snapshot) {
+proposalDbRef.on("child_added", function (snapshot) {
   var proposal = snapshot.val();
   proposal.key = snapshot.key;
   poposalArray.push(proposal);
   svelteFactProposalStore.set(poposalArray);
 });
-proposalDbRef.on("child_removed", function(snapshot) {
-  poposalArray = poposalArray.filter(p => p.key !== snapshot.key);
+proposalDbRef.on("child_removed", function (snapshot) {
+  poposalArray = poposalArray.filter((p) => p.key !== snapshot.key);
   svelteFactProposalStore.set(poposalArray);
 });
 
 if (factsFromStore && factsFromStore.length) {
   factsArray.push(...factsFromStore);
   factsArray.sort((x, y) => y.insertTime - x.insertTime);
-  svelteFactStore.set(factsArray);
+  svelteFactStore.set([...factsArray]);
 }
 
-factsDbRef.on("child_added", function(snapshot) {
+factsDbRef.on("child_added", function (snapshot) {
   var fact = snapshot.val();
   fact.key = snapshot.key;
   addFact(fact);
 });
-factsDbRef.on("child_removed", function(snapshot) {
-  factsArray = factsArray.filter(p => p.key !== snapshot.key);
+factsDbRef.on("child_removed", function (snapshot) {
+  factsArray = factsArray.filter((p) => p.key !== snapshot.key);
   svelteFactStore.set(factsArray);
 });
 
@@ -47,7 +54,7 @@ export function deleteFact(fact) {
     return factsDbRef
       .child(fact.key)
       .remove()
-      .then(error => {
+      .then((error) => {
         if (error) {
           console.log("error delete fact", error);
           return false;
@@ -63,7 +70,7 @@ export function deleteFactProposal(proposal) {
     return proposalDbRef
       .child(proposal.key)
       .remove()
-      .then(error => {
+      .then((error) => {
         if (error) {
           console.log("error delete proposal", error);
           return false;
@@ -78,9 +85,9 @@ export function acceptFactProposal(proposal) {
   let fact = {
     fact: proposal.fact,
     insertTime: proposal.insertTime,
-    contributor: proposal.contributor
+    contributor: proposal.contributor,
   };
-  return saveFact(fact).then(error => {
+  return saveFact(fact).then((error) => {
     if (error) {
       console.log("error accept proposal", error);
       return false;
@@ -90,19 +97,16 @@ export function acceptFactProposal(proposal) {
 }
 
 function saveFact(fact) {
-  let newFactRef = db
-    .ref()
-    .child("facts")
-    .push();
+  let newFactRef = db.ref().child("facts").push();
   return newFactRef.set(fact);
 }
 
 function addFact(fact) {
-  if (factsArray.some(x => x.key == fact.key)) {
+  if (factsArray.some((x) => x.key == fact.key)) {
     return;
   }
   factsArray.push(fact);
   factsArray.sort((x, y) => y.insertTime - x.insertTime);
-  svelteFactStore.set(factsArray);
+  svelteFactStore.set([...factsArray]);
   localStorage.setItem("facts", JSON.stringify(factsArray));
 }

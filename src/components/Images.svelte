@@ -1,22 +1,21 @@
 <script>
-  import { getImages } from "../services/imageSerivce.js";
+  import { svelteImageStore } from "../services/imageSerivce.js";
   import Image from "./Image.svelte";
   import { userStore } from "./../services/loginService.js";
-  import Kitchen from "@smui/snackbar/kitchen/index";
-  import { deleteImageAndMetadata } from "../services/imageUploadService.js";
-  import { notify } from "./../services/notifyService.js";
 
-  const localStore = getImages();
+  import { deleteImageAndMetadata } from "../services/imageUploadService.js";
+  import { notify, ask } from "./../services/notifyService.js";
 
   let loggedIn = false;
   userStore.subscribe(user => {
     loggedIn = user.loggedIn;
   });
 
-  let kitchen;
-
-  function onDeleteLocation(event) {
-    return pushToKitchen(event.detail);
+  async function onDeleteLocation(event) {
+    let ok = await ask("Do you really want to delete this location?");
+    if (ok) {
+      deleteLocationSerious(event.detail);
+    }
   }
 
   function deleteLocationSerious(location) {
@@ -28,25 +27,6 @@
         notify("something went wrong while deleting the location");
       }
     );
-  }
-
-  function pushToKitchen(location) {
-    kitchen.push({
-      props: {
-        variant: "stacked"
-      },
-      label: "Do you really want to delete this location?",
-      actions: [
-        {
-          onClick: () => deleteLocationSerious(location),
-          text: "Yes, please"
-        },
-        {
-          text: "Nope"
-        }
-      ],
-      dismissButton: false
-    });
   }
 </script>
 
@@ -69,7 +49,7 @@
 
 <div>
   <ul class="list">
-    {#each $localStore as image}
+    {#each $svelteImageStore as image}
       <li class="list-item">
         <Image
           {image}
@@ -79,5 +59,3 @@
     {/each}
   </ul>
 </div>
-
-<Kitchen bind:this={kitchen} dismiss$class="material-icons" />

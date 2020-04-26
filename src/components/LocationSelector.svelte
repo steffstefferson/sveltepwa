@@ -76,7 +76,7 @@
       initMap();
     } else if (selectedOption == "device") {
       locationOfDevice = {
-        msg: "Locate your device postion.....",
+        msg: "Locate your device position.....",
         icon: "phonelink_ring"
       };
       if (!navigator.geolocation) {

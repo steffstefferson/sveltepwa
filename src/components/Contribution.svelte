@@ -47,7 +47,7 @@
 
 </style>
 
-<div>
+<div class="contentpadding">
   <h1>Contribute</h1>
   <form style="max-width: 400px;" on:submit={sendContribution}>
     <div>

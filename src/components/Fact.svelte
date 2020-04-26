@@ -11,9 +11,11 @@
   const dispatch = createEventDispatcher();
 
   function deleteFact() {
+    e.stopPropagation();
     dispatch("delete", { fact });
   }
   function acceptFact() {
+    e.stopPropagation();
     dispatch("accept", { fact });
   }
 </script>

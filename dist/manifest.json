@@ -4,22 +4,22 @@
   "description": "Lurinfacts, the site about the world greatest coder",
   "icons": [
     {
-      "src": "images/logo48m.png",
+      "src": "assets/android-chrome-32x32.png",
       "type": "image/png",
-      "sizes": "48x48"
+      "sizes": "32x32"
     },
     {
-      "src": "images/logo96m.png",
+      "src": "assets/android-chrome-256x256.png",
       "type": "image/png",
-      "sizes": "96x96"
+      "sizes": "256x256"
     },
     {
-      "src": "images/logo192m.png",
+      "src": "assets/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "images/logo512m.png",
+      "src": "assets/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

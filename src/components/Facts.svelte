@@ -1,11 +1,10 @@
 <script>
   import { svelteFactStore, deleteFact } from "./../services/factsService";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import { notify } from "./../services/notifyService";
+  import { notify, ask } from "./../services/notifyService";
   import Fact from "./Fact.svelte";
   import Button, { Label } from "@smui/button";
   import { userStore } from "./../services/loginService.js";
-  import Kitchen from "@smui/snackbar/kitchen/index";
   import page from "page";
 
   export let params;
@@ -16,10 +15,11 @@
     loggedIn = user.loggedIn;
   });
 
-  let kitchen;
-
-  function onDeleteFact(event) {
-    return pushToKitchen(event.detail.fact);
+  async function onDeleteFact(event) {
+    let ok = await ask("Do you really want to delete this fact?");
+    if (ok) {
+      deleteFactSerious(event.detail);
+    }
   }
 
   function deleteFactSerious(fact) {
@@ -45,25 +45,6 @@
     selectedFact = fact;
     selectedFactDialog.open();
     page("/facts?key=" + selectedFact.key);
-  }
-
-  function pushToKitchen(fact) {
-    kitchen.push({
-      props: {
-        variant: "stacked"
-      },
-      label: "Do you really want to delete this fact?",
-      actions: [
-        {
-          onClick: () => deleteFactSerious(fact),
-          text: "Yes, please"
-        },
-        {
-          text: "Nope"
-        }
-      ],
-      dismissButton: false
-    });
   }
 </script>
 
@@ -126,5 +107,3 @@
     </Button>
   </Actions>
 </Dialog>
-
-<Kitchen bind:this={kitchen} dismiss$class="material-icons" />

@@ -3,6 +3,7 @@
   import Facts from "./components/Facts.svelte";
   import Images from "./components/Images.svelte";
   import Map from "./components/Map.svelte";
+  import Home from "./components/Home.svelte";
   import Settings from "./components/Settings.svelte";
   import AddPlaceToBe from "./components/AddPlaceToBe.svelte";
   import Login from "./components/Login.svelte";
@@ -19,6 +20,7 @@
   let params = {};
 
   router("/login", () => (page = Login));
+  router("/home", () => (page = Home));
   router("/settings", () => (page = Settings));
   router("/contribute", () => (page = Contribution));
   router("/contributions", () => (page = ManageContribution));
@@ -39,7 +41,7 @@
   router("/images", () => (page = Images));
 
   router(
-    "/images/slideShow",
+    "/slideShow",
     (ctx, next) => {
       params = ctx.querystring.split("&").reduce((red, keyval) => {
         let [key, val] = keyval.split("=");
@@ -51,7 +53,7 @@
     () => (page = ImageFullScreen)
   );
 
-  router("/*", () => (page = Facts));
+  router("/*", () => (page = Home));
   router.start();
 </script>
 
@@ -66,6 +68,10 @@
     float: right;
   }
 
+  :global(.contentpadding) {
+    padding: 0px 20px;
+  }
+
   :global(app, body, html) {
     display: block !important;
     height: auto !important;
@@ -74,7 +80,7 @@
     font-family: Roboto, sans-serif;
   }
   .mainContainer {
-    padding: 40px 20px;
+    padding: 50px 0px;
   }
 </style>
 

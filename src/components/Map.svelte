@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { Icon } from "@smui/icon-button";
-  import { getImages } from "../services/imageSerivce.js";
+  import { svelteImageStore } from "../services/imageSerivce.js";
   import { tick } from "svelte";
   import page from "page";
 
@@ -9,9 +9,10 @@
   let map;
   let mapElement;
   let markers = [];
+  let online = window.navigator.onLine;
 
   function initMap() {
-    if (!googleMapsLoaded) {
+    if (!window.googleMapsLoaded) {
       return;
     }
     let initialCoords = { lat: 46.65, lng: 7.709 };
@@ -53,15 +54,23 @@
     while (images.length > 0) {
       let i = 0;
       while (images.length > 0 && i++ < 10) {
-        addImageToMap(images.pop());
+        var img = images.pop();
+        delayedAdd(img);
       }
-      await tick();
     }
   }
 
+  function delayedAdd(img) {
+    window.setTimeout(function() {
+      addImageToMap(img);
+    }, 1000 + Math.random() * 7000);
+  }
+
   onMount(async () => {
-    initMap();
-    getImages().subscribe(addImagesToMap);
+    if (online) {
+      initMap();
+      svelteImageStore.subscribe(addImagesToMap);
+    }
   });
 
   function getTemplate(image) {
@@ -121,6 +130,13 @@
   }
 </style>
 
-<div class="mapContainer">
-  <div id="map" bind:this={mapElement} />
-</div>
+{#if online}
+  <div class="mapContainer">
+    <div id="map" bind:this={mapElement} />
+  </div>
+{:else}
+  <h1>Sorry, Google Maps only work when online!</h1>
+  Go to
+  <a href="/images">Images</a>
+  instead.
+{/if}

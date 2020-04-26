@@ -36,7 +36,11 @@
     let file = new File([data], image.key + ".jpg", metadata);
     const files = [file];
     if (canShare && navigator.canShare({ files })) {
-      navigator.share({ files });
+      try {
+        navigator.share({ files });
+      } catch (ex) {
+        console.log("sharerror", ex);
+      }
     }
   }
 
@@ -60,7 +64,7 @@
         backgroundStyle = "background-image: url(" + fullSizeImageUrl + "); ";
       });
     }
-    page("/images/slideShow?key=" + key);
+    page("/slideShow?key=" + key);
 
     return img;
   }

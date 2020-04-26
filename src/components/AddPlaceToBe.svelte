@@ -90,7 +90,7 @@
 
 </style>
 
-<div>
+<div class="contentpadding">
   <h1>Add place to be</h1>
   <form style="max-width: 400px;" on:submit={saveData}>
     <div>

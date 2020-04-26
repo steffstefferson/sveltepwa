@@ -11,7 +11,8 @@
 
   const dispatch = createEventDispatcher();
 
-  function deleteLocation() {
+  function deleteLocation(e) {
+    e.stopPropagation();
     dispatch("delete", image);
   }
 
@@ -25,7 +26,7 @@
 <style>
   .imageContainer {
     margin: 5px;
-    padding: 15px 15px;
+    padding: 16px;
     background-color: #ffff65;
     font-size: 18px;
     border: 2px solid #b7b3b3;
@@ -41,7 +42,7 @@
   }
   .imageSubtitle {
     font-size: 12px;
-    float: right;
+    text-align: right;
   }
 
   .square {
@@ -69,7 +70,7 @@
 
 <div
   class="imageContainer"
-  on:click={() => page('/images/slideShow?key=' + image.key)}>
+  on:click={() => page('/slideShow?key=' + image.key)}>
 
   <div class="imageText">{image.imageTitle}</div>
   <div class="square">

@@ -2383,56 +2383,56 @@
 
     function preparePushMessage(event) {
       if (event.data) {
-        console.log('This push event has data: ', event.data.text());
+        console.log("This push event has data: ", event.data.text());
       } else {
-        console.log('This push event has no data.');
+        console.log("This push event has no data.");
       }
 
       var pushMsg = convertMessage(event.data);
       if (pushMsg.type) {
         var options = prepareOptions(pushMsg);
-        return { title: pushMsg.title, options }
+        return { title: pushMsg.title, options };
       } else {
-        console.log('This push event has no pushType.');
+        console.log("This push event has no pushType.");
       }
     }
 
     function convertMessage(data) {
       try {
-        return data.json()
+        return data.json();
       } catch (err) {
-        console.log('could not jsonize ' + data.text(), err);
+        console.log("could not jsonize " + data.text(), err);
       }
       //return test message!
       return {
-        type: 'message',
-        title: 'Lurin just like to say that he is watching you!',
-        message: '',
+        type: "message",
+        title: "Lurin just like to say that he is watching you!",
+        message: "",
         timestamp: new Date(),
-      }
+      };
     }
 
     function prepareOptions(pushMsg) {
-      console.log('handle push msg:' + pushMsg.type);
-      var data = { url: '/home' };
+      console.log("handle push msg:" + pushMsg.type);
+      var data = { url: "/home" };
 
-      if (pushMsg.type == 'newfact' || pushMsg.type == 'randomfact') {
-        data = { url: '/facts?key=' + pushMsg.itemKey };
+      if (pushMsg.type == "newfact" || pushMsg.type == "randomfact") {
+        data = { url: "/facts?key=" + pushMsg.itemKey };
       }
-      if (pushMsg.type == 'newimage' || pushMsg.type == 'randomimage') {
-        data = { url: '/images/slideShow?key=' + pushMsg.itemKey };
+      if (pushMsg.type == "newimage" || pushMsg.type == "randomimage") {
+        data = { url: "/slideShow?key=" + pushMsg.itemKey };
       }
 
       const options = {
-        badge: '/images/logo192m.png',
-        icon: '/images/logo192m.png',
+        badge: "/images/logo192m.png",
+        icon: "/images/logo192m.png",
         body: pushMsg.message,
         data: data,
         vibrate: [500, 110, 500],
         timestamp: pushMsg.timestamp,
       };
 
-      return options
+      return options;
     }
 
     // @ts-ignore
@@ -3365,7 +3365,7 @@
 
     // This will be replaced by the list of files to precache by
     // the `workbox injectManifest` build step.
-    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"fb5b7d1349b1371cff7baa3b413c7e5b","url":"components.css"},{"revision":"0fc2d5335fb7c962f4ebfad006fb218a","url":"index.html"},{"revision":"967cf4021e5686489eb09930bd36a814","url":"main.css"}]);
+    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"690470d76ef241197c08d5c255aa5f02","url":"components.css"},{"revision":"34886ec37a5c7f1984c7121651f21b1a","url":"index.html"},{"revision":"505e422bf6b8f99426264ad2c440282a","url":"main.css"}]);
 
     registerRoute("/_share-target", shareTargetHandler, "POST");
 

@@ -51,10 +51,10 @@
       <Item on:SMUI:action={() => page('/images')}>Images</Item>
       <Item on:SMUI:action={() => page('/map')}>Map</Item>
       {#if loggedIn}
-        <Item on:SMUI:action={() => page('/admin/contributions')}>
+        <Item on:SMUI:action={() => page('/contributions')}>
           Manage contributions
         </Item>
-        <Item on:SMUI:action={() => page('/admin/addImage')}>Add image</Item>
+        <Item on:SMUI:action={() => page('/addImage')}>Add image</Item>
       {/if}
       <Item on:SMUI:action={() => page('/login')}>
         {loggedIn ? 'Logout' : 'Login'}

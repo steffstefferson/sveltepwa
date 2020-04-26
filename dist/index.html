@@ -92,16 +92,16 @@
       function mapsLoaded() {
         window.googleMapsLoaded = true;
       }
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/service-worker.js", { scope: "" })
-          .then(function (reg) {
-            console.log("Registrierung erfolgreich. Scope ist " + reg.scope);
-          })
-          .catch(function (error) {
-            console.log("Registrierung fehlgeschlagen mit " + error);
-          });
-      }
+      // if ("serviceWorker" in navigator) {
+      //   navigator.serviceWorker
+      //     .register("/service-worker.js", { scope: "" })
+      //     .then(function (reg) {
+      //       console.log("Registrierung erfolgreich. Scope ist " + reg.scope);
+      //     })
+      //     .catch(function (error) {
+      //       console.log("Registrierung fehlgeschlagen mit " + error);
+      //     });
+      // }
     </script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkg9lEDwpI3a_YteembM0t_iOmR3jdOD8&callback=mapsLoaded"

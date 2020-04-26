@@ -63,8 +63,8 @@
   }
 </style>
 
-<h1>Manage fact purposals</h1>
-<div>
+<div class="contentpadding">
+  <h1>Manage fact purposals</h1>
   <ul class="list">
     {#each $svelteFactProposalStore as fact}
       <li class="list-item">
