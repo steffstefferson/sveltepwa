@@ -75,6 +75,29 @@ ul {
   .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
     color: rgba(255, 255, 255, 0.87) !important;
   }
+
+  .mdc-text-field--focused
+    .mdc-text-field__input:required
+    ~ .mdc-floating-label:after,
+  .mdc-text-field--focused
+    .mdc-text-field__input:required
+    ~ .mdc-notched-outline
+    .mdc-floating-label:after,
+  .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: rgba(255, 255, 255, 0.87) !important;
+  }
+}
+
+.mdc-text-field--focused
+  .mdc-text-field__input:required
+  ~ .mdc-floating-label:after,
+.md
+  -text-field--focused
+  .mdc-text-field__input:required
+  ~ .mdc-notched-outline
+  .mdc-floating-label:after,
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(0, 0, 0, 0.87) !important;
 }
 
 @import "@material/linear-progress/mixins";

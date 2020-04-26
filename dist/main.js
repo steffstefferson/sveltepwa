@@ -32754,7 +32754,7 @@
     	return child_ctx;
     }
 
-    // (22:6) {#each $svelteNewestFactStore as fact}
+    // (20:6) {#each $svelteNewestFactStore as fact}
     function create_each_block_1(ctx) {
     	let div;
     	let current;
@@ -32777,8 +32777,8 @@
     		c: function create() {
     			div = element("div");
     			create_component(fact.$$.fragment);
-    			attr_dev(div, "class", "fact svelte-14imjvt");
-    			add_location(div, file$f, 22, 8, 852);
+    			attr_dev(div, "class", "fact svelte-147mad1");
+    			add_location(div, file$f, 20, 8, 984);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, div, anchor);
@@ -32813,14 +32813,14 @@
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(22:6) {#each $svelteNewestFactStore as fact}",
+    		source: "(20:6) {#each $svelteNewestFactStore as fact}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:8) <Label>
+    // (26:8) <Label>
     function create_default_slot_3$2(ctx) {
     	let t;
 
@@ -32840,14 +32840,14 @@
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(28:8) <Label>",
+    		source: "(26:8) <Label>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:6) <Button href="/facts" variant="raised" class="formButton">
+    // (25:6) <Button href="/facts" variant="raised" class="formButton">
     function create_default_slot_2$2(ctx) {
     	let current;
 
@@ -32894,14 +32894,14 @@
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(27:6) <Button href=\\\"/facts\\\" variant=\\\"raised\\\" class=\\\"formButton\\\">",
+    		source: "(25:6) <Button href=\\\"/facts\\\" variant=\\\"raised\\\" class=\\\"formButton\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (33:6) {#each $svelteNewestImageStore as image}
+    // (31:6) {#each $svelteNewestImageStore as image}
     function create_each_block$2(ctx) {
     	let current;
 
@@ -32944,14 +32944,14 @@
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(33:6) {#each $svelteNewestImageStore as image}",
+    		source: "(31:6) {#each $svelteNewestImageStore as image}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:8) <Label>
+    // (35:8) <Label>
     function create_default_slot_1$3(ctx) {
     	let t;
 
@@ -32971,14 +32971,14 @@
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(37:8) <Label>",
+    		source: "(35:8) <Label>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (36:6) <Button href="/images" variant="raised" class="formButton">
+    // (34:6) <Button href="/images" variant="raised" class="formButton">
     function create_default_slot$5(ctx) {
     	let current;
 
@@ -33025,7 +33025,7 @@
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(36:6) <Button href=\\\"/images\\\" variant=\\\"raised\\\" class=\\\"formButton\\\">",
+    		source: "(34:6) <Button href=\\\"/images\\\" variant=\\\"raised\\\" class=\\\"formButton\\\">",
     		ctx
     	});
 
@@ -33033,17 +33033,16 @@
     }
 
     function create_fragment$h(ctx) {
-    	let div3;
-    	let img;
-    	let img_src_value;
-    	let t0;
-    	let div2;
+    	let div4;
     	let div0;
+    	let t0;
+    	let div3;
+    	let div1;
     	let h10;
     	let t2;
     	let t3;
     	let t4;
-    	let div1;
+    	let div2;
     	let h11;
     	let t6;
     	let t7;
@@ -33096,11 +33095,11 @@
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
-    			img = element("img");
-    			t0 = space();
-    			div2 = element("div");
+    			div4 = element("div");
     			div0 = element("div");
+    			t0 = space();
+    			div3 = element("div");
+    			div1 = element("div");
     			h10 = element("h1");
     			h10.textContent = "Newest facts";
     			t2 = space();
@@ -33112,7 +33111,7 @@
     			t3 = space();
     			create_component(button0.$$.fragment);
     			t4 = space();
-    			div1 = element("div");
+    			div2 = element("div");
     			h11 = element("h1");
     			h11.textContent = "Newest image";
     			t6 = space();
@@ -33123,50 +33122,49 @@
 
     			t7 = space();
     			create_component(button1.$$.fragment);
-    			attr_dev(img, "class", "headerImage svelte-14imjvt");
-    			if (img.src !== (img_src_value = "./../assets/lurinfacts-header-transparent.png")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "Lurinfacts Logo");
-    			add_location(img, file$f, 14, 2, 600);
-    			add_location(h10, file$f, 20, 6, 775);
-    			attr_dev(div0, "class", "list-item svelte-14imjvt");
-    			add_location(div0, file$f, 19, 4, 744);
-    			add_location(h11, file$f, 31, 6, 1184);
-    			attr_dev(div1, "class", "list-item svelte-14imjvt");
-    			add_location(div1, file$f, 30, 4, 1153);
-    			attr_dev(div2, "class", "list svelte-14imjvt");
-    			add_location(div2, file$f, 18, 2, 720);
-    			attr_dev(div3, "class", "contentpadding");
-    			add_location(div3, file$f, 13, 0, 568);
+    			attr_dev(div0, "id", "maskedLogo");
+    			attr_dev(div0, "class", "svelte-147mad1");
+    			add_location(div0, file$f, 15, 2, 825);
+    			add_location(h10, file$f, 18, 6, 907);
+    			attr_dev(div1, "class", "list-item svelte-147mad1");
+    			add_location(div1, file$f, 17, 4, 876);
+    			add_location(h11, file$f, 29, 6, 1316);
+    			attr_dev(div2, "class", "list-item svelte-147mad1");
+    			add_location(div2, file$f, 28, 4, 1285);
+    			attr_dev(div3, "class", "list svelte-147mad1");
+    			add_location(div3, file$f, 16, 2, 852);
+    			attr_dev(div4, "class", "contentpadding");
+    			add_location(div4, file$f, 13, 0, 791);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, img);
-    			append_dev(div3, t0);
-    			append_dev(div3, div2);
-    			append_dev(div2, div0);
-    			append_dev(div0, h10);
-    			append_dev(div0, t2);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div0);
+    			append_dev(div4, t0);
+    			append_dev(div4, div3);
+    			append_dev(div3, div1);
+    			append_dev(div1, h10);
+    			append_dev(div1, t2);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(div0, null);
+    				each_blocks_1[i].m(div1, null);
     			}
 
-    			append_dev(div0, t3);
-    			mount_component(button0, div0, null);
-    			append_dev(div2, t4);
-    			append_dev(div2, div1);
-    			append_dev(div1, h11);
-    			append_dev(div1, t6);
+    			append_dev(div1, t3);
+    			mount_component(button0, div1, null);
+    			append_dev(div3, t4);
+    			append_dev(div3, div2);
+    			append_dev(div2, h11);
+    			append_dev(div2, t6);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div1, null);
+    				each_blocks[i].m(div2, null);
     			}
 
-    			append_dev(div1, t7);
-    			mount_component(button1, div1, null);
+    			append_dev(div2, t7);
+    			mount_component(button1, div2, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -33185,7 +33183,7 @@
     						each_blocks_1[i] = create_each_block_1(child_ctx);
     						each_blocks_1[i].c();
     						transition_in(each_blocks_1[i], 1);
-    						each_blocks_1[i].m(div0, t3);
+    						each_blocks_1[i].m(div1, t3);
     					}
     				}
 
@@ -33221,7 +33219,7 @@
     						each_blocks[i] = create_each_block$2(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div1, t7);
+    						each_blocks[i].m(div2, t7);
     					}
     				}
 
@@ -33276,7 +33274,7 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div4);
     			destroy_each(each_blocks_1, detaching);
     			destroy_component(button0);
     			destroy_each(each_blocks, detaching);
@@ -46112,26 +46110,26 @@
     			if_block.c();
     			t11 = space();
     			create_component(iconbutton4.$$.fragment);
-    			attr_dev(div0, "class", "showHideInfoArea svelte-1x03scn");
-    			add_location(div0, file$v, 76, 2, 2562);
-    			attr_dev(span, "class", "title svelte-1x03scn");
-    			add_location(span, file$v, 87, 8, 2839);
-    			attr_dev(div1, "class", "svelte-1x03scn");
-    			add_location(div1, file$v, 86, 6, 2825);
-    			attr_dev(div2, "class", "text svelte-1x03scn");
-    			add_location(div2, file$v, 89, 6, 2904);
-    			attr_dev(div3, "class", "text svelte-1x03scn");
-    			add_location(div3, file$v, 90, 6, 2950);
-    			attr_dev(div4, "class", "svelte-1x03scn");
-    			add_location(div4, file$v, 85, 4, 2813);
-    			attr_dev(div5, "class", "svelte-1x03scn");
-    			add_location(div5, file$v, 92, 4, 3024);
-    			attr_dev(div6, "class", "textContainer svelte-1x03scn");
+    			attr_dev(div0, "class", "showHideInfoArea svelte-5k3dd5");
+    			add_location(div0, file$v, 76, 2, 2624);
+    			attr_dev(span, "class", "title svelte-5k3dd5");
+    			add_location(span, file$v, 87, 8, 2901);
+    			attr_dev(div1, "class", "svelte-5k3dd5");
+    			add_location(div1, file$v, 86, 6, 2887);
+    			attr_dev(div2, "class", "text svelte-5k3dd5");
+    			add_location(div2, file$v, 89, 6, 2966);
+    			attr_dev(div3, "class", "text svelte-5k3dd5");
+    			add_location(div3, file$v, 90, 6, 3012);
+    			attr_dev(div4, "class", "svelte-5k3dd5");
+    			add_location(div4, file$v, 85, 4, 2875);
+    			attr_dev(div5, "class", "svelte-5k3dd5");
+    			add_location(div5, file$v, 92, 4, 3086);
+    			attr_dev(div6, "class", "textContainer svelte-5k3dd5");
     			set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
-    			add_location(div6, file$v, 82, 2, 2719);
-    			attr_dev(div7, "class", "container svelte-1x03scn");
+    			add_location(div6, file$v, 82, 2, 2781);
+    			attr_dev(div7, "class", "container svelte-5k3dd5");
     			attr_dev(div7, "style", div7_style_value = "" + (/*backgroundStyle*/ ctx[1] + " " + /*backgroundSize*/ ctx[2]));
-    			add_location(div7, file$v, 75, 0, 2493);
+    			add_location(div7, file$v, 75, 0, 2555);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -52678,7 +52676,7 @@
     const file$E = "src\\components\\HeaderTopBar.svelte";
 
     // (32:6) <IconButton class="material-icons" on:click={() => menu2.setOpen(true)}>
-    function create_default_slot_13(ctx) {
+    function create_default_slot_15(ctx) {
     	let t;
 
     	const block = {
@@ -52695,7 +52693,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_13.name,
+    		id: create_default_slot_15.name,
     		type: "slot",
     		source: "(32:6) <IconButton class=\\\"material-icons\\\" on:click={() => menu2.setOpen(true)}>",
     		ctx
@@ -52705,7 +52703,7 @@
     }
 
     // (31:4) <Section>
-    function create_default_slot_12(ctx) {
+    function create_default_slot_14(ctx) {
     	let t0;
     	let span;
     	let current;
@@ -52713,7 +52711,7 @@
     	const iconbutton = new IconButton({
     			props: {
     				class: "material-icons",
-    				$$slots: { default: [create_default_slot_13] },
+    				$$slots: { default: [create_default_slot_15] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -52763,7 +52761,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_12.name,
+    		id: create_default_slot_14.name,
     		type: "slot",
     		source: "(31:4) <Section>",
     		ctx
@@ -52773,12 +52771,12 @@
     }
 
     // (30:2) <Row>
-    function create_default_slot_11(ctx) {
+    function create_default_slot_13(ctx) {
     	let current;
 
     	const section = new Section({
     			props: {
-    				$$slots: { default: [create_default_slot_12] },
+    				$$slots: { default: [create_default_slot_14] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -52817,7 +52815,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11.name,
+    		id: create_default_slot_13.name,
     		type: "slot",
     		source: "(30:2) <Row>",
     		ctx
@@ -52827,12 +52825,12 @@
     }
 
     // (29:0) <TopAppBar {dense} {prominent} {variant} color="primary" bind:collapsed>
-    function create_default_slot_10(ctx) {
+    function create_default_slot_12(ctx) {
     	let current;
 
     	const row = new Row({
     			props: {
-    				$$slots: { default: [create_default_slot_11] },
+    				$$slots: { default: [create_default_slot_13] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -52871,7 +52869,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10.name,
+    		id: create_default_slot_12.name,
     		type: "slot",
     		source: "(29:0) <TopAppBar {dense} {prominent} {variant} color=\\\"primary\\\" bind:collapsed>",
     		ctx
@@ -52881,7 +52879,7 @@
     }
 
     // (46:6) <Item on:SMUI:action={() => page('/')}>
-    function create_default_slot_9(ctx) {
+    function create_default_slot_11(ctx) {
     	let t;
 
     	const block = {
@@ -52898,7 +52896,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9.name,
+    		id: create_default_slot_11.name,
     		type: "slot",
     		source: "(46:6) <Item on:SMUI:action={() => page('/')}>",
     		ctx
@@ -52908,7 +52906,7 @@
     }
 
     // (47:6) <Item on:SMUI:action={() => page('/facts')}>
-    function create_default_slot_8(ctx) {
+    function create_default_slot_10(ctx) {
     	let t;
 
     	const block = {
@@ -52925,7 +52923,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8.name,
+    		id: create_default_slot_10.name,
     		type: "slot",
     		source: "(47:6) <Item on:SMUI:action={() => page('/facts')}>",
     		ctx
@@ -52935,7 +52933,7 @@
     }
 
     // (48:6) <Item on:SMUI:action={() => page('/images')}>
-    function create_default_slot_7$3(ctx) {
+    function create_default_slot_9(ctx) {
     	let t;
 
     	const block = {
@@ -52952,7 +52950,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$3.name,
+    		id: create_default_slot_9.name,
     		type: "slot",
     		source: "(48:6) <Item on:SMUI:action={() => page('/images')}>",
     		ctx
@@ -52962,7 +52960,7 @@
     }
 
     // (49:6) <Item on:SMUI:action={() => page('/map')}>
-    function create_default_slot_6$5(ctx) {
+    function create_default_slot_8(ctx) {
     	let t;
 
     	const block = {
@@ -52979,7 +52977,7 @@
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$5.name,
+    		id: create_default_slot_8.name,
     		type: "slot",
     		source: "(49:6) <Item on:SMUI:action={() => page('/map')}>",
     		ctx
@@ -52988,22 +52986,70 @@
     	return block;
     }
 
-    // (50:6) {#if loggedIn}
+    // (50:6) <Item on:SMUI:action={() => page('/settings')}>
+    function create_default_slot_7$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Settings");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_7$3.name,
+    		type: "slot",
+    		source: "(50:6) <Item on:SMUI:action={() => page('/settings')}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (51:6) <Item on:SMUI:action={() => page('/login')}>
+    function create_default_slot_6$5(ctx) {
+    	let t_value = (/*loggedIn*/ ctx[0] ? "Logout" : "Login") + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*loggedIn*/ 1 && t_value !== (t_value = (/*loggedIn*/ ctx[0] ? "Logout" : "Login") + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_6$5.name,
+    		type: "slot",
+    		source: "(51:6) <Item on:SMUI:action={() => page('/login')}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (54:6) {#if loggedIn}
     function create_if_block$f(ctx) {
     	let t;
     	let current;
 
     	const item0 = new Item$1({
-    			props: {
-    				$$slots: { default: [create_default_slot_5$5] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	item0.$on("SMUI:action", /*SMUI_action_handler_4*/ ctx[14]);
-
-    	const item1 = new Item$1({
     			props: {
     				$$slots: { default: [create_default_slot_4$6] },
     				$$scope: { ctx }
@@ -53011,7 +53057,17 @@
     			$$inline: true
     		});
 
-    	item1.$on("SMUI:action", /*SMUI_action_handler_5*/ ctx[15]);
+    	item0.$on("SMUI:action", /*SMUI_action_handler_6*/ ctx[16]);
+
+    	const item1 = new Item$1({
+    			props: {
+    				$$slots: { default: [create_default_slot_2$a] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	item1.$on("SMUI:action", /*SMUI_action_handler_7*/ ctx[17]);
 
     	const block = {
     		c: function create() {
@@ -53063,20 +53119,20 @@
     		block,
     		id: create_if_block$f.name,
     		type: "if",
-    		source: "(50:6) {#if loggedIn}",
+    		source: "(54:6) {#if loggedIn}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:8) <Item on:SMUI:action={() => page('/contributions')}>
+    // (56:10) <Icon              class="material-icons"              style="font-size:18px; margin-top: -5px;">
     function create_default_slot_5$5(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Manage contributions");
+    			t = text("lock");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -53090,25 +53146,58 @@
     		block,
     		id: create_default_slot_5$5.name,
     		type: "slot",
-    		source: "(51:8) <Item on:SMUI:action={() => page('/contributions')}>",
+    		source: "(56:10) <Icon              class=\\\"material-icons\\\"              style=\\\"font-size:18px; margin-top: -5px;\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:8) <Item on:SMUI:action={() => page('/addImage')}>
+    // (55:8) <Item on:SMUI:action={() => page('/contributions')}>
     function create_default_slot_4$6(ctx) {
     	let t;
+    	let current;
+
+    	const icon = new Icon({
+    			props: {
+    				class: "material-icons",
+    				style: "font-size:18px; margin-top: -5px;",
+    				$$slots: { default: [create_default_slot_5$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
-    			t = text("Add image");
+    			create_component(icon.$$.fragment);
+    			t = text("\r\n          Contributions");
     		},
     		m: function mount(target, anchor) {
+    			mount_component(icon, target, anchor);
     			insert_dev(target, t, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const icon_changes = {};
+
+    			if (dirty & /*$$scope*/ 2097152) {
+    				icon_changes.$$scope = { dirty, ctx };
+    			}
+
+    			icon.$set(icon_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(icon.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(icon.$$.fragment, local);
+    			current = false;
     		},
     		d: function destroy(detaching) {
+    			destroy_component(icon, detaching);
     			if (detaching) detach_dev(t);
     		}
     	};
@@ -53117,27 +53206,23 @@
     		block,
     		id: create_default_slot_4$6.name,
     		type: "slot",
-    		source: "(54:8) <Item on:SMUI:action={() => page('/addImage')}>",
+    		source: "(55:8) <Item on:SMUI:action={() => page('/contributions')}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:6) <Item on:SMUI:action={() => page('/login')}>
+    // (64:10) <Icon              class="material-icons"              style="font-size:18px; margin-top: -5px;">
     function create_default_slot_3$9(ctx) {
-    	let t_value = (/*loggedIn*/ ctx[0] ? "Logout" : "Login") + "";
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text(t_value);
+    			t = text("lock");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*loggedIn*/ 1 && t_value !== (t_value = (/*loggedIn*/ ctx[0] ? "Logout" : "Login") + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t);
@@ -53148,25 +53233,58 @@
     		block,
     		id: create_default_slot_3$9.name,
     		type: "slot",
-    		source: "(56:6) <Item on:SMUI:action={() => page('/login')}>",
+    		source: "(64:10) <Icon              class=\\\"material-icons\\\"              style=\\\"font-size:18px; margin-top: -5px;\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:6) <Item on:SMUI:action={() => page('/settings')}>
+    // (63:8) <Item on:SMUI:action={() => page('/addImage')}>
     function create_default_slot_2$a(ctx) {
     	let t;
+    	let current;
+
+    	const icon = new Icon({
+    			props: {
+    				class: "material-icons",
+    				style: "font-size:18px; margin-top: -5px;",
+    				$$slots: { default: [create_default_slot_3$9] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
-    			t = text("Settings");
+    			create_component(icon.$$.fragment);
+    			t = text("\r\n          Add image");
     		},
     		m: function mount(target, anchor) {
+    			mount_component(icon, target, anchor);
     			insert_dev(target, t, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const icon_changes = {};
+
+    			if (dirty & /*$$scope*/ 2097152) {
+    				icon_changes.$$scope = { dirty, ctx };
+    			}
+
+    			icon.$set(icon_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(icon.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(icon.$$.fragment, local);
+    			current = false;
     		},
     		d: function destroy(detaching) {
+    			destroy_component(icon, detaching);
     			if (detaching) detach_dev(t);
     		}
     	};
@@ -53175,7 +53293,7 @@
     		block,
     		id: create_default_slot_2$a.name,
     		type: "slot",
-    		source: "(59:6) <Item on:SMUI:action={() => page('/settings')}>",
+    		source: "(63:8) <Item on:SMUI:action={() => page('/addImage')}>",
     		ctx
     	});
 
@@ -53190,11 +53308,12 @@
     	let t3;
     	let t4;
     	let t5;
+    	let if_block_anchor;
     	let current;
 
     	const item0 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_9] },
+    				$$slots: { default: [create_default_slot_11] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -53204,7 +53323,7 @@
 
     	const item1 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_8] },
+    				$$slots: { default: [create_default_slot_10] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -53214,7 +53333,7 @@
 
     	const item2 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_7$3] },
+    				$$slots: { default: [create_default_slot_9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -53224,34 +53343,34 @@
 
     	const item3 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_6$5] },
+    				$$slots: { default: [create_default_slot_8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	item3.$on("SMUI:action", /*SMUI_action_handler_3*/ ctx[13]);
-    	let if_block = /*loggedIn*/ ctx[0] && create_if_block$f(ctx);
 
     	const item4 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_3$9] },
+    				$$slots: { default: [create_default_slot_7$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	item4.$on("SMUI:action", /*SMUI_action_handler_6*/ ctx[16]);
+    	item4.$on("SMUI:action", /*SMUI_action_handler_4*/ ctx[14]);
 
     	const item5 = new Item$1({
     			props: {
-    				$$slots: { default: [create_default_slot_2$a] },
+    				$$slots: { default: [create_default_slot_6$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	item5.$on("SMUI:action", /*SMUI_action_handler_7*/ ctx[17]);
+    	item5.$on("SMUI:action", /*SMUI_action_handler_5*/ ctx[15]);
+    	let if_block = /*loggedIn*/ ctx[0] && create_if_block$f(ctx);
 
     	const block = {
     		c: function create() {
@@ -53263,11 +53382,12 @@
     			t2 = space();
     			create_component(item3.$$.fragment);
     			t3 = space();
-    			if (if_block) if_block.c();
-    			t4 = space();
     			create_component(item4.$$.fragment);
-    			t5 = space();
+    			t4 = space();
     			create_component(item5.$$.fragment);
+    			t5 = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
     		},
     		m: function mount(target, anchor) {
     			mount_component(item0, target, anchor);
@@ -53278,11 +53398,12 @@
     			insert_dev(target, t2, anchor);
     			mount_component(item3, target, anchor);
     			insert_dev(target, t3, anchor);
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, t4, anchor);
     			mount_component(item4, target, anchor);
-    			insert_dev(target, t5, anchor);
+    			insert_dev(target, t4, anchor);
     			mount_component(item5, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -53314,6 +53435,20 @@
     			}
 
     			item3.$set(item3_changes);
+    			const item4_changes = {};
+
+    			if (dirty & /*$$scope*/ 2097152) {
+    				item4_changes.$$scope = { dirty, ctx };
+    			}
+
+    			item4.$set(item4_changes);
+    			const item5_changes = {};
+
+    			if (dirty & /*$$scope, loggedIn*/ 2097153) {
+    				item5_changes.$$scope = { dirty, ctx };
+    			}
+
+    			item5.$set(item5_changes);
 
     			if (/*loggedIn*/ ctx[0]) {
     				if (if_block) {
@@ -53323,7 +53458,7 @@
     					if_block = create_if_block$f(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(t4.parentNode, t4);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -53334,21 +53469,6 @@
 
     				check_outros();
     			}
-
-    			const item4_changes = {};
-
-    			if (dirty & /*$$scope, loggedIn*/ 2097153) {
-    				item4_changes.$$scope = { dirty, ctx };
-    			}
-
-    			item4.$set(item4_changes);
-    			const item5_changes = {};
-
-    			if (dirty & /*$$scope*/ 2097152) {
-    				item5_changes.$$scope = { dirty, ctx };
-    			}
-
-    			item5.$set(item5_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -53356,9 +53476,9 @@
     			transition_in(item1.$$.fragment, local);
     			transition_in(item2.$$.fragment, local);
     			transition_in(item3.$$.fragment, local);
-    			transition_in(if_block);
     			transition_in(item4.$$.fragment, local);
     			transition_in(item5.$$.fragment, local);
+    			transition_in(if_block);
     			current = true;
     		},
     		o: function outro(local) {
@@ -53366,9 +53486,9 @@
     			transition_out(item1.$$.fragment, local);
     			transition_out(item2.$$.fragment, local);
     			transition_out(item3.$$.fragment, local);
-    			transition_out(if_block);
     			transition_out(item4.$$.fragment, local);
     			transition_out(item5.$$.fragment, local);
+    			transition_out(if_block);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -53380,11 +53500,12 @@
     			if (detaching) detach_dev(t2);
     			destroy_component(item3, detaching);
     			if (detaching) detach_dev(t3);
-    			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(t4);
     			destroy_component(item4, detaching);
-    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(t4);
     			destroy_component(item5, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
     		}
     	};
 
@@ -53471,7 +53592,7 @@
     		prominent: /*prominent*/ ctx[5],
     		variant: /*variant*/ ctx[6],
     		color: "primary",
-    		$$slots: { default: [create_default_slot_10] },
+    		$$slots: { default: [create_default_slot_12] },
     		$$scope: { ctx }
     	};
 
@@ -53615,10 +53736,10 @@
     	const SMUI_action_handler_1 = () => page_js("/facts");
     	const SMUI_action_handler_2 = () => page_js("/images");
     	const SMUI_action_handler_3 = () => page_js("/map");
-    	const SMUI_action_handler_4 = () => page_js("/contributions");
-    	const SMUI_action_handler_5 = () => page_js("/addImage");
-    	const SMUI_action_handler_6 = () => page_js("/login");
-    	const SMUI_action_handler_7 = () => page_js("/settings");
+    	const SMUI_action_handler_4 = () => page_js("/settings");
+    	const SMUI_action_handler_5 = () => page_js("/login");
+    	const SMUI_action_handler_6 = () => page_js("/contributions");
+    	const SMUI_action_handler_7 = () => page_js("/addImage");
 
     	function menu_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {

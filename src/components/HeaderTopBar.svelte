@@ -50,16 +50,28 @@
       <Item on:SMUI:action={() => page('/facts')}>Facts</Item>
       <Item on:SMUI:action={() => page('/images')}>Images</Item>
       <Item on:SMUI:action={() => page('/map')}>Map</Item>
-      {#if loggedIn}
-        <Item on:SMUI:action={() => page('/contributions')}>
-          Manage contributions
-        </Item>
-        <Item on:SMUI:action={() => page('/addImage')}>Add image</Item>
-      {/if}
+      <Item on:SMUI:action={() => page('/settings')}>Settings</Item>
       <Item on:SMUI:action={() => page('/login')}>
         {loggedIn ? 'Logout' : 'Login'}
       </Item>
-      <Item on:SMUI:action={() => page('/settings')}>Settings</Item>
+      {#if loggedIn}
+        <Item on:SMUI:action={() => page('/contributions')}>
+          <Icon
+            class="material-icons"
+            style="font-size:18px; margin-top: -5px;">
+            lock
+          </Icon>
+          Contributions
+        </Item>
+        <Item on:SMUI:action={() => page('/addImage')}>
+          <Icon
+            class="material-icons"
+            style="font-size:18px; margin-top: -5px;">
+            lock
+          </Icon>
+          Add image
+        </Item>
+      {/if}
     </List>
   </Menu>
 </div>

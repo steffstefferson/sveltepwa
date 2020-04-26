@@ -72,10 +72,11 @@
 
 <style>
   :global(.lurinsnavicons) {
-    font-size: 32px !important;
+    font-size: 25px !important;
     padding: 0px;
     margin: 0px !important;
     width: 25px;
+    height: 30px;
   }
 
   .container {
@@ -88,17 +89,16 @@
   }
 
   .textContainer {
-    background-color: yellow;
+    background-color: var(--mdc-theme-primary, black);
     border: 1px black solid;
-    padding: 10px;
-    margin: 10px;
+    padding: 0px 10px;
     display: grid;
     grid-template-columns: auto 100px;
     position: absolute;
     align-items: center;
     position: absolute;
     bottom: 0px;
-    right: 10px;
+    width: calc(100% - 22px);
   }
 
   .textContainer div {

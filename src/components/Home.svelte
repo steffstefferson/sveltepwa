@@ -17,22 +17,25 @@
   .list-item {
     padding: 0.5em;
     max-width: 400px;
-    /* flex: 1 0 auto; */
-  }
-  .headerImage {
-    padding-top: 20px;
   }
 
   .fact {
     margin-bottom: 20px;
   }
+
+  #maskedLogo {
+    margin-top: 20px;
+    width: 256px;
+    height: 115px;
+    background-color: var(--mdc-theme-on-primary, black);
+    -webkit-mask-image: url(./../assets/lurinfacts-header-transparent.png);
+    mask-image: url(./../assets/lurinfacts-header-transparent.png);
+  }
 </style>
 
 <div class="contentpadding">
-  <img
-    class="headerImage"
-    src="./../assets/lurinfacts-header-transparent.png"
-    alt="Lurinfacts Logo" />
+
+  <div id="maskedLogo" />
   <div class="list">
     <div class="list-item">
       <h1>Newest facts</h1>
