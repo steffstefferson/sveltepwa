@@ -16,8 +16,8 @@
   }
   .list-item {
     padding: 0.5em;
-    width: 300px;
-    flex: 1 0 auto;
+    max-width: 400px;
+    /* flex: 1 0 auto; */
   }
   .headerImage {
     padding-top: 20px;

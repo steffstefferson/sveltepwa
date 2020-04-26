@@ -57,13 +57,11 @@
   .list-item {
     display: flex;
     padding: 0.5em;
-    width: 350px;
-    flex-grow: 1;
+    max-width: 400px;
+    min-width: 300px;
+    flex: 1 1 0px;
   }
 
-  .list-content p {
-    flex: 1 0 auto;
-  }
   ul {
     padding-inline-start: 5px;
   }

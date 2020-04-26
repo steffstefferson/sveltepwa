@@ -20,22 +20,26 @@ if (imgFromStore && imgFromStore.length) {
   addImage(imgFromStore);
 } else {
   console.log("load image from firebase");
-  var metaRef = db.ref("imageMetaData");
+  let metaRef = db.ref("imageMetaData");
   metaRef.on("child_added", function (snapshot) {
-    var image = snapshot.val();
+    let image = snapshot.val();
     image.key = snapshot.key;
     addImage([image]);
   });
   metaRef.on("child_removed", function (snapshot) {
     imagesArray = imagesArray.filter((p) => p.key !== snapshot.key);
-    svelteImageStore.set(imagesArray);
+    svelteImageStore.set([...imagesArray]);
+    localStorage.setItem("images", JSON.stringify(imagesArray));
   });
 }
 
-function addImage(imageArray) {
-  imagesArray.push(...imageArray);
+function addImage(images) {
+  let onlyNewOnes = images.filter(
+    (img) => !imagesArray.some((x) => x.key == img.key)
+  );
+  imagesArray.push(...onlyNewOnes);
   imagesArray.sort((x, y) => y.insertTime - x.insertTime);
-  svelteImageStore.set(imagesArray);
+  svelteImageStore.set([...imagesArray]);
   localStorage.setItem("images", JSON.stringify(imagesArray));
 }
 
@@ -54,7 +58,7 @@ function getDownloadUrl() {
     return Promise.resolve(this.fullImageSizeUrl);
   }
 
-  var tangRef = storageRef.child("locations/" + this.imageKey + ".jpg");
+  let tangRef = storageRef.child("locations/" + this.imageKey + ".jpg");
   return tangRef.getDownloadURL().then((url) => {
     this.fullImageSizeUrl = url;
     return url;
@@ -62,7 +66,7 @@ function getDownloadUrl() {
 }
 
 export function getImage(imageKey, offSet, preload = true) {
-  var idx = imagesArray.findIndex((i) => i.key == imageKey);
+  let idx = imagesArray.findIndex((i) => i.key == imageKey);
   idx += offSet;
   if (idx < 0) {
     idx = imagesArray.length - 1;
@@ -71,7 +75,7 @@ export function getImage(imageKey, offSet, preload = true) {
     idx = 0;
   }
 
-  var image = imagesArray[idx];
+  let image = imagesArray[idx];
 
   if (preload) {
     preloadImage(image.key, idx + offSet);
@@ -86,7 +90,7 @@ export function getImage(imageKey, offSet, preload = true) {
 function loadFullSizeImage() {
   return this.getDownloadUrl().then((url) => {
     const p1 = new Promise(function (resolve, reject) {
-      var newImg = new Image();
+      let newImg = new Image();
       newImg.onload = function () {
         resolve(url);
       };

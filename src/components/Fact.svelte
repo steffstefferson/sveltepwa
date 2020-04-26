@@ -23,8 +23,6 @@
 <style>
   .factContainer {
     width: 100%;
-    max-width: 350px;
-    min-width: 350px;
   }
 
   .factSubtitle {
@@ -39,7 +37,7 @@
   }
 </style>
 
-<div style="display: flex; flex-wrap: wrap;">
+<div style="display: flex; flex-wrap: wrap;width:100%">
   <div class="card-container short factContainer">
     <Card style="background-color: #ffff65;" padded>
       {fact.fact}

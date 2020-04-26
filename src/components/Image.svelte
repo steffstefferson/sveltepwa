@@ -26,11 +26,13 @@
 <style>
   .imageContainer {
     margin: 5px;
-    padding: 16px;
     background-color: #ffff65;
     font-size: 18px;
-    border: 2px solid #b7b3b3;
     border-radius: 6px;
+    width: 100%;
+  }
+  .imageContainer > div {
+    padding: 16px;
   }
   @media (prefers-color-scheme: dark) {
     .imageContainer {
@@ -69,22 +71,23 @@
 </style>
 
 <div
-  class="imageContainer"
+  class="imageContainer mdc-card"
   on:click={() => page('/slideShow?key=' + image.key)}>
-
-  <div class="imageText">{image.imageTitle}</div>
-  <div class="square">
-    <img
-      src={image.thumbnail}
-      class={landscapeClass}
-      on:load={imageLoaded}
-      alt={image.funimage} />
+  <div>
+    <div class="imageText">{image.imageTitle}</div>
+    <div class="square">
+      <img
+        src={image.thumbnail}
+        class={landscapeClass}
+        on:load={imageLoaded}
+        alt={image.funimage} />
+    </div>
+    <div class="imageText">{image.funFact}</div>
+    <div class="imageSubtitle">{getDisplayTime(image.insertTime)}</div>
+    {#if hasDeleteButton}
+      <Button on:click={deleteLocation} variant="raised" class="formButton">
+        <Label>Delete location</Label>
+      </Button>
+    {/if}
   </div>
-  <div class="imageText">{image.funFact}</div>
-  <div class="imageSubtitle">{getDisplayTime(image.insertTime)}</div>
-  {#if hasDeleteButton}
-    <Button on:click={deleteLocation} variant="raised" class="formButton">
-      <Label>Delete location</Label>
-    </Button>
-  {/if}
 </div>
