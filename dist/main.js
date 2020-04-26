@@ -29989,7 +29989,7 @@
     	return child_ctx;
     }
 
-    // (56:4) <Label>
+    // (57:6) <Label>
     function create_default_slot_7(ctx) {
     	let t;
 
@@ -30009,14 +30009,14 @@
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(56:4) <Label>",
+    		source: "(57:6) <Label>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:2) <Button href="/contribute" variant="raised" class="formButton">
+    // (56:4) <Button href="/contribute" variant="raised" class="formButton">
     function create_default_slot_6(ctx) {
     	let current;
 
@@ -30063,14 +30063,14 @@
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(55:2) <Button href=\\\"/contribute\\\" variant=\\\"raised\\\" class=\\\"formButton\\\">",
+    		source: "(56:4) <Button href=\\\"/contribute\\\" variant=\\\"raised\\\" class=\\\"formButton\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:4) {#each $svelteFactStore as fact}
+    // (62:6) {#each $svelteFactStore as fact}
     function create_each_block(ctx) {
     	let li;
     	let t;
@@ -30097,8 +30097,8 @@
     			li = element("li");
     			create_component(fact.$$.fragment);
     			t = space();
-    			attr_dev(li, "class", "list-item svelte-1hpgi7i");
-    			add_location(li, file$a, 61, 6, 1914);
+    			attr_dev(li, "class", "list-item svelte-dibgb0");
+    			add_location(li, file$a, 62, 8, 1966);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, li, anchor);
@@ -30135,14 +30135,14 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(61:4) {#each $svelteFactStore as fact}",
+    		source: "(62:6) {#each $svelteFactStore as fact}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (77:2) <Title id="list-title">
+    // (79:2) <Title id="list-title">
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -30162,14 +30162,14 @@
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(77:2) <Title id=\\\"list-title\\\">",
+    		source: "(79:2) <Title id=\\\"list-title\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:4) {#if selectedFact}
+    // (81:4) {#if selectedFact}
     function create_if_block$1(ctx) {
     	let current;
 
@@ -30213,14 +30213,14 @@
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(79:4) {#if selectedFact}",
+    		source: "(81:4) {#if selectedFact}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:2) <Content>
+    // (80:2) <Content>
     function create_default_slot_4$1(ctx) {
     	let if_block_anchor;
     	let current;
@@ -30276,14 +30276,14 @@
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(78:2) <Content>",
+    		source: "(80:2) <Content>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:6) <Label>
+    // (90:6) <Label>
     function create_default_slot_3$1(ctx) {
     	let t;
 
@@ -30303,14 +30303,14 @@
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(88:6) <Label>",
+    		source: "(90:6) <Label>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (87:4) <Button action="accept">
+    // (89:4) <Button action="accept" variant="raised" class="formButton">
     function create_default_slot_2$1(ctx) {
     	let current;
 
@@ -30357,20 +30357,22 @@
     		block,
     		id: create_default_slot_2$1.name,
     		type: "slot",
-    		source: "(87:4) <Button action=\\\"accept\\\">",
+    		source: "(89:4) <Button action=\\\"accept\\\" variant=\\\"raised\\\" class=\\\"formButton\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (86:2) <Actions>
+    // (88:2) <Actions>
     function create_default_slot_1$1(ctx) {
     	let current;
 
     	const button = new Button_1({
     			props: {
     				action: "accept",
+    				variant: "raised",
+    				class: "formButton",
     				$$slots: { default: [create_default_slot_2$1] },
     				$$scope: { ctx }
     			},
@@ -30412,14 +30414,14 @@
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(86:2) <Actions>",
+    		source: "(88:2) <Actions>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:0) <Dialog    bind:this={selectedFactDialog}    aria-labelledby="list-title"    aria-describedby="list-content">
+    // (75:0) <Dialog    bind:this={selectedFactDialog}    aria-labelledby="list-title"    aria-describedby="list-content">
     function create_default_slot$3(ctx) {
     	let t0;
     	let t1;
@@ -30515,7 +30517,7 @@
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(73:0) <Dialog    bind:this={selectedFactDialog}    aria-labelledby=\\\"list-title\\\"    aria-describedby=\\\"list-content\\\">",
+    		source: "(75:0) <Dialog    bind:this={selectedFactDialog}    aria-labelledby=\\\"list-title\\\"    aria-describedby=\\\"list-content\\\">",
     		ctx
     	});
 
@@ -30523,6 +30525,7 @@
     }
 
     function create_fragment$c(ctx) {
+    	let div2;
     	let div0;
     	let t0;
     	let div1;
@@ -30565,6 +30568,7 @@
 
     	const block = {
     		c: function create() {
+    			div2 = element("div");
     			div0 = element("div");
     			create_component(button.$$.fragment);
     			t0 = space();
@@ -30577,20 +30581,23 @@
 
     			t1 = space();
     			create_component(dialog.$$.fragment);
-    			set_style(div0, "height", "50px");
-    			add_location(div0, file$a, 53, 0, 1680);
-    			attr_dev(ul, "class", "list svelte-1hpgi7i");
-    			add_location(ul, file$a, 59, 2, 1851);
-    			add_location(div1, file$a, 58, 0, 1842);
+    			set_style(div0, "height", "60px");
+    			add_location(div0, file$a, 54, 2, 1716);
+    			attr_dev(ul, "class", "list svelte-dibgb0");
+    			add_location(ul, file$a, 60, 4, 1899);
+    			add_location(div1, file$a, 59, 2, 1888);
+    			attr_dev(div2, "class", "contentpadding");
+    			add_location(div2, file$a, 53, 0, 1684);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div0, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
     			mount_component(button, div0, null);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, div1, anchor);
+    			append_dev(div2, t0);
+    			append_dev(div2, div1);
     			append_dev(div1, ul);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -30669,10 +30676,8 @@
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(div2);
     			destroy_component(button);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(div1);
     			destroy_each(each_blocks, detaching);
     			if (detaching) detach_dev(t1);
     			/*dialog_binding*/ ctx[7](null);
@@ -30940,7 +30945,7 @@
     /* src\components\Image.svelte generated by Svelte v3.20.1 */
     const file$b = "src\\components\\Image.svelte";
 
-    // (43:4) {#if hasDeleteButton}
+    // (46:4) {#if hasDeleteButton}
     function create_if_block$2(ctx) {
     	let current;
 
@@ -30954,7 +30959,7 @@
     			$$inline: true
     		});
 
-    	button.$on("click", /*deleteLocation*/ ctx[3]);
+    	button.$on("click", /*deleteLocation*/ ctx[4]);
 
     	const block = {
     		c: function create() {
@@ -30967,7 +30972,7 @@
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 128) {
+    			if (dirty & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -30991,14 +30996,14 @@
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(43:4) {#if hasDeleteButton}",
+    		source: "(46:4) {#if hasDeleteButton}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (45:8) <Label>
+    // (48:8) <Label>
     function create_default_slot_1$2(ctx) {
     	let t;
 
@@ -31018,14 +31023,14 @@
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(45:8) <Label>",
+    		source: "(48:8) <Label>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (44:6) <Button on:click={deleteLocation} variant="raised" class="formButton">
+    // (47:6) <Button on:click={deleteLocation} variant="raised" class="formButton">
     function create_default_slot$4(ctx) {
     	let current;
 
@@ -31048,7 +31053,7 @@
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 128) {
+    			if (dirty & /*$$scope*/ 256) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31072,7 +31077,7 @@
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(44:6) <Button on:click={deleteLocation} variant=\\\"raised\\\" class=\\\"formButton\\\">",
+    		source: "(47:6) <Button on:click={deleteLocation} variant=\\\"raised\\\" class=\\\"formButton\\\">",
     		ctx
     	});
 
@@ -31122,21 +31127,21 @@
     			t6 = space();
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "imageText svelte-16yywul");
-    			add_location(div0, file$b, 32, 4, 1309);
+    			add_location(div0, file$b, 35, 4, 1457);
     			if (img.src !== (img_src_value = /*image*/ ctx[0].thumbnail)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", img_class_value = "" + (null_to_empty(/*landscapeClass*/ ctx[2]) + " svelte-16yywul"));
+    			attr_dev(img, "class", img_class_value = "" + (null_to_empty(/*landscapeClass*/ ctx[3]) + " svelte-16yywul"));
     			attr_dev(img, "alt", img_alt_value = /*image*/ ctx[0].funimage);
-    			add_location(img, file$b, 34, 6, 1388);
+    			add_location(img, file$b, 37, 6, 1536);
     			attr_dev(div1, "class", "square svelte-16yywul");
-    			add_location(div1, file$b, 33, 4, 1361);
+    			add_location(div1, file$b, 36, 4, 1509);
     			attr_dev(div2, "class", "imageText svelte-16yywul");
-    			add_location(div2, file$b, 40, 4, 1531);
+    			add_location(div2, file$b, 43, 4, 1679);
     			attr_dev(div3, "class", "imageSubtitle svelte-16yywul");
-    			add_location(div3, file$b, 41, 4, 1580);
+    			add_location(div3, file$b, 44, 4, 1728);
     			attr_dev(div4, "class", "svelte-16yywul");
-    			add_location(div4, file$b, 31, 2, 1299);
+    			add_location(div4, file$b, 34, 2, 1447);
     			attr_dev(div5, "class", "imageContainer mdc-card svelte-16yywul");
-    			add_location(div5, file$b, 28, 0, 1202);
+    			add_location(div5, file$b, 31, 0, 1325);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -31161,8 +31166,8 @@
     			if (remount) run_all(dispose);
 
     			dispose = [
-    				listen_dev(img, "load", /*imageLoaded*/ ctx[4], false, false, false),
-    				listen_dev(div5, "click", /*click_handler*/ ctx[6], false, false, false)
+    				listen_dev(img, "load", /*imageLoaded*/ ctx[5], false, false, false),
+    				listen_dev(div5, "click", /*click_handler*/ ctx[7], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
@@ -31172,7 +31177,7 @@
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (!current || dirty & /*landscapeClass*/ 4 && img_class_value !== (img_class_value = "" + (null_to_empty(/*landscapeClass*/ ctx[2]) + " svelte-16yywul"))) {
+    			if (!current || dirty & /*landscapeClass*/ 8 && img_class_value !== (img_class_value = "" + (null_to_empty(/*landscapeClass*/ ctx[3]) + " svelte-16yywul"))) {
     				attr_dev(img, "class", img_class_value);
     			}
 
@@ -31233,6 +31238,12 @@
     function instance$d($$self, $$props, $$invalidate) {
     	let { image } = $$props;
     	let { hasDeleteButton } = $$props;
+    	let pathName = location.pathname || "home";
+
+    	pathName = pathName.indexOf("/") == 0
+    	? pathName.substring(1)
+    	: PathName;
+
     	let landscapeClass = "portrait";
     	const dispatch = createEventDispatcher();
 
@@ -31243,7 +31254,7 @@
 
     	function imageLoaded(e) {
     		if (e.target.width > e.target.height) {
-    			$$invalidate(2, landscapeClass = "landscape");
+    			$$invalidate(3, landscapeClass = "landscape");
     		}
     	}
 
@@ -31255,7 +31266,7 @@
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("Image", $$slots, []);
-    	const click_handler = () => page_js("/slideShow?key=" + image.key);
+    	const click_handler = () => page_js("/slideShow?key=" + image.key + "&backUrl=" + pathName);
 
     	$$self.$set = $$props => {
     		if ("image" in $$props) $$invalidate(0, image = $$props.image);
@@ -31270,6 +31281,7 @@
     		page: page_js,
     		image,
     		hasDeleteButton,
+    		pathName,
     		landscapeClass,
     		dispatch,
     		deleteLocation,
@@ -31279,7 +31291,8 @@
     	$$self.$inject_state = $$props => {
     		if ("image" in $$props) $$invalidate(0, image = $$props.image);
     		if ("hasDeleteButton" in $$props) $$invalidate(1, hasDeleteButton = $$props.hasDeleteButton);
-    		if ("landscapeClass" in $$props) $$invalidate(2, landscapeClass = $$props.landscapeClass);
+    		if ("pathName" in $$props) $$invalidate(2, pathName = $$props.pathName);
+    		if ("landscapeClass" in $$props) $$invalidate(3, landscapeClass = $$props.landscapeClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -31289,6 +31302,7 @@
     	return [
     		image,
     		hasDeleteButton,
+    		pathName,
     		landscapeClass,
     		deleteLocation,
     		imageLoaded,
@@ -46099,25 +46113,25 @@
     			t11 = space();
     			create_component(iconbutton4.$$.fragment);
     			attr_dev(div0, "class", "showHideInfoArea svelte-1x03scn");
-    			add_location(div0, file$v, 76, 2, 2539);
+    			add_location(div0, file$v, 76, 2, 2562);
     			attr_dev(span, "class", "title svelte-1x03scn");
-    			add_location(span, file$v, 87, 8, 2816);
+    			add_location(span, file$v, 87, 8, 2839);
     			attr_dev(div1, "class", "svelte-1x03scn");
-    			add_location(div1, file$v, 86, 6, 2802);
+    			add_location(div1, file$v, 86, 6, 2825);
     			attr_dev(div2, "class", "text svelte-1x03scn");
-    			add_location(div2, file$v, 89, 6, 2881);
+    			add_location(div2, file$v, 89, 6, 2904);
     			attr_dev(div3, "class", "text svelte-1x03scn");
-    			add_location(div3, file$v, 90, 6, 2927);
+    			add_location(div3, file$v, 90, 6, 2950);
     			attr_dev(div4, "class", "svelte-1x03scn");
-    			add_location(div4, file$v, 85, 4, 2790);
+    			add_location(div4, file$v, 85, 4, 2813);
     			attr_dev(div5, "class", "svelte-1x03scn");
-    			add_location(div5, file$v, 92, 4, 3001);
+    			add_location(div5, file$v, 92, 4, 3024);
     			attr_dev(div6, "class", "textContainer svelte-1x03scn");
     			set_style(div6, "visibility", /*showText*/ ctx[0] ? "inherit" : "hidden");
-    			add_location(div6, file$v, 82, 2, 2696);
+    			add_location(div6, file$v, 82, 2, 2719);
     			attr_dev(div7, "class", "container svelte-1x03scn");
     			attr_dev(div7, "style", div7_style_value = "" + (/*backgroundStyle*/ ctx[1] + " " + /*backgroundSize*/ ctx[2]));
-    			add_location(div7, file$v, 75, 0, 2470);
+    			add_location(div7, file$v, 75, 0, 2493);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -46259,7 +46273,7 @@
     	let backgroundStyle = "";
     	let backgroundSize = "background-size: cover;";
     	let image = load(params.key, 0);
-    	let backUrl = "/images";
+    	let backUrl = "/" + (params.backUrl || "home");
     	const canShare = "canShare" in navigator;
 
     	function toggleText() {

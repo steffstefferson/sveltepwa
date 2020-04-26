@@ -56,7 +56,7 @@
   }
   .list-item {
     display: flex;
-    padding: 0.5em;
+    padding: 0px 0px 25px 0px;
     max-width: 400px;
     min-width: 300px;
     flex: 1 1 0px;
@@ -67,23 +67,25 @@
   }
 </style>
 
-<div style="height: 50px;">
-  <Button href="/contribute" variant="raised" class="formButton">
-    <Label>Contribute your own fact</Label>
-  </Button>
-</div>
-<div>
-  <ul class="list">
-    {#each $svelteFactStore as fact}
-      <li class="list-item" on:click={() => selectFact(fact)}>
-        <Fact
-          {fact}
-          hasDeleteButton={loggedIn}
-          on:delete={onDeleteFact}
-          hasAcceptButton={false} />
-      </li>
-    {/each}
-  </ul>
+<div class="contentpadding">
+  <div style="height: 60px;">
+    <Button href="/contribute" variant="raised" class="formButton">
+      <Label>Contribute your own fact</Label>
+    </Button>
+  </div>
+  <div>
+    <ul class="list">
+      {#each $svelteFactStore as fact}
+        <li class="list-item" on:click={() => selectFact(fact)}>
+          <Fact
+            {fact}
+            hasDeleteButton={loggedIn}
+            on:delete={onDeleteFact}
+            hasAcceptButton={false} />
+        </li>
+      {/each}
+    </ul>
+  </div>
 </div>
 
 <Dialog
@@ -100,7 +102,7 @@
     {/if}
   </Content>
   <Actions>
-    <Button action="accept">
+    <Button action="accept" variant="raised" class="formButton">
       <Label>Got it!</Label>
     </Button>
   </Actions>

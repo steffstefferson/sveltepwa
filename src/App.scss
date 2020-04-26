@@ -38,6 +38,9 @@ body {
 h1 {
   color: var(--mdc-theme-on-primary, black);
 }
+ul {
+  padding-left: 0px;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

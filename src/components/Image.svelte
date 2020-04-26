@@ -7,6 +7,9 @@
   export let image;
   export let hasDeleteButton;
 
+  let pathName = location.pathname || "home";
+  pathName = pathName.indexOf("/") == 0 ? pathName.substring(1) : PathName;
+
   let landscapeClass = "portrait";
 
   const dispatch = createEventDispatcher();
@@ -72,7 +75,7 @@
 
 <div
   class="imageContainer mdc-card"
-  on:click={() => page('/slideShow?key=' + image.key)}>
+  on:click={() => page('/slideShow?key=' + image.key + '&backUrl=' + pathName)}>
   <div>
     <div class="imageText">{image.imageTitle}</div>
     <div class="square">

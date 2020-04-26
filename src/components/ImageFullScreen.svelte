@@ -12,7 +12,7 @@
   let backgroundStyle = "";
   let backgroundSize = "background-size: cover;";
   let image = load(params.key, 0);
-  let backUrl = "/images";
+  let backUrl = "/" + (params.backUrl || "home");
   const canShare = "canShare" in navigator;
 
   function toggleText() {
