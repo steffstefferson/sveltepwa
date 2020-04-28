@@ -27,7 +27,7 @@
 
 </style>
 
-<div>
+<div class="contentpadding">
   <h1>Settings</h1>
 
   <h2>Push Notifications</h2>

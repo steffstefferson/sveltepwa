@@ -27,6 +27,10 @@
   .pageTitle {
     color: var(--mdc-theme-on-primary, black);
   }
+  .twitterLink {
+    margin: auto;
+    padding-right: 13px;
+  }
 </style>
 
 <TopAppBar {dense} {prominent} {variant} color="primary" bind:collapsed>
@@ -35,8 +39,15 @@
       <IconButton class="material-icons" on:click={() => menu2.setOpen(true)}>
         menu
       </IconButton>
-      <span class="pageTitle">Lurinfacts</span>
+      <span class="pageTitle">Lurinfacts beta</span>
     </Section>
+    <a
+      class="twitterLink"
+      target="_blank"
+      href="https://www.twitter.com/@lurin_tha_one"
+      alt="follow Lurin on twitter">
+      <img src="./../assets/twitter_logo.png" alt="Twitter Logo" />
+    </a>
   </Row>
 </TopAppBar>
 <div use:Anchor bind:this={anchor2}>

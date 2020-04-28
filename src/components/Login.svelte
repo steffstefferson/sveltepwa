@@ -76,7 +76,7 @@
 
 </style>
 
-<div style="max-width: 400px;">
+<div style="max-width: 400px;" class="contentpadding">
   {#if showLogin}
     <h1>Login</h1>
     <form on:submit={loginUser}>

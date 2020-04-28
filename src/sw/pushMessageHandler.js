@@ -41,8 +41,8 @@ function prepareOptions(pushMsg) {
   }
 
   const options = {
-    badge: "/images/logo192m.png",
-    icon: "/images/logo192m.png",
+    badge: "/assets/android-chrome-192x192.png",
+    icon: "/assets/android-chrome-192x192.png",
     body: pushMsg.message,
     data: data,
     vibrate: [500, 110, 500],

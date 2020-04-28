@@ -25,6 +25,7 @@
 
   #maskedLogo {
     margin-top: 20px;
+    margin: auto;
     width: 256px;
     height: 115px;
     background-color: var(--mdc-theme-on-primary, black);

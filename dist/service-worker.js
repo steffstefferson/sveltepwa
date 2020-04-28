@@ -2424,8 +2424,8 @@
       }
 
       const options = {
-        badge: "/images/logo192m.png",
-        icon: "/images/logo192m.png",
+        badge: "/assets/android-chrome-192x192.png",
+        icon: "/assets/android-chrome-192x192.png",
         body: pushMsg.message,
         data: data,
         vibrate: [500, 110, 500],
@@ -3365,7 +3365,7 @@
 
     // This will be replaced by the list of files to precache by
     // the `workbox injectManifest` build step.
-    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"690470d76ef241197c08d5c255aa5f02","url":"components.css"},{"revision":"34886ec37a5c7f1984c7121651f21b1a","url":"index.html"},{"revision":"505e422bf6b8f99426264ad2c440282a","url":"main.css"}]);
+    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"6e5520378862c0f6f5d83de420e88e47","url":"components.css"},{"revision":"34886ec37a5c7f1984c7121651f21b1a","url":"index.html"},{"revision":"76a3d72bab9008ca272cea265f10b492","url":"main.css"}]);
 
     registerRoute("/_share-target", shareTargetHandler, "POST");
 

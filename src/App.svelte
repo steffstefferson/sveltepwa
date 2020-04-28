@@ -7,7 +7,7 @@
   import Settings from "./components/Settings.svelte";
   import AddPlaceToBe from "./components/AddPlaceToBe.svelte";
   import Login from "./components/Login.svelte";
-  import ImageFullScreen from "./components/ImageFullScreen.svelte";
+  import ImageFullScreenSwipe from "./components/ImageFullScreenSwipe.svelte";
   import HeaderTopBar from "./components/HeaderTopBar.svelte";
   import ShareApiTest from "./components/ShareApiTest.svelte";
   import Contribution from "./components/Contribution.svelte";
@@ -50,7 +50,7 @@
       }, {});
       next();
     },
-    () => (page = ImageFullScreen)
+    () => (page = ImageFullScreenSwipe)
   );
 
   router("/*", () => (page = Home));
@@ -80,7 +80,8 @@
     font-family: Roboto, sans-serif;
   }
   .mainContainer {
-    padding: 50px 0px;
+    padding: 50px 0 0 0;
+    display: inline;
   }
 </style>
 

@@ -1,30 +1,19 @@
 <script>
-  import { getImage } from "../services/imageSerivce.js";
   import IconButton, { Icon } from "@smui/icon-button";
   import { getDisplayTime } from "../services/displayTime.js";
+  import { createEventDispatcher } from "svelte";
   import page from "page";
 
-  export let params;
-
-  let showText = true;
-  console.log(params);
-  let imageSizeContain = false;
-  let backgroundStyle = "";
+  export let image;
+  let showTextContainer = true;
+  export let imageRatioContain = false;
   let backgroundSize = "background-size: cover;";
-  let image = load(params.key, 0);
-  let backUrl = "/" + (params.backUrl || "home");
+  let dispatcher = createEventDispatcher();
+
   const canShare = "canShare" in navigator;
 
   function toggleText() {
-    showText = !showText;
-  }
-
-  function getPreviousImage(e) {
-    image = load(image.key, -1);
-  }
-
-  function getNextImage(e) {
-    image = load(image.key, 1);
+    showTextContainer = !showTextContainer;
   }
 
   async function shareImage(e) {
@@ -45,28 +34,15 @@
   }
 
   function toggleZoom() {
-    imageSizeContain = !imageSizeContain;
-    if (imageSizeContain) {
+    imageRatioContain = !imageRatioContain;
+    if (imageRatioContain) {
       backgroundSize = "background-size: contain;";
     } else {
       backgroundSize = "background-size: cover;";
     }
-  }
-
-  function load(key, offset) {
-    const img = getImage(key, offset);
-    backgroundStyle =
-      "background-image: url(" +
-      (img.fullImageSizeUrl || img.thumbnail) +
-      "); ";
-    if (!img.fullImageSizeUrl) {
-      img.loadFullSizeImage().then(fullSizeImageUrl => {
-        backgroundStyle = "background-image: url(" + fullSizeImageUrl + "); ";
-      });
-    }
-    page("/slideShow?key=" + key);
-
-    return img;
+    dispatcher("imageratiochanged", {
+      imageRatioContain: imageRatioContain
+    });
   }
 </script>
 
@@ -84,21 +60,18 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    position: absolute;
-    top: 0px;
+    grid-template-rows: auto min-content;
+    display: inline-grid;
   }
 
   .textContainer {
     background-color: var(--mdc-theme-primary, black);
     border: 1px black solid;
-    padding: 0px 10px;
+    padding: 10px;
     display: grid;
     grid-template-columns: auto 100px;
-    position: absolute;
     align-items: center;
-    position: absolute;
     bottom: 0px;
-    width: calc(100% - 22px);
   }
 
   .textContainer div {
@@ -107,7 +80,6 @@
 
   .showHideInfoArea {
     height: 80%;
-    position: absolute;
     bottom: 20%;
     border: none;
     width: 100%;
@@ -121,7 +93,9 @@
   }
 </style>
 
-<div class="container" style="{backgroundStyle} {backgroundSize}">
+<div
+  class="container"
+  style="background-image: url('{image.url}'); {backgroundSize}">
   <div
     class="showHideInfoArea"
     on:mousedown={toggleText}
@@ -130,7 +104,7 @@
     on:mouseup={toggleText} />
   <div
     class="textContainer"
-    style="visibility: {showText ? 'inherit' : 'hidden'}">
+    style="visibility: {showTextContainer ? 'inherit' : 'hidden'}">
     <div>
       <div>
         <span class="title">{image.imageTitle}</span>
@@ -151,19 +125,7 @@
         aria-label="Toggle zoom">
         aspect_ratio
       </IconButton>
-      <IconButton
-        on:click={() => page(backUrl)}
-        class="lurinsnavicons material-icons"
-        aria-label="Close">
-        close
-      </IconButton>
 
-      <IconButton
-        on:click={getPreviousImage}
-        class="lurinsnavicons material-icons"
-        aria-label="Back">
-        navigate_before
-      </IconButton>
       {#if canShare}
         <IconButton
           on:click={shareImage}
@@ -178,12 +140,6 @@
           _
         </IconButton>
       {/if}
-      <IconButton
-        on:click={getNextImage}
-        class="lurinsnavicons material-icons"
-        aria-label="Next">
-        navigate_next
-      </IconButton>
     </div>
   </div>
 </div>
