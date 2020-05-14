@@ -7,7 +7,7 @@
   import Fact from "./Fact.svelte";
   import Button, { Label } from "@smui/button";
   import { notify } from "./../services/notifyService";
-  import { userStore } from "./../services/loginService.js";
+  import { userStore } from "./../services/loginWrapperService.js";
 
   let factProposals = getFactsProposals();
 

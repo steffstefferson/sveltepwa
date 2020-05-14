@@ -56,8 +56,34 @@ function getNewest(imagesArray) {
   return imagesArray.filter((x, idx) => idx < 1);
 }
 
-loadImages();
-
-export async function loadFullSizeImage(...p) {
-  return dataInterface.loadFullSizeImage(...p);
+export async function deleteImageAndMetadata(...p) {
+  return dataInterface.deleteImageAndMetadata(...p);
 }
+
+export async function saveImageAndMetadata(...p) {
+  return dataInterface.saveImageAndMetadata(...p);
+}
+
+export async function loadFullSizeImage(image) {
+  if (image.fullImageSizeUrl) {
+    return Promise.resolve(image.fullImageSizeUrl);
+  }
+  const p1 = new Promise(function (resolve, reject) {
+    function callback(url) {
+      image.fullImageSizeUrl = url;
+
+      let newImg = new Image();
+      newImg.onload = function () {
+        resolve(url);
+      };
+      newImg.onerror = function () {
+        reject();
+      };
+      newImg.src = url;
+    }
+    dataInterface.getDownloadUrl(image.imageKey, Comlink.proxy(callback));
+  });
+  return p1;
+}
+
+loadImages();

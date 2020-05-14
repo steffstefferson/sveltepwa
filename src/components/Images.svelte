@@ -1,15 +1,20 @@
 <script>
-  import { subscribeToImages } from "./../services/imagesWrapperService.js";
+  import {
+    subscribeToImages,
+    deleteImageAndMetadata
+  } from "./../services/imagesWrapperService.js";
   import Image from "./Image.svelte";
-  import { userStore } from "./../services/loginService.js";
+  import { userStore } from "./../services/loginWrapperService.js";
 
-  import { deleteImageAndMetadata } from "../services/imageUploadService.js";
   import { notify, ask } from "./../services/notifyService.js";
   import { onMount } from "svelte";
+
+  export let params;
 
   let images = [];
 
   onMount(async function() {
+    console.log("images mounted");
     let imageObservable = await subscribeToImages();
     imageObservable.subscribe(x => {
       images = x;

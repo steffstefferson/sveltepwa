@@ -44,6 +44,7 @@
   }
   .imageText {
     width: 100%;
+    overflow: auto;
   }
   .imageSubtitle {
     font-size: 12px;

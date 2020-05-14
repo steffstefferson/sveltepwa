@@ -7,7 +7,7 @@
   import { notify, ask } from "./../services/notifyService";
   import Fact from "./Fact.svelte";
   import Button, { Label } from "@smui/button";
-  import { userStore } from "./../services/loginService.js";
+  import { userStore } from "./../services/loginWrapperService.js";
   import page from "page";
   import { onMount } from "svelte";
 

@@ -1,5 +1,5 @@
 <script>
-  import { saveImageAndMetadata } from "./../services/imageUploadService.js";
+  import { saveImageAndMetadata } from "./../services/imagesWrapperService.js";
   import {
     resizeImage,
     getOrientation,

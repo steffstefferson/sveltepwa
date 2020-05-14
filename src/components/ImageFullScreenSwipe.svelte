@@ -7,6 +7,7 @@
 
   import { tick, onMount } from "svelte";
   import { notify } from "./../services/notifyService.js";
+
   import page from "page";
   export let params;
 
@@ -14,22 +15,24 @@
   let imageRatioContain = false;
   let slider;
   let defaultIndex;
-  subscribeToImages().subscribe(x => {
-    defaultIndex = x.findIndex(y => y.key == params.key);
-    images = x.filter(x => {
-      x.url = x.thumbnail;
-      return x;
+
+  onMount(async function() {
+    let imageObservable = await subscribeToImages();
+    imageObservable.subscribe(x => {
+      defaultIndex = x.findIndex(y => y.key == params.key);
+      images = x.filter(x => {
+        x.url = x.thumbnail;
+        return x;
+      });
+      if (defaultIndex == -1) {
+        defaultIndex = 0;
+      }
+
+      preloadImage(defaultIndex);
+      preloadImage(defaultIndex + 1);
+      preloadImage(defaultIndex - 1);
     });
-    if (defaultIndex == -1) {
-      defaultIndex = 0;
-    }
 
-    preloadImage(defaultIndex);
-    preloadImage(defaultIndex + 1);
-    preloadImage(defaultIndex - 1);
-  });
-
-  onMount(function() {
     notify("use arrow keys or swipe to navigate between images.");
     slider.scrollLeft = (slider.scrollWidth / images.length) * defaultIndex;
   });

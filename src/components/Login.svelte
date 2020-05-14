@@ -4,7 +4,7 @@
     logout,
     userStore,
     resetPasswordRequest
-  } from "./../services/loginService.js";
+  } from "./../services/loginWrapperService.js";
   import { form } from "svelte-forms";
   import Button, { Label } from "@smui/button";
   import Textfield from "@smui/textfield";
@@ -44,7 +44,7 @@
     });
   }
 
-  function loginUser(e) {
+  async function loginUser(e) {
     e.preventDefault();
     if (!navigator.onLine) {
       notify(
@@ -52,23 +52,12 @@
       );
       return false;
     }
-
-    return login(loginObj).then(
-      function(user) {
-        if (user.loggedIn) {
-          loginObj.email = "";
-          loginObj.password = "";
-          notify("you are logged in! Add some nice content.");
-        } else {
-          notify("oooups, lurin didn't let you login.");
-        }
-      },
-      function(e) {
-        console.log("login error:", e);
-        notify("oooups, lurin didn't let you login.");
-      }
-    );
-    return false;
+    try {
+      await login(loginObj);
+    } catch (e) {
+      console.log("login error:", e);
+      notify("oooups, lurin didn't let you login.");
+    }
   }
 </script>
 

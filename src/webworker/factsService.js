@@ -1,8 +1,6 @@
 import { db } from "./customfirebase";
 
 let factsArray = [];
-// let factsNewestArray = [];
-
 var factsDbRef = db.ref("facts");
 
 export function subscribeToFacts(callback) {

@@ -9,6 +9,8 @@
   let mapElement;
   let markers = [];
   let online = window.navigator.onLine;
+  var loadState = "";
+  let addedImagesKeys = [];
 
   function initMap() {
     if (!window.googleMapsLoaded) {
@@ -47,14 +49,15 @@
     }
   }
 
-  // To add the marker to the map, call setMap();
-
   async function addImagesToMap(images) {
     while (images.length > 0) {
       let i = 0;
       while (images.length > 0 && i++ < 10) {
         var img = images.pop();
-        delayedAdd(img);
+        if (!addedImagesKeys.find(x => x.key == img.key)) {
+          delayedAdd(img);
+          addedImagesKeys.push(img.key);
+        }
       }
     }
   }
@@ -66,11 +69,23 @@
   }
 
   onMount(async () => {
-    if (online) {
-      initMap();
-      subscribeToImages().subscribe(addImagesToMap);
+    if (!online) {
+      loadState = "offline";
+      return;
     }
+    (await subscribeToImages()).subscribe(addImagesToMap);
+    loadState = "loading";
+    waitForMapToLoaded();
   });
+
+  function waitForMapToLoaded() {
+    if (window.googleMapsLoaded) {
+      loadState = "loaded";
+      initMap();
+    } else {
+      setTimeout(waitForMapToLoaded, 500);
+    }
+  }
 
   function getTemplate(image) {
     return `<div id="content" class="markerPopUp">
@@ -130,13 +145,15 @@
   }
 </style>
 
-{#if online}
-  <div class="mapContainer">
-    <div id="map" bind:this={mapElement} />
-  </div>
-{:else}
+{#if loadState == 'loading'}
+  <h1>Waiting for google maps to load....</h1>
+{:else if loadState == 'offline'}
   <h1>Sorry, Google Maps only work when online!</h1>
   Go to
   <a href="/images">Images</a>
   instead.
 {/if}
+
+<div class="mapContainer">
+  <div id="map" bind:this={mapElement} />
+</div>

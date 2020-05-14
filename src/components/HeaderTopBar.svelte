@@ -7,7 +7,11 @@
   import { Anchor } from "@smui/menu-surface";
   import List, { Item } from "@smui/list";
   import page from "page";
-  import { login, logout, userStore } from "./../services/loginService.js";
+  import {
+    login,
+    logout,
+    userStore
+  } from "./../services/loginWrapperService.js";
 
   let loggedIn = false;
   const unsubscribe = userStore.subscribe(user => {
