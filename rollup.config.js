@@ -11,6 +11,7 @@ import { injectManifest } from "rollup-plugin-workbox";
 import replace from "@rollup/plugin-replace";
 import sizes from "rollup-plugin-sizes";
 import svelte_preprocess_postcss from "svelte-preprocess-postcss";
+import analyze from "rollup-plugin-analyzer";
 
 const production = !process.env.ROLLUP_WATCH;
 export default [
@@ -56,6 +57,7 @@ export default [
       !production && livereload("dist"),
       production && terser(),
       sizes(),
+      analyze({ limit: 10 }),
     ],
   },
   {
@@ -86,6 +88,23 @@ export default [
           );
         }
       ),
+    ],
+  },
+  {
+    input: "src/webworker/worker.js",
+    output: {
+      sourcemap: true,
+      format: "iife",
+      name: "webworker",
+      file: "dist/worker.js",
+    },
+    plugins: [
+      replace({
+        "process.env.NODE_ENV": JSON.stringify(
+          process.env.NODE_ENV || "production"
+        ),
+      }),
+      resolve(),
     ],
   },
 ];

@@ -81,7 +81,7 @@
   }
   .mainContainer {
     padding: 50px 0 0 0;
-    display: inline;
+    /* display: inline; */
   }
 </style>
 

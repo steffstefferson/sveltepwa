@@ -1,10 +1,20 @@
 <script>
-  import { svelteImageStore } from "../services/imageSerivce.js";
+  import { subscribeToImages } from "./../services/imagesWrapperService.js";
   import Image from "./Image.svelte";
   import { userStore } from "./../services/loginService.js";
 
   import { deleteImageAndMetadata } from "../services/imageUploadService.js";
   import { notify, ask } from "./../services/notifyService.js";
+  import { onMount } from "svelte";
+
+  let images = [];
+
+  onMount(async function() {
+    let imageObservable = await subscribeToImages();
+    imageObservable.subscribe(x => {
+      images = x;
+    });
+  });
 
   let loggedIn = false;
   userStore.subscribe(user => {
@@ -49,7 +59,7 @@
 
 <div>
   <ul class="list">
-    {#each $svelteImageStore as image}
+    {#each images as image}
       <li class="list-item">
         <Image
           {image}

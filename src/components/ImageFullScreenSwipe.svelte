@@ -1,9 +1,10 @@
 <script>
   import ImageFullScreen from "./ImageFullScreen.svelte";
   import {
-    svelteImageStore,
+    subscribeToImages,
     loadFullSizeImage
-  } from "../services/imageSerivce.js";
+  } from "./../services/imagesWrapperService.js";
+
   import { tick, onMount } from "svelte";
   import { notify } from "./../services/notifyService.js";
   import page from "page";
@@ -13,7 +14,7 @@
   let imageRatioContain = false;
   let slider;
   let defaultIndex;
-  svelteImageStore.subscribe(x => {
+  subscribeToImages().subscribe(x => {
     defaultIndex = x.findIndex(y => y.key == params.key);
     images = x.filter(x => {
       x.url = x.thumbnail;
@@ -81,7 +82,7 @@
 <style>
   .slider {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
     display: flex;
     overflow-x: hidden;
     scroll-snap-type: x mandatory;
@@ -89,7 +90,7 @@
   .slide {
     flex-shrink: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
     scroll-snap-align: start;
   }
 </style>

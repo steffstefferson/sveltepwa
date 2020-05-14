@@ -1,11 +1,24 @@
 <script>
-  import { svelteNewestFactStore } from "./../services/factsService";
-  import { svelteNewestImageStore } from "../services/imageSerivce.js";
+  import { subscribeToNewestFacts } from "./../services/factsWrapperService.js";
+  import { subscribeToNewestImages } from "./../services/imagesWrapperService.js";
   import Fact from "./Fact.svelte";
   import Image from "./Image.svelte";
   import Button, { Label } from "@smui/button";
+  import { onMount } from "svelte";
 
-  export let params;
+  let facts = [];
+  let images = [];
+
+  onMount(async function() {
+    let factsObservable = await subscribeToNewestFacts();
+    factsObservable.subscribe(x => {
+      facts = x;
+    });
+    let imageObservable = await subscribeToNewestImages();
+    imageObservable.subscribe(x => {
+      images = x;
+    });
+  });
 </script>
 
 <style type="text/postcss">
@@ -40,8 +53,8 @@
   <div class="list">
     <div class="list-item">
       <h1>Newest facts</h1>
-      {#each $svelteNewestFactStore as fact}
-        <div class="fact" on:click={() => selectFact(fact)}>
+      {#each facts as fact}
+        <div class="fact">
           <Fact {fact} hasDeleteButton={false} hasAcceptButton={false} />
         </div>
       {/each}
@@ -51,7 +64,7 @@
     </div>
     <div class="list-item">
       <h1>Newest image</h1>
-      {#each $svelteNewestImageStore as image}
+      {#each images as image}
         <Image {image} hasDeleteButton={false} />
       {/each}
       <Button href="/images" variant="raised" class="formButton">

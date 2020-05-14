@@ -1,10 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { Icon } from "@smui/icon-button";
-  import { svelteImageStore } from "../services/imageSerivce.js";
   import { tick } from "svelte";
+  import { subscribeToImages } from "./../services/imagesWrapperService.js";
   import page from "page";
-
   export let params;
   let map;
   let mapElement;
@@ -69,7 +68,7 @@
   onMount(async () => {
     if (online) {
       initMap();
-      svelteImageStore.subscribe(addImagesToMap);
+      subscribeToImages().subscribe(addImagesToMap);
     }
   });
 
@@ -95,15 +94,16 @@
 </script>
 
 <style type="text/postcss">
-  #map {
-    height: 100%;
-    width: 100%;
-  }
   .mapContainer {
-    height: 100%;
+    height: calc(100% - 50px);
     width: 100%;
     position: absolute;
     left: 0px;
+  }
+
+  #map {
+    height: 100%;
+    width: 100%;
   }
 
   :global(.markerPopUp) {

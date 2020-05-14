@@ -1,5 +1,5 @@
 <script>
-  import { addFactProposal } from "./../services/factsService.js";
+  import { addFactProposal } from "./../services/factsWrapperService.js";
   import { notify } from "./../services/notifyService.js";
   import { form } from "svelte-forms";
   import Button, { Label } from "@smui/button";

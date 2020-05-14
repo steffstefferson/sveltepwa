@@ -3365,7 +3365,7 @@
 
     // This will be replaced by the list of files to precache by
     // the `workbox injectManifest` build step.
-    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"6e5520378862c0f6f5d83de420e88e47","url":"components.css"},{"revision":"34886ec37a5c7f1984c7121651f21b1a","url":"index.html"},{"revision":"76a3d72bab9008ca272cea265f10b492","url":"main.css"}]);
+    precacheAndRoute([{"revision":"0a27a4163254fc8fce870c8cc3a3f94f","url":"404.html"},{"revision":"c4013c7c6046142eb10d919a9ae2b287","url":"components.css"},{"revision":"6610454996b77cfeea713dbfbf58862f","url":"index.html"},{"revision":"db3a580dd57f91ea6481180f48f3441b","url":"main.css"},{"revision":"a75fa7e5a76a209c436a2d162a994273","url":"worker.js"}]);
 
     registerRoute("/_share-target", shareTargetHandler, "POST");
 

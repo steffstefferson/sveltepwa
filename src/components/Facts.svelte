@@ -1,12 +1,24 @@
 <script>
-  import { svelteFactStore, deleteFact } from "./../services/factsService";
+  import {
+    deleteFact,
+    subscribeToFacts
+  } from "./../services/factsWrapperService.js";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import { notify, ask } from "./../services/notifyService";
   import Fact from "./Fact.svelte";
   import Button, { Label } from "@smui/button";
   import { userStore } from "./../services/loginService.js";
   import page from "page";
+  import { onMount } from "svelte";
 
+  onMount(async function() {
+    var s = await subscribeToFacts();
+    s.subscribe(x => {
+      facts = x;
+    });
+  });
+
+  let facts = [];
   export let params;
   let selectedFactDialog;
   let selectedFact = null;
@@ -56,7 +68,7 @@
   }
   .list-item {
     display: flex;
-    padding: 0px 0px 25px 0px;
+    padding: 0px 20px 25px;
     max-width: 400px;
     min-width: 300px;
     flex: 1 1 0px;
@@ -75,7 +87,7 @@
   </div>
   <div>
     <ul class="list">
-      {#each $svelteFactStore as fact}
+      {#each facts as fact}
         <li class="list-item" on:click={() => selectFact(fact)}>
           <Fact
             {fact}
