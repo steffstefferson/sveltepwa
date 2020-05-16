@@ -7,6 +7,7 @@
 
   import { tick, onMount } from "svelte";
   import { notify } from "./../services/notifyService.js";
+  import { writable } from "svelte/store";
 
   import page from "page";
   export let params;
@@ -14,20 +15,22 @@
   let images = [];
   let imageRatioContain = false;
   let slider;
-  let defaultIndex;
+  let defaultIndex = -1;
+  let backUrl = params.backUrl;
 
   onMount(async function() {
     let imageObservable = await subscribeToImages();
     imageObservable.subscribe(x => {
-      defaultIndex = x.findIndex(y => y.key == params.key);
-      console.log("default index is:", defaultIndex);
+      var idx = x.findIndex(y => y.key == params.key);
+      console.log("default index is:", idx);
       images = x.map(x => {
-        x.url = x.url || x.thumbnail;
+        x.url = x.fullImageSizeUrl || x.thumbnail;
         return x;
       });
-      if (defaultIndex == -1) {
-        defaultIndex = 0;
-      } else {
+      if (idx == -1) {
+        idx = 0;
+      } else if (defaultIndex != idx) {
+        defaultIndex = idx;
         preloadImage(defaultIndex);
         preloadImage(defaultIndex + 1);
         preloadImage(defaultIndex - 1);
@@ -52,14 +55,13 @@
   function preloadImage(idx) {
     idx = getIndex(idx);
     let i = images[idx];
-    if (!i || i.fullImageIsPreloaded) {
-      i.url = i.fullImageSizeUrl;
-      //console.log(i.imageTitle + "is already preloaded");
+    if (!i || i.fullImageSizeUrl) {
+      console.log(i.imageTitle + " is already preloaded");
       return;
     }
 
     loadFullSizeImage(i).then(url => {
-      i.fullImageIsPreloaded = true;
+      i.fullImageSizeUrl = url;
       i.url = url;
       console.log("preload ok for: " + i.imageTitle, idx);
       images[idx] = Object.assign({}, i);
@@ -110,6 +112,7 @@
   {#each images as image}
     <div class="slide">
       <ImageFullScreen
+        {backUrl}
         {image}
         {imageRatioContain}
         on:imageratiochanged={imageRatioChanged} />

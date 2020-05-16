@@ -68,20 +68,14 @@ export async function loadFullSizeImage(image) {
   if (image.fullImageSizeUrl) {
     return Promise.resolve(image.fullImageSizeUrl);
   }
-  const p1 = new Promise(function (resolve, reject) {
+  const p1 = new Promise(async function (resolve, reject) {
     function callback(url) {
-      image.fullImageSizeUrl = url;
-
-      let newImg = new Image();
-      newImg.onload = function () {
-        resolve(url);
-      };
-      newImg.onerror = function () {
-        reject();
-      };
-      newImg.src = url;
+      resolve(url);
     }
-    dataInterface.getDownloadUrl(image.imageKey, Comlink.proxy(callback));
+    await dataInterface.preloadImageByKey(
+      image.imageKey,
+      Comlink.proxy(callback)
+    );
   });
   return p1;
 }

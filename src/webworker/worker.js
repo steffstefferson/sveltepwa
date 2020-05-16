@@ -1,6 +1,10 @@
 import * as Comlink from "comlink";
 import { deleteFact, subscribeToFacts } from "./factsService.js";
-import { subscribeToImages, getDownloadUrl } from "./imageSerivce.js";
+import {
+  subscribeToImages,
+  getDownloadUrl,
+  preloadImageByKey,
+} from "./imageSerivce.js";
 import {
   saveImageAndMetadata,
   deleteImageAndMetadata,
@@ -30,6 +34,7 @@ const dataInterface = {
   subscribeToFacts,
   subscribeToImages,
   getDownloadUrl,
+  preloadImageByKey,
   deleteImageAndMetadata,
   saveImageAndMetadata,
   logout,

@@ -57,6 +57,7 @@
     height: 200px;
     overflow: hidden;
     margin: 6px auto;
+    cursor: pointer;
   }
   img {
     position: absolute;
@@ -84,7 +85,7 @@
         src={image.thumbnail}
         class={landscapeClass}
         on:load={imageLoaded}
-        alt={image.funimage} />
+        alt={image.funFact} />
     </div>
     <div class="imageText">{image.funFact}</div>
     <div class="imageSubtitle">{getDisplayTime(image.insertTime)}</div>

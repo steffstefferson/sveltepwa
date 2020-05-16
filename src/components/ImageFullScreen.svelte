@@ -5,11 +5,12 @@
   import page from "page";
 
   export let image;
-  let showTextContainer = true;
+  export let backUrl;
   export let imageRatioContain = false;
+
+  let showTextContainer = true;
   let backgroundSize = "background-size: cover;";
   let dispatcher = createEventDispatcher();
-
   const canShare = "canShare" in navigator;
 
   function toggleText() {
@@ -69,7 +70,7 @@
     border: 1px black solid;
     padding: 10px;
     display: grid;
-    grid-template-columns: auto 100px;
+    grid-template-columns: auto 115px;
     align-items: center;
     bottom: 0px;
   }
@@ -113,6 +114,13 @@
       <div class="text">{getDisplayTime(image.insertTime)}</div>
     </div>
     <div>
+      <IconButton
+        on:click={() => page('/' + backUrl + '#:~:text=' + encodeURIComponent(image.imageTitle))}
+        class="lurinsnavicons material-icons"
+        aria-label="Open map">
+        close
+      </IconButton>
+
       <IconButton
         on:click={() => page('/map?key=' + image.key)}
         class="lurinsnavicons material-icons"

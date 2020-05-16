@@ -106,6 +106,11 @@
     infowindow.open(map, marker);
     page("/map?key=" + marker.key);
   }
+
+  window.mapsLoaded = function() {
+    window.googleMapsLoaded = true;
+    console.log("maps loaded");
+  };
 </script>
 
 <style type="text/postcss">
@@ -145,6 +150,13 @@
   }
 </style>
 
+<svelte:head>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkg9lEDwpI3a_YteembM0t_iOmR3jdOD8&callback=mapsLoaded"
+    defer>
+
+  </script>
+</svelte:head>
 {#if loadState == 'loading'}
   <h1>Waiting for google maps to load....</h1>
 {:else if loadState == 'offline'}

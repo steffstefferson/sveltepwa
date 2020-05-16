@@ -40,3 +40,19 @@ export function getDownloadUrl(imageKey, callback) {
     callback(url);
   });
 }
+
+export async function loadImageBlobByUrl(url, callback) {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  callback(blob);
+}
+
+export function preloadImageByKey(imageKey, callback) {
+  let tangRef = storageRef.child("locations/" + imageKey + ".jpg");
+  tangRef.getDownloadURL().then(async (url) => {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    console.log("preloaded image in worker" + url);
+    callback(url);
+  });
+}
