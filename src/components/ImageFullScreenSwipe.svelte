@@ -20,20 +20,22 @@
     let imageObservable = await subscribeToImages();
     imageObservable.subscribe(x => {
       defaultIndex = x.findIndex(y => y.key == params.key);
-      images = x.filter(x => {
-        x.url = x.thumbnail;
+      console.log("default index is:", defaultIndex);
+      images = x.map(x => {
+        x.url = x.url || x.thumbnail;
         return x;
       });
       if (defaultIndex == -1) {
         defaultIndex = 0;
+      } else {
+        preloadImage(defaultIndex);
+        preloadImage(defaultIndex + 1);
+        preloadImage(defaultIndex - 1);
       }
-
-      preloadImage(defaultIndex);
-      preloadImage(defaultIndex + 1);
-      preloadImage(defaultIndex - 1);
     });
 
     notify("use arrow keys or swipe to navigate between images.");
+    await tick();
     slider.scrollLeft = (slider.scrollWidth / images.length) * defaultIndex;
   });
 
@@ -47,16 +49,19 @@
     return idx;
   }
 
-  function preloadImage(defaultIndex) {
-    let idx = getIndex(defaultIndex);
+  function preloadImage(idx) {
+    idx = getIndex(idx);
     let i = images[idx];
     if (!i || i.fullImageIsPreloaded) {
+      i.url = i.fullImageSizeUrl;
+      //console.log(i.imageTitle + "is already preloaded");
       return;
     }
-    console.log("preload index", idx);
+
     loadFullSizeImage(i).then(url => {
       i.fullImageIsPreloaded = true;
       i.url = url;
+      console.log("preload ok for: " + i.imageTitle, idx);
       images[idx] = Object.assign({}, i);
     });
   }
@@ -64,7 +69,9 @@
   function sliderScrolled(e) {
     let width = e.target.scrollWidth / images.length;
     let idx = Math.round(e.target.scrollLeft / width, 0);
-    activeChanged(idx);
+    if (idx != defaultIndex) {
+      activeChanged(idx);
+    }
   }
 
   function imageRatioChanged(e) {
@@ -72,7 +79,8 @@
   }
 
   function activeChanged(idx) {
-    console.log("activechange", idx);
+    defaultIndex = idx;
+    console.log("activechange to:", images[idx].imageTitle, idx);
     tick();
     page("/slideShow?key=" + images[idx].key);
     preloadImage(idx + 2);

@@ -71,6 +71,9 @@
   :global(.contentpadding) {
     padding: 0px 20px;
   }
+  :global(.mdc-top-app-bar) {
+    height: 50px;
+  }
 
   :global(app, body, html) {
     display: block !important;
@@ -81,7 +84,6 @@
   }
   .mainContainer {
     padding: 50px 0 0 0;
-    /* display: inline; */
   }
 </style>
 

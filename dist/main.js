@@ -23961,7 +23961,7 @@
     	return child_ctx;
     }
 
-    // (89:2) {#each images as image}
+    // (97:2) {#each images as image}
     function create_each_block$3(ctx) {
     	let div;
     	let t;
@@ -23983,7 +23983,7 @@
     			create_component(imagefullscreen.$$.fragment);
     			t = space();
     			attr_dev(div, "class", "slide svelte-1mbjqia");
-    			add_location(div, file$w, 89, 4, 2424);
+    			add_location(div, file$w, 97, 4, 2706);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -24016,7 +24016,7 @@
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(89:2) {#each images as image}",
+    		source: "(97:2) {#each images as image}",
     		ctx
     	});
 
@@ -24048,7 +24048,7 @@
     			}
 
     			attr_dev(div, "class", "slider svelte-1mbjqia");
-    			add_location(div, file$w, 87, 0, 2327);
+    			add_location(div, file$w, 95, 0, 2609);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -24143,22 +24143,24 @@
 
     		imageObservable.subscribe(x => {
     			defaultIndex = x.findIndex(y => y.key == params.key);
+    			console.log("default index is:", defaultIndex);
 
-    			$$invalidate(0, images = x.filter(x => {
-    				x.url = x.thumbnail;
+    			$$invalidate(0, images = x.map(x => {
+    				x.url = x.url || x.thumbnail;
     				return x;
     			}));
 
     			if (defaultIndex == -1) {
     				defaultIndex = 0;
+    			} else {
+    				preloadImage(defaultIndex);
+    				preloadImage(defaultIndex + 1);
+    				preloadImage(defaultIndex - 1);
     			}
-
-    			preloadImage(defaultIndex);
-    			preloadImage(defaultIndex + 1);
-    			preloadImage(defaultIndex - 1);
     		});
 
     		notify("use arrow keys or swipe to navigate between images.");
+    		await tick();
     		$$invalidate(2, slider.scrollLeft = slider.scrollWidth / images.length * defaultIndex, slider);
     	});
 
@@ -24174,19 +24176,21 @@
     		return idx;
     	}
 
-    	function preloadImage(defaultIndex) {
-    		let idx = getIndex(defaultIndex);
+    	function preloadImage(idx) {
+    		idx = getIndex(idx);
     		let i = images[idx];
 
     		if (!i || i.fullImageIsPreloaded) {
+    			i.url = i.fullImageSizeUrl;
+
+    			//console.log(i.imageTitle + "is already preloaded");
     			return;
     		}
-
-    		console.log("preload index", idx);
 
     		loadFullSizeImage(i).then(url => {
     			i.fullImageIsPreloaded = true;
     			i.url = url;
+    			console.log("preload ok for: " + i.imageTitle, idx);
     			$$invalidate(0, images[idx] = Object.assign({}, i), images);
     		});
     	}
@@ -24194,7 +24198,10 @@
     	function sliderScrolled(e) {
     		let width = e.target.scrollWidth / images.length;
     		let idx = Math.round(e.target.scrollLeft / width, 0);
-    		activeChanged(idx);
+
+    		if (idx != defaultIndex) {
+    			activeChanged(idx);
+    		}
     	}
 
     	function imageRatioChanged(e) {
@@ -24202,7 +24209,8 @@
     	}
 
     	function activeChanged(idx) {
-    		console.log("activechange", idx);
+    		defaultIndex = idx;
+    		console.log("activechange to:", images[idx].imageTitle, idx);
     		tick();
     		page_js("/slideShow?key=" + images[idx].key);
     		preloadImage(idx + 2);
@@ -34891,9 +34899,9 @@
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t1 = space();
     			create_component(notification.$$.fragment);
-    			attr_dev(main, "class", "mainContainer svelte-1j8iud3");
+    			attr_dev(main, "class", "mainContainer svelte-1wabyb9");
     			attr_dev(main, "densefixedadjust", "");
-    			add_location(main, file$L, 63, 0, 2331);
+    			add_location(main, file$L, 63, 0, 2369);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
