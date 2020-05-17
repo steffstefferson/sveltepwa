@@ -9,8 +9,6 @@
   import { notify } from "./../services/notifyService.js";
   import { form } from "svelte-forms";
   import Button, { Label } from "@smui/button";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import { onMount } from "svelte";
   import LocationSelector from "./LocationSelector.svelte";
   import ImageSelector from "./ImageSelector.svelte";
@@ -93,47 +91,25 @@
 <div class="contentpadding">
   <h1>Add place to be</h1>
   <form style="max-width: 400px;" on:submit={saveData}>
-    <div>
-      <Textfield
-        class="shaped-outlined"
-        variant="outlined"
-        bind:value={imageObj.imageTitle}
-        label="Location, Country"
-        style="width: 100%;"
-        input$required
-        input$min-length="5"
-        input$max-length="80"
-        input$aria-controls="helper-text-shaped-outlined-a"
-        input$aria-describedby="helper-text-shaped-outlined-a" />
-      <HelperText id="helper-text-shaped-outlined-a">
-        Where have you been?
-      </HelperText>
-    </div>
-    <br />
-    <div>
-      <Textfield
-        class="shaped-outlined"
-        variant="outlined"
-        bind:value={imageObj.funFact}
-        label="FunFact"
-        style="width: 100%;"
-        input$required
-        input$min-length="5"
-        input$max-length="240"
-        input$aria-controls="helper-text-shaped-outlined-a"
-        input$aria-describedby="helper-text-shaped-outlined-a" />
-      <HelperText id="helper-text-shaped-outlined-a">How was it?</HelperText>
-    </div>
-    <br />
+    <div class="lurinForm">
+      <div>
+        <label for="title">Location, Country</label>
+        <input type="text" name="title" bind:value={imageObj.imageTitle} />
+      </div>
+      <div>
+        <label for="fact">Fun Fact</label>
+        <input type="text" name="fact" bind:value={imageObj.funFact} />
+      </div>
 
-    <ImageSelector on:imageChoosen={updateImage} />
+      <ImageSelector on:imageChoosen={updateImage} />
 
-    <LocationSelector on:locationChoosen={updateLocation} />
-    <Button
-      disabled={!($imageForm.valid && imageObj.funFact.length > 0 && fullsizeImage && thumbnailImage && location)}
-      variant="raised"
-      class="formButton">
-      <Label>Send</Label>
-    </Button>
+      <LocationSelector on:locationChoosen={updateLocation} />
+      <Button
+        disabled={!($imageForm.valid && imageObj.funFact.length > 0 && fullsizeImage && thumbnailImage && location)}
+        variant="raised"
+        class="formButton">
+        <Label>Send</Label>
+      </Button>
+    </div>
   </form>
 </div>

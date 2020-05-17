@@ -107,3 +107,18 @@ ul {
   @include mdc-linear-progress-bar-color($material-color-green-500);
   @include mdc-linear-progress-buffer-color($material-color-green-100);
 }
+.lurinForm {
+  max-width: 400px;
+}
+.lurinForm input,
+textarea {
+  display: flex;
+  padding: 12px 16px 14px;
+  border: solid black 1px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: var(--mdc-theme-text-primary-on-background, black);
+}

@@ -4,9 +4,8 @@
     getPositionByCoords,
     getPositionByAddress
   } from "./../services/geoLocationService.js";
+  import { loadMapScript } from "./../services/mapsLoaderService.js";
   import Button, { Label } from "@smui/button";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Radio from "@smui/radio";
   import FormField from "@smui/form-field";
   import { Icon } from "@smui/icon-button";
@@ -21,29 +20,31 @@
   let selectedOption = "map";
   let addressSearch = "";
   function initMap() {
-    if (!googleMapsLoaded) {
-      return;
-    }
-    let initialCoords = { lat: 46.65, lng: 7.709 };
+    var observer = loadMapScript();
+    observer.subscribe(loaded => {
+      if (loaded) {
+        let initialCoords = { lat: 46.65, lng: 7.709 };
 
-    if (location && location.latitude) {
-      initialCoords = { lat: location.latitude, lng: location.longitude };
-    } else {
-      updateLocationByCoords(initialCoords.lat, initialCoords.lng);
-    }
-    map = new google.maps.Map(mapElement, {
-      center: initialCoords,
-      zoom: 8
-    });
-    marker = new google.maps.Marker({
-      map: map,
-      draggable: true,
-      animation: google.maps.Animation.DROP,
-      position: initialCoords
-    });
-    marker.addListener("dragend", function() {
-      console.log(marker);
-      updateLocationByCoords(marker.position.lat(), marker.position.lng());
+        if (location && location.latitude) {
+          initialCoords = { lat: location.latitude, lng: location.longitude };
+        } else {
+          updateLocationByCoords(initialCoords.lat, initialCoords.lng);
+        }
+        map = new google.maps.Map(mapElement, {
+          center: initialCoords,
+          zoom: 8
+        });
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: initialCoords
+        });
+        marker.addListener("dragend", function() {
+          console.log(marker);
+          updateLocationByCoords(marker.position.lat(), marker.position.lng());
+        });
+      }
     });
   }
 
@@ -153,22 +154,10 @@
   {#if selectedOption == 'address'}
     <div>
       <h3>Choose by address</h3>
-      <div>
-        <Textfield
-          class="shaped-outlined"
-          variant="outlined"
-          bind:value={addressSearch}
-          label="Address"
-          style="width: 100%;"
-          input$required
-          input$min-length="5"
-          input$max-length="240"
-          input$aria-controls="helper-text-shaped-outlined-a"
-          input$aria-describedby="helper-text-shaped-outlined-a" />
-        <HelperText id="helper-text-shaped-outlined-a">
-          Where have you been? Enter a address, Lurin will guess the
-          coordinates.
-        </HelperText>
+      <div class="lurinForm">
+        <label for="contributor">Address</label>
+        <input type="text" name="contributor" bind:value={addressSearch} />
+        Where have you been? Enter a address, Lurin will guess the coordinates.
       </div>
       <div style="width: 100%;height: 80px;">
         <Button on:click={getByAddress} variant="raised" class="formButton">

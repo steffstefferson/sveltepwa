@@ -7,8 +7,6 @@
   } from "./../services/loginWrapperService.js";
   import { form } from "svelte-forms";
   import Button, { Label } from "@smui/button";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import { notify } from "./../services/notifyService";
   let loginObj = { email: "", password: "" };
 
@@ -65,44 +63,18 @@
 
 </style>
 
-<div style="max-width: 400px;" class="contentpadding">
+<div class="contentpadding">
   {#if showLogin}
     <h1>Login</h1>
-    <form on:submit={loginUser}>
+    <form on:submit={loginUser} class="lurinForm">
       <div>
-        <Textfield
-          type="email"
-          class="shaped-outlined"
-          variant="outlined"
-          bind:value={loginObj.email}
-          label="Email Address"
-          style="width: 100%;"
-          input$required
-          input$min-length="2"
-          input$max-length="80"
-          input$aria-controls="helper-text-shaped-outlined-a"
-          input$aria-describedby="helper-text-shaped-outlined-a" />
-        <HelperText id="helper-text-shaped-outlined-a">
-          Your email address?
-        </HelperText>
+        <label for="email">Email Address</label>
+        <input type="text" name="email" bind:value={loginObj.email} />
       </div>
       <br />
       <div>
-        <Textfield
-          type="password"
-          class="shaped-outlined"
-          variant="outlined"
-          bind:value={loginObj.password}
-          label="Password"
-          style="width: 100%;"
-          input$required
-          input$min-length="2"
-          input$max-length="80"
-          input$aria-controls="helper-text-shaped-outlined-a"
-          input$aria-describedby="helper-text-shaped-outlined-a" />
-        <HelperText id="helper-text-shaped-outlined-a">
-          Password, please. Can't remember? Ask Lurin!
-        </HelperText>
+        <label for="password">Password</label>
+        <input type="password" name="password" bind:value={loginObj.password} />
       </div>
       <Button
         disabled={!$loginForm.valid || loginObj.email.length == 0 || loginObj.password.length == 0}

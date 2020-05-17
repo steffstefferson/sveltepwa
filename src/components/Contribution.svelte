@@ -3,10 +3,6 @@
   import { notify } from "./../services/notifyService.js";
   import { form } from "svelte-forms";
   import Button, { Label } from "@smui/button";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
-  import CharacterCounter from "@smui/textfield/character-counter/index";
-  import Snackbar, { Actions } from "@smui/snackbar";
 
   let factObj = { fact: "", contributor: "" };
 
@@ -49,44 +45,24 @@
 
 <div class="contentpadding">
   <h1>Contribute</h1>
-  <form style="max-width: 400px;" on:submit={sendContribution}>
+  <form on:submit={sendContribution} class="lurinForm">
+
     <div>
-      <Textfield
-        class="shaped-outlined"
-        variant="outlined"
-        bind:value={factObj.contributor}
-        label="Contributor"
-        style="width: 100%;"
-        input$required
-        input$min-length="5"
-        input$max-length="80"
-        input$aria-controls="helper-text-shaped-outlined-a"
-        input$aria-describedby="helper-text-shaped-outlined-a" />
-      <HelperText id="helper-text-shaped-outlined-a">
-        What's your name?
-      </HelperText>
-      <HelperText validationMsg>
-        A name with length between 5 - 80 characters is required.
-      </HelperText>
+      <label for="contributor">Contributor</label>
+      <input type="text" name="contributor" bind:value={factObj.contributor} />
     </div>
+    <br />
     <div>
-      <div>
-        <Textfield
-          textarea
-          input$maxlength="150"
-          input$rows="5"
-          style="width: 100%;"
-          bind:value={factObj.fact}
-          label="Fact">
-          <CharacterCounter>0 / 150</CharacterCounter>
-        </Textfield>
-      </div>
-      <Button
-        disabled={!$contributeForm.valid || factObj.fact.length == 0}
-        variant="raised"
-        class="formButton">
-        <Label>Send</Label>
-      </Button>
+      <label for="fact">Fact</label>
+      <textarea name="fact" cols="40" rows="5" bind:value={factObj.fact} />
+      {factObj.fact.length} / 150
     </div>
+
+    <Button
+      disabled={!$contributeForm.valid || factObj.fact.length == 0}
+      variant="raised"
+      class="formButton">
+      <Label>Send</Label>
+    </Button>
   </form>
 </div>

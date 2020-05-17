@@ -3,6 +3,7 @@
   import { Icon } from "@smui/icon-button";
   import { tick } from "svelte";
   import { subscribeToImages } from "./../services/imagesWrapperService.js";
+  import { loadMapScript } from "./../services/mapsLoaderService.js";
   import page from "page";
   export let params;
   let map;
@@ -13,9 +14,6 @@
   let addedImagesKeys = [];
 
   function initMap() {
-    if (!window.googleMapsLoaded) {
-      return;
-    }
     let initialCoords = { lat: 46.65, lng: 7.709 };
 
     map = new google.maps.Map(mapElement, {
@@ -73,18 +71,19 @@
       loadState = "offline";
       return;
     }
-    (await subscribeToImages()).subscribe(addImagesToMap);
     loadState = "loading";
     waitForMapToLoaded();
   });
 
-  function waitForMapToLoaded() {
-    if (window.googleMapsLoaded) {
-      loadState = "loaded";
-      initMap();
-    } else {
-      setTimeout(waitForMapToLoaded, 500);
-    }
+  async function waitForMapToLoaded() {
+    var observer = loadMapScript();
+    observer.subscribe(async loaded => {
+      if (loaded) {
+        loadState = "loaded";
+        initMap();
+        (await subscribeToImages()).subscribe(addImagesToMap);
+      }
+    });
   }
 
   function getTemplate(image) {
@@ -150,13 +149,6 @@
   }
 </style>
 
-<svelte:head>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkg9lEDwpI3a_YteembM0t_iOmR3jdOD8&callback=mapsLoaded"
-    defer>
-
-  </script>
-</svelte:head>
 {#if loadState == 'loading'}
   <h1>Waiting for google maps to load....</h1>
 {:else if loadState == 'offline'}
