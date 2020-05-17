@@ -80,6 +80,8 @@
     width: 100%;
     height: 71px;
     cursor: pointer;
+    padding: 0px;
+    margin: 0px;
   }
 
   .dropZoneOverlay {
