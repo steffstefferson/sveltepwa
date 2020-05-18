@@ -8,7 +8,6 @@
   import Login from "./components/Login.svelte";
   import FullScreenMenu from "./components/FullScreenMenu.svelte";
   import ImageFullScreenSwipe from "./components/ImageFullScreenSwipe.svelte";
-  import HeaderTopBar from "./components/HeaderTopBar.svelte";
   import ShareApiTest from "./components/ShareApiTest.svelte";
   import Contribution from "./components/Contribution.svelte";
   import ManageContribution from "./components/ManageContribution.svelte";
