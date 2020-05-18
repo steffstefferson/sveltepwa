@@ -13,7 +13,7 @@ import sizes from "rollup-plugin-sizes";
 import svelte_preprocess_postcss from "svelte-preprocess-postcss";
 import analyze from "rollup-plugin-analyzer";
 
-const production = !process.env.ROLLUP_WATCH;
+const production = true;
 export default [
   {
     input: "src/main.js",

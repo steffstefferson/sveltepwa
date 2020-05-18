@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import config from "./../config";
+import config from "./../config.js";
 
 const isLoaded = writable(false);
 let scriptInjected = false;
@@ -14,7 +14,7 @@ export function loadMapScript() {
     var script = document.createElement("script");
     script.src =
       "https://maps.googleapis.com/maps/api/js?key=" +
-      config.googleMapsApiKey +
+      config.secret.googleMapsApiKey +
       "&callback=mapsLoaded";
     document.head.appendChild(script);
     scriptInjected = true;
