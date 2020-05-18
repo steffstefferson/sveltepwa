@@ -8,8 +8,13 @@
   import Button, { Label } from "@smui/button";
   import { notify } from "./../services/notifyService";
   import { userStore } from "./../services/loginWrapperService.js";
+  import { onMount } from "svelte";
 
-  let factProposals = getFactsProposals();
+  let facts = [];
+
+  onMount(async function() {
+    facts = await getFactsProposals();
+  });
 
   let loggedIn = false;
   userStore.subscribe(user => {
@@ -68,7 +73,7 @@
 <div class="contentpadding">
   <h1>Manage fact purposals</h1>
   <ul class="list">
-    {#each factProposals as fact}
+    {#each facts as fact}
       <li class="list-item">
         <Fact
           {fact}

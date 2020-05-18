@@ -5,8 +5,8 @@
   import Map from "./components/Map.svelte";
   import Home from "./components/Home.svelte";
   import Settings from "./components/Settings.svelte";
-  import AddPlaceToBe from "./components/AddPlaceToBe.svelte";
   import Login from "./components/Login.svelte";
+  import FullScreenMenu from "./components/FullScreenMenu.svelte";
   import ImageFullScreenSwipe from "./components/ImageFullScreenSwipe.svelte";
   import HeaderTopBar from "./components/HeaderTopBar.svelte";
   import ShareApiTest from "./components/ShareApiTest.svelte";
@@ -14,7 +14,6 @@
   import ManageContribution from "./components/ManageContribution.svelte";
   import Notification from "./components/Notification.svelte";
   import router from "page";
-  import { DenseFixedAdjust } from "@smui/top-app-bar";
 
   let page;
   let params = {};
@@ -55,6 +54,11 @@
 
   router("/*", () => (page = Home));
   router.start();
+
+  let menuOpened = false;
+  function menuOpen() {
+    menuOpened = !menuOpened;
+  }
 </script>
 
 <style>
@@ -82,13 +86,10 @@
     position: static !important;
     font-family: Roboto, sans-serif;
   }
-  .mainContainer {
-    padding: 50px 0 0 0;
-  }
 </style>
 
-<HeaderTopBar />
-<main class="mainContainer" DenseFixedAdjust>
+<FullScreenMenu on:message={menuOpen} />
+<main class="mainContainer" style={menuOpened ? 'display:none' : ''}>
   <svelte:component this={page} {params} />
 </main>
 <Notification />
