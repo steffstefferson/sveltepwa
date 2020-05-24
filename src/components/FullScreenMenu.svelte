@@ -45,24 +45,26 @@
     display: grid;
     grid-template-columns: 1px auto 1px;
     background-color: var(--mdc-theme-primary, yellow);
-    height: 100vh;
-    padding: 15px;
+    height: calc(100vh - 20px);
+    padding: 10px;
+    transition: 1s;
   }
   nav.minimized {
-    grid-template-columns: auto auto auto;
-    height: 20px;
+    grid-template-columns: 1fr 25px 1fr;
+    height: 30px;
+    transition: 2s;
   }
 
   ul {
-    margin: 4px 50px;
     list-style: none;
-    padding: 0px 10px;
-    background-color: var(--mdc-theme-primary, yellow);
+    transition: 1s;
   }
 
   nav.minimized ul {
     width: 25px;
     margin: 0px;
+    margin-top: 5px;
+    transition: 1s;
   }
 
   li {
@@ -70,32 +72,56 @@
     padding: 10px 20px;
     margin-bottom: 10px;
     font-size: 4vw;
-    transition: 1s;
+    transition: 0.5s;
+  }
+  a {
+    color: var(--mdc-theme-on-primary, black);
   }
 
   nav.minimized ul li {
     background-color: black;
     margin-bottom: 0px;
     padding: 0px;
+    transition: 1s;
+  }
+
+  .menuDiv {
+    margin: auto;
   }
 
   nav.minimized ul > li:nth-child(-n + 3) {
     margin-bottom: 3px;
+    transition: 1s;
     padding: 2px 3px;
+    transition: 1s;
   }
 
   nav.minimized ul li a {
     display: none;
+    transition: 1s;
+  }
+
+  #maskedLogo {
+    width: 30px;
+    height: 30px;
+    background-color: var(--mdc-theme-on-primary, black);
+    -webkit-mask-image: url(./../assets/lurinfacts-icon-transparent.png);
+    mask-image: url(./../assets/lurinfacts-icon-transparent.png);
   }
 </style>
 
 <nav on:click={toggleMenu} class={minimized ? 'minimized' : ''}>
   <div>
     {#if minimized}
-      <div class="pageTitle">Lurinfacts beta</div>
+      <div style="display:inline-flex">
+        <div id="maskedLogo">&bnsp;</div>
+        <span class="pageTitle" style="margin: auto;padding-left: 10px;">
+          Lurinfacts
+        </span>
+      </div>
     {/if}
   </div>
-  <div>
+  <div class="menuDiv">
     <ul>
       <li>
         <a on:click={checkIsOpened} href="/">Home</a>
@@ -138,8 +164,7 @@
     </ul>
   </div>
   {#if minimized}
-    <div style="justify-self: end;">
-
+    <div style="justify-self: end;margin-top: 5px;">
       <a
         class="twitterLink"
         target="_blank"

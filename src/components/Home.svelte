@@ -50,6 +50,9 @@
 <div class="contentpadding">
 
   <div id="maskedLogo" />
+  <div style="text-align: center;">
+    A site dedicated to the greatest coder ever.
+  </div>
   <div class="list">
     <div class="list-item">
       <h1>Newest facts</h1>

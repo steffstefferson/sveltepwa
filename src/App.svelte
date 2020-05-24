@@ -7,6 +7,7 @@
   import Settings from "./components/Settings.svelte";
   import Login from "./components/Login.svelte";
   import FullScreenMenu from "./components/FullScreenMenu.svelte";
+  import AddPlaceToBe from "./components/AddPlaceToBe.svelte";
   import ImageFullScreenSwipe from "./components/ImageFullScreenSwipe.svelte";
   import ShareApiTest from "./components/ShareApiTest.svelte";
   import Contribution from "./components/Contribution.svelte";
