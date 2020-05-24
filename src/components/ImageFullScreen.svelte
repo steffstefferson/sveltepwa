@@ -34,16 +34,18 @@
     }
   }
 
-  function toggleZoom() {
+  function toggleZoom(e) {
     imageRatioContain = !imageRatioContain;
     if (imageRatioContain) {
       backgroundSize = "background-size: contain;";
     } else {
       backgroundSize = "background-size: cover;";
     }
-    dispatcher("imageratiochanged", {
+    dispatcher("ratio", {
       imageRatioContain: imageRatioContain
     });
+    e.preventDefault();
+    return false;
   }
 </script>
 

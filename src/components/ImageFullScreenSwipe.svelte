@@ -13,7 +13,7 @@
   export let params;
 
   let images = [];
-  let imageRatioContain = false;
+  let imageRatioContain = true;
   let slider;
   let defaultIndex = -1;
   let backUrl = params.backUrl;
@@ -78,6 +78,7 @@
 
   function imageRatioChanged(e) {
     imageRatioContain = e.detail.imageRatioContain;
+    console.log("new ratio " + imageRatioContain);
   }
 
   function activeChanged(idx) {
@@ -115,7 +116,7 @@
         {backUrl}
         {image}
         {imageRatioContain}
-        on:imageratiochanged={imageRatioChanged} />
+        on:ratio={imageRatioChanged} />
     </div>
   {/each}
 
