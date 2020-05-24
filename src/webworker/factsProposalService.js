@@ -1,5 +1,5 @@
 import { db } from "./customfirebase";
-
+import { triggerPush } from "./pushService";
 let poposalArray = [];
 
 var proposalDbRef = db.ref("factsProposal");
@@ -50,7 +50,11 @@ export function acceptFactProposal(proposal) {
       console.log("error accept proposal", error);
       return false;
     }
-    return deleteFactProposal(proposal);
+    let ok = deleteFactProposal(proposal);
+    if (ok) {
+      triggerPush();
+    }
+    return ok;
   });
 }
 

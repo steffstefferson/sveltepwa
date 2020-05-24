@@ -1,11 +1,16 @@
 import { db, storage } from "./customfirebase";
-const firebaseMetaData = db.ref().child("imageMetaDataTest");
+import { triggerPush } from "./pushService";
+const firebaseMetaData = db.ref().child("imageMetaData");
 const storageRef = storage.ref();
 export function saveImageAndMetadata(metaData, image, thumbnail) {
   return saveImage(image).then((imageKey) => {
     metaData.imageKey = imageKey;
     metaData.thumbnail = thumbnail;
-    return saveMetaData(metaData);
+    var ok = saveMetaData(metaData);
+    if (ok) {
+      triggerPush();
+    }
+    return ok;
   });
 }
 
