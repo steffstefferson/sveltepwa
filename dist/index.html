@@ -69,21 +69,37 @@
     />
     <meta name="twitter:image" content="/assets/lurinfacts-header.png" />
     <meta name="theme-color" content="#ffff65" />
+
+    <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
+
     <link
-      defer
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
     />
     <link
-      defer
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+    />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
     />
 
     <script type="text/javascript">
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("/service-worker.js", { scope: "" })
+          .register("./service-worker.js")
           .then(function (reg) {
             console.log("Registrierung erfolgreich. Scope ist " + reg.scope);
           })

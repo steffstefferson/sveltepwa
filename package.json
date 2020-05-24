@@ -1,7 +1,7 @@
 {
-  "name": "svelte-starter-postcss",
-  "version": "1.0.0",
-  "description": "A starter for bulding Svelte web apps, with PostCSS support.",
+  "name": "lurinfacts",
+  "version": "2.0.0",
+  "description": "A site about the greatest coder ever.",
   "main": " ",
   "scripts": {
     "build": "rollup -c",
@@ -14,19 +14,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noprodev/svelte-starter-postcss.git"
+    "url": "git+https://github.com/Krigu/lurinfacts.git"
   },
   "keywords": [
     "Svelte",
     "starter",
     "PostCSS"
   ],
-  "author": "noprodev",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/noprodev/svelte-starter-postcss/issues"
-  },
-  "homepage": "https://github.com/noprodev/svelte-starter-postcss#readme",
+  "author": "Stef Käser",
+  "license": "MIT",
+  "homepage": "https://lurinfacts.ch",
   "devDependencies": {
     "@material/theme": "^5.1.0",
     "@rollup/plugin-commonjs": "^11.0.2",

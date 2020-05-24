@@ -97,7 +97,7 @@
     width: 100vw;
     height: calc(100vh - 50px);
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
   }
   .slide {

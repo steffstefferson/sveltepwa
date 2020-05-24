@@ -20,7 +20,7 @@
   let thumbnailImage = null;
   let fullsizeImage = null;
   let cachedImage = {};
-  let cachedImageLoading = true; //!!new URLSearchParams(window.location.search).get("shareTarget");
+  let cachedImageLoading = true;
   onMount(async () => {
     if (cachedImageLoading) {
       loadCachedImage();

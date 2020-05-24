@@ -48,6 +48,7 @@
     height: calc(100vh - 20px);
     padding: 10px;
     transition: 1s;
+    cursor: pointer;
   }
   nav.minimized {
     grid-template-columns: 1fr 25px 1fr;
