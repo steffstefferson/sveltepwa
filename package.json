@@ -58,7 +58,7 @@
     "rollup-plugin-workbox": "^5.0.1",
     "sirv-cli": "^0.4.5",
     "smelte": "^1.0.12",
-    "svelte": "^3.20.1",
+    "svelte": "^3.49.0",
     "svelte-forms": "^1.2.0",
     "svelte-material-ui": "^1.0.0-beta.20",
     "svelte-preprocess": "^2.16.0",
